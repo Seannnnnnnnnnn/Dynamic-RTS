@@ -1,0 +1,88 @@
+@inproceedings{GAN16,
+  author       = {Miao Qiao and
+                  Junhao Gan and
+                  Yufei Tao},
+  editor       = {Fatma {\"{O}}zcan and
+                  Georgia Koutrika and
+                  Sam Madden},
+  title        = {Range Thresholding on Streams},
+  booktitle    = {Proceedings of the 2016 International Conference on Management of
+                  Data, {SIGMOD} Conference 2016, San Francisco, CA, USA, June 26 -
+                  July 01, 2016},
+  pages        = {571--582},
+  publisher    = {{ACM}},
+  year         = {2016},
+  url          = {https://doi.org/10.1145/2882903.2915965},
+  doi          = {10.1145/2882903.2915965},
+  timestamp    = {Wed, 07 Dec 2022 23:08:47 +0100},
+  biburl       = {https://dblp.org/rec/conf/sigmod/QiaoGT16.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
+
+
+@article{BENTLEY1980301,
+title = {Decomposable searching problems I. Static-to-dynamic transformation},
+journal = {Journal of Algorithms},
+volume = {1},
+number = {4},
+pages = {301-358},
+year = {1980},
+issn = {0196-6774},
+doi = {https://doi.org/10.1016/0196-6774(80)90015-2},
+url = {https://www.sciencedirect.com/science/article/pii/0196677480900152},
+author = {Jon Louis Bentley and James B Saxe},
+abstract = {Transformations that serve as tools in the design of new data structures are investigated. Specifically, general methods for converting static structures (in which all elements are known before any searches are performed) to dynamic structures (in which insertions of new elements can be mixed with searches) are studied. Three classes of such transformations are exhibited, each based on a different counting scheme for representing the integers, and a combinatorial model is used to show the optimality of many of the transformations. Issues such as online data structures and deletion of elements are also examined. To demonstrate the applicability of these tools, several new data structures that have been developed by applying the transformations are studied.}
+}
+
+
+@article{Cormode2011,
+author = {Cormode, Graham and Muthukrishnan, S. and Yi, Ke},
+title = {Algorithms for Distributed Functional Monitoring},
+year = {2011},
+issue_date = {March 2011},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {7},
+number = {2},
+issn = {1549-6325},
+url = {https://doi.org/10.1145/1921659.1921667},
+doi = {10.1145/1921659.1921667},
+abstract = {Consider the following problem: We have k players each receiving a stream of items, and communicating with a central coordinator. Let the multiset of items received by player i up until time t be Ai(t). The coordinator's task is to monitor a given function f computed over the union of the inputs ∪i Ai(t), continuously at all times t. The goal is to minimize the number of bits communicated between the players and the coordinator. Of interest is the approximate version where the coordinator outputs 1 if f ≥ τ and 0 if f≤ (1−ϵ)τ. This defines the (k,f,τ,ϵ) distributed functional monitoring problem. Functional monitoring problems are fundamental in distributed systems, in particular sensor networks, where we must minimize communication; they also connect to the well-studied streaming model and communication complexity. Yet few formal bounds are known for functional monitoring.We give upper and lower bounds for the (k,f,τ,ϵ) problem for some of the basic f's. In particular, we study the frequency moments Fp for p=0,1,2. For F0 and F1, we obtain monitoring algorithms with cost almost the same as algorithms that compute the function for a single instance of time. However, for F2 the monitoring problem seems to be much harder than computing the function for a single time instance. We give a carefully constructed multiround algorithm that uses “sketch summaries” at multiple levels of details and solves the (k,F2,τ,ϵ) problem with communication \~{O}(k2/ϵ + k3/2/ϵ3). Our algorithmic techniques are likely to be useful for other functional monitoring problems as well.},
+journal = {ACM Trans. Algorithms},
+month = {mar},
+articleno = {21},
+numpages = {20},
+keywords = {Distributed computing, functional monitoring}
+}
+
+@inproceedings{DBLP:conf/soda/Rahul15,
+  author       = {Saladi Rahul},
+  editor       = {Piotr Indyk},
+  title        = {Improved Bounds for Orthogonal Point Enclosure Query and Point Location
+                  in Orthogonal Subdivisions in \({R}^{\mbox{3}}\)},
+  booktitle    = {Proceedings of the Twenty-Sixth Annual {ACM-SIAM} Symposium on Discrete
+                  Algorithms, {SODA} 2015, San Diego, CA, USA, January 4-6, 2015},
+  pages        = {200--211},
+  publisher    = {{SIAM}},
+  year         = {2015},
+  url          = {https://doi.org/10.1137/1.9781611973730.15},
+  doi          = {10.1137/1.9781611973730.15},
+  timestamp    = {Tue, 02 Feb 2021 17:07:46 +0100},
+  biburl       = {https://dblp.org/rec/conf/soda/Rahul15.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
+
+
+@article{doi:10.1137/0606031,
+author = {Tarjan, Robert Endre},
+title = {Amortized Computational Complexity},
+journal = {SIAM Journal on Algebraic Discrete Methods},
+volume = {6},
+number = {2},
+pages = {306-318},
+year = {1985},
+doi = {10.1137/0606031},
+URL = {https://doi.org/10.1137/0606031},
+eprint = {https://doi.org/10.1137/0606031},
+abstract = { A powerful technique in the complexity analysis of data structures is amortization, or averaging over time. Amortized running time is a realistic but robust complexity measure for which we can obtain surprisingly tight upper and lower bounds on a variety of algorithms. By following the principle of designing algorithms whose amortized complexity is low, we obtain “self-adjusting” data structures that are simple, flexible and efficient. This paper surveys recent work by several researchers on amortized complexity. }
+}
