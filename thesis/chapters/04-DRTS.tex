@@ -1,0 +1,57 @@
+\clearpage
+
+\def\chaptertitle{Dynamic Range Thresholding on Streams}
+
+\lhead{\emph{\chaptertitle}}
+
+\chapter{\chaptertitle}
+\label{ch:drts}
+
+For certain applications, one may be motivated to define a more general type of RTS query, in which the interval of interest \textit{evolves over time} with the data stream. Consider our first motivating example of a trader wanting to be alerted the moment some volume $\tau$ of Apple shares is traded between some price levels $[200, 205]$. In practice, the price levels of interest is likely to evolve over the day of the trading, or even widen with volatility. For example, a trader may wish to register a query of the form: \textit{notify me when $\tau$ volume of Apple shares are traded within 10\% of Apple's volume-weighted average price}. As one may recall, the volume-weighted average price (vwap) formula is given by 
+$$\text{vwap} = \frac{\sum_{e} v(e) \cdot w(e)}{\sum_{e}w(e)}$$
+which we clearly see evolves over the evolution of the data stream $\{e_i\}_{i=1}$.
+
+In this chapter, we formally define this more general type of query, which we call a \textit{dynamic range threshold query} (DRTS query), then demonstrate that with minor adjustments, the DT algorithm discussed in \cref{ch:rts} is able to solve this more general type of query, though only when the number of \textit{distinct} DRTS queries is small (we will formally define exactly what we mean by \textit{distinct} later on). Finally, we introduce a novel approximation algorithm to handle a large number of distinct DRTS queries. 
+
+
+\section{Problem Definition}
+\label{sec:drts-problem-definition}
+
+We define a Dynamic RTS (DRTS) query and then the dynamic range thresholding on streams problem.
+
+\begin{definition}[Dynamic RTS query] A Dynamic RTS query is defined by a time-index triple $(R_t, \tau, f)$ where $\tau\in\mathbb{Z}$ is a \textit{threshold}, $f$ is a monotonically increasing  endpoint function and $R_t\subseteq \mathbb{R}^d$ is a time-indexed subset of the data space formed by axis-parallel rectangles. For $t =1,2,\dots$ the end points of each axis parallel rectangle $[a_t, b_t]$ are updated according to $[a_{t+1}, b_{t+1}]_i = [f(a_t), f(b_t)]_i$ for $i=1,\dots,d$ and $t=1,2,\dots$
+\end{definition}
+
+The dynamic range thresholding on streams problem is defined exactly as in \cref{sec:rts-definition}, though now with DRTS queries. That is, if a given query is issued after receiving $e_j$ for some $j\geq 1$ then for $t\geq j+1$ we define $S(q,t)$ to represent the elements $e_{j+1},e_{j+2},\dots,e_t$ that \textit{stab} $R_q$. That is, 
+$$S(q, t) := \{e_i | j < i \leq t \text{ and } e_i \in R_q\}$$
+Define
+$$W(q, t) := \sum_{e\in S(q,t)}w(e)$$
+Then the \textit{maturity time} of a query $q$ is the smallest $t$ such that $W(q,t)\geq \tau_q$. Our goal is to simultaneously support a set of $m$ DRTS queries and to correctly report the maturity time of a each query as well as the operations Register$(q)$: accept a new query at the current moment (after the arrival of $e_n$) and Terminate$(q)$: stop a given query $q$.
+
+Some useful examples of DRTS queries are the following
+
+\begin{example}[\textit{Equal Step DRTS}] Consider $m$ DRTS queries $(R_{qt}, \tau_q, f)$ on the one-dimensional data space  $\mathbb{R}$ with common endpoint function $f(x) = x + \Delta$ for a fixed constant $\Delta\in\mathbb{R}$. Conceptually, such an endpoint function moves the each query to the left or right (depending on the sign of $\Delta$) by a factor of $\Delta$ after each time step.
+\end{example}
+
+\begin{example}[\textit{Equal Expansion DRTS}] Consider $m$ DRTS queries $(R_{qt}, \tau_q, f)$ on the one-dimensional data space  $\mathbb{R}$ with common endpoint function $f(x) = \Delta x$  for a fixed constant $\Delta\in\mathbb{R}$. Conceptually, such an endpoint function expands the length of each query by an order of $\Delta$ on each time step.
+\end{example}
+    
+We note that definition 4.1 leaves few restrictions on the possible choices for the endpoint function $f$, only that it be monotonically increasing so that the interval remains well defined after each time step. One could therefore supply a multivariate function $f(x,t)$ such as $f(x, t) = x + \Delta_t$ for some sequence $\{\Delta_t: t\geq1\}$. Thus, proposed solutions to the DTS problem must be able to solve these types of queries also. 
+
+
+\newpage
+\section{DT Algorithm For DRTS Queries}
+\label{sec:drts-dt-algorithm}
+
+The goal of this section is to demonstrate that with minor enhancements, the DT algorithm can solve certain DRTS queries. Moreover, we then characterise exactly what DRTS queries our new algorithm is able to solve. First we need to consider two versions of the Dynamic Range Thresholding on Streams problem: 
+
+\begin{definition}[Distinct \& Non-Distinct Dynamic RTS]
+    Conisder $m$ DRTS queries $(R_{t}^q, \tau_q, f_q)$ if all queries share the same endpoint function, that is for all $1\leq i\leq  j\leq m$ we have $f_i = f_j$ then we classify this instance as the \textit{Non-Distinct} DRTS problem. In the case where any of the two queries have different endpoint functions, we call this an instance of the \textit{Distinct DRTS} problem.
+\end{definition}
+
+Clearly, the non-distinct DRTS problem offers us a simpler problem instance from which we can first design our enhanced algorithm. We then apply some standard techniques to extend to the distinct case. 
+
+\subsection{Non-Distinct DRTS}
+\label{ssec:non-distinct-rts}
+
+We consider the scenario in which all 
