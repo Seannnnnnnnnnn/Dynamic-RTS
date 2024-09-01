@@ -54,7 +54,7 @@ A well-studied type of query in the Computer Science literature is the so-called
 \begin{definition}[Stabbing Query] Given a point $v$ in the data space $\mathbb{R}^d$ report the set of intervals $I$ in some set $Q$ such that $v \in I$. The returned set of queries are set to \textit{stabbed} by $Q$.
 \end{definition}
 
-There are a number of data structures \cite{DBLP:conf/soda/Rahul15} that support Stabbing queries, which can naturally be applied in the context of the RTS problem. We consider some notable examples below. 
+Clearly, the RTS problem defined in \cref{sec:rts-definition} is itself a generalised form of stabbing query. There are a number of data structures \cite{DBLP:conf/soda/Rahul15} that support Stabbing queries, which can naturally be applied in the context of the RTS problem. We consider some notable examples below. 
 
 \textbf{Interval Trees.}
 
@@ -139,7 +139,7 @@ Fortunately, with a few observations a we can leverage the Min-Heap described in
 \end{equation}
 where $\lambda_q, \Bar{c}_q$ correspond to values defined by \cref{alg:dist-tracking}. Intuitively $\sigma_q(u)$ represents the \textit{next} value of $c_q(u)$ for when the next signal from $u$ to coordinator $q$ should occur. The key observation is that, for $q_1, q_2 \in Q(u)$ with $\sigma_{q_{1}}(u) < \sigma_{q_{2}}(u)$ then $c_{q_1}(u) < c_{q_2}(u)$. That is, if we don't need to send a message for $q_1$, then we can immediately deduce that we do not need to send a messages for $q_2$. Using this key observation, we maintain a Min-Heap $\mathcal{H}(u)$ on $Q(u)$ for each $u\in V(\mathcal{T})$ and apply the following procedure whenever a counter is incremented.
 
-\begin{algorithm}
+\begin{algorithm}\label{alg:slack-inspection}
 \begin{algorithmic}[1]
 \Procedure{SlackInspection}{$u$}
 \State \text{Find the minimum $\sigma_q(u)$ in $\mathcal{H}(u)$}
@@ -164,8 +164,49 @@ We have the following result to analyse the
     Each $q \in Q^*$ is mapped to an instance of Distributed Tracking which is then solved by \cref{alg:dist-tracking}. The correctness of reporting when $W(q) = \tau_q$ follows as a consequence of Theorem 2.5.
 \end{proof}
 
-\begin{theorem}[Time Complexity]
+\begin{theorem}[Time Complexity] For a collection of $m$ RTS queries and a stream of $n$ elements, the constrained DT algorithm requires $O(n\log m + m\log^2m\log\tau_{max})$ time.
 \end{theorem}
+\begin{proof}
+\end{proof}
 
+An important observation is that the runtime of the DT algorithm can be decomposed into the runtime of the \textit{element processing} (tracing a stream element through the endpoint tree) and the runtime of the \textit{communication cost} (the simulated messaging of \cref{alg:dist-tracking}). That is, 
+$$O(\underbrace{n\log m}_{\text{element processing}} + \underbrace{m\log ^2 m\log\tau_{max}}_{\text{communication}})$$
+
+For completeness, we completely describe the constrained DT algorithm in psuedocode below. 
+
+\begin{algorithm}
+\caption{Constrained DT}\label{alg:constrained-dt}
+\begin{algorithmic}[1]
+\Require $Q^* \gets m$ \text{ RTS queries $(R_q, \tau_q)$}
+\State \text{Build end point tree $\mathcal{T}$ from endpoints in $Q^*$}
+\For{ $q \in Q^*$}
+    \State \text{Find canonical node set $U_q$}
+    \State \text{Create instance of \cref{alg:dist-tracking} on $U_q$}
+\EndFor
+\State \text{Commence data stream} 
+\For{$e_t$ for $t = 1,2,\dots$}
+\State \text{Trace $e_t$ through $\mathcal{T}$ based on Jurisdiction Interval}
+\State \text{Update node counters $c(v) \gets c(v)+1$ for each $v\in V(\mathcal{T})$ traced}
+\State \text{Perform \cref{alg:slack-inspection} for each $v\in V(\mathcal{T})$ traced}
+\EndFor
+\end{algorithmic}
+\end{algorithm}
 
 \subsection{Unconstrained RTS Case}
+\label{ssec:unconstrained-DT-algorithm}
+
+We now reveal how \cref{alg:constrained-dt} can be extended to solve the full, unconstrained RTS problem. We will remove each constraint separately before revealing our complete algorithm. 
+
+\textbf{Enabling Insertions.} The first constraint we will eliminate is the one-time registration condition; that is, will define how to incorporate a Register($q$) procedure for a new RTS query $q$. 
+
+Our solution is to apply \textit{Logarithmic Rebuilding} described in \cref{sec:logarithmic-rebuilding}. The query set $Q^*$ is now partitioned into sets $S_1,\dots, S_h$ such that $h = O(\log m)$, each query set $S_i$ contains either $2^i$ queries, or is empty and importantly, each query belongs to precisely one $S_i$. Associated to each query set is an independent end-point tree $\mathcal{T}_1\dots, \mathcal{T}_h$, built on the endpoints of queries in $S_1,\dots,S_h$. Registering a new query is as described in \cref{sec:logarithmic-rebuilding}, identify the smallest $j$ such that $S_j = \emptyset$ and set $S_j = \bigcup_{i=1}^{j-1}S_i$ along with the new query $q$, and then create a new endpoint tree $\mathcal{T}$ on $S_j$.
+
+
+To preserve the correctness of our original algorithm, given an incoming element $e$ we must now trace it through each $\mathcal{T}_1,\dots,\mathcal{T}_h$. As $h = O(\log m)$ and the height of each tree is $O(\log m)$ this implies an element processing cost of $O(n\log ^2 m)$ for a stream of length $n$.
+
+\textbf{Multidimensional Queries.} 
+
+\textbf{Weighted Stream Elements.} The final constraint to remove is the restriction of stream weights to be just 1. To achieve this, we will require a more general Distributed Tracking algorithm which allows for counter updates to be of the form $c(u) \gets c(u) + w$ with $w\in\mathbb{Z}$. 
+
+The straight-forward approach is to just apply \cref{alg:constrained-dt}, though now simply transmit $w$ signals, one at a time. The drawback of this approach however is that each transmission requires $O(1)$ time which implies the total work of the algorithm becomes $O(\tau + h\log\tau)$, which can become substantially higher than the desired $O(n + h\log\tau)$ if $\tau\gg n$. In turn, this would result in prohibitively high communication cost if substituted into the DT algorithm. To handle this problem \cite{GAN16} proposes the following algorithm
+

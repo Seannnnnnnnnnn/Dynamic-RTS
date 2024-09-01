@@ -9,7 +9,7 @@
 
 For certain applications, one may be motivated to define a more general type of RTS query, in which the interval of interest \textit{evolves over time} with the data stream. Consider our first motivating example of a trader wanting to be alerted the moment some volume $\tau$ of Apple shares is traded between some price levels $[200, 205]$. In practice, the price levels of interest is likely to evolve over the day of the trading, or even widen with volatility. For example, a trader may wish to register a query of the form: \textit{notify me when $\tau$ volume of Apple shares are traded within 10\% of Apple's volume-weighted average price}. As one may recall, the volume-weighted average price (vwap) formula is given by 
 $$\text{vwap} = \frac{\sum_{e} v(e) \cdot w(e)}{\sum_{e}w(e)}$$
-which we clearly see evolves over the evolution of the data stream $\{e_i\}_{i=1}$.
+which we clearly see evolves over the evolution of the data stream $\{e_i\}_{i=1}$, meaning that the endpoints of the traders interval of interest also evolves over time.
 
 In this chapter, we formally define this more general type of query, which we call a \textit{dynamic range threshold query} (DRTS query), then demonstrate that with minor adjustments, the DT algorithm discussed in \cref{ch:rts} is able to solve this more general type of query, though only when the number of \textit{distinct} DRTS queries is small (we will formally define exactly what we mean by \textit{distinct} later on). Finally, we introduce a novel approximation algorithm to handle a large number of distinct DRTS queries. 
 
@@ -38,15 +38,13 @@ Some useful examples of DRTS queries are the following
     
 We note that definition 4.1 leaves few restrictions on the possible choices for the endpoint function $f$, only that it be monotonically increasing so that the interval remains well defined after each time step. One could therefore supply a multivariate function $f(x,t)$ such as $f(x, t) = x + \Delta_t$ for some sequence $\{\Delta_t: t\geq1\}$. Thus, proposed solutions to the DTS problem must be able to solve these types of queries also. 
 
-
-\newpage
 \section{DT Algorithm For DRTS Queries}
 \label{sec:drts-dt-algorithm}
 
 The goal of this section is to demonstrate that with minor enhancements, the DT algorithm can solve certain DRTS queries. Moreover, we then characterise exactly what DRTS queries our new algorithm is able to solve. First we need to consider two versions of the Dynamic Range Thresholding on Streams problem: 
 
 \begin{definition}[Distinct \& Non-Distinct Dynamic RTS]
-    Conisder $m$ DRTS queries $(R_{t}^q, \tau_q, f_q)$ if all queries share the same endpoint function, that is for all $1\leq i\leq  j\leq m$ we have $f_i = f_j$ then we classify this instance as the \textit{Non-Distinct} DRTS problem. In the case where any of the two queries have different endpoint functions, we call this an instance of the \textit{Distinct DRTS} problem.
+    Conisder $m$ DRTS queries $(R_{t}^q, \tau_q, f_q)$ if all queries share the same endpoint function, that is for all $1\leq i\leq  j\leq m$ we have $f_i = f_j$ then we say this is an instance of the \textit{Non-Distinct} DRTS problem. In the case where any of the two queries have different endpoint functions, we call this an instance of the \textit{Distinct DRTS} problem.
 \end{definition}
 
 Clearly, the non-distinct DRTS problem offers us a simpler problem instance from which we can first design our enhanced algorithm. We then apply some standard techniques to extend to the distinct case. 
@@ -54,4 +52,24 @@ Clearly, the non-distinct DRTS problem offers us a simpler problem instance from
 \subsection{Non-Distinct DRTS}
 \label{ssec:non-distinct-rts}
 
-We consider the scenario in which all 
+We consider the scenario in which all queries are registered with the same end point function and to illuminate the discussion, we suppose our queries are an instance of the \textit{Equal-Step} case (see Example 4.1). 
+
+Given it's effectiveness in the standard RTS problem We would like to continue using the DT algorithm from \cref{sec:DT-algorithm}. One initial thought may be to insert new intervals or create new endpoint trees for each timestamp $t$, as the intervals of the registered queries change according to $f$. Simple analysis will show that this adds an unavoidable $O(m\log m)$ factor to the element processing cost, inflating the runtime of the algorithm back to the quadratic $O(nm\log^2 m)$. Instead, our approach will focus on pre-processing the stream value $v(e_t)$ at each time step. 
+
+The crucial observation is that in the non-distinct DRTS problem, we can map the problem to an instance of the standard RTS problem with the following \textit{shifting lemma}. 
+
+\begin{lemma}[Shifting Lemma]
+    let $(R_n, \tau, f)$ be an RTS query such that $f$ is invertable and $e_n$ be the $n^{th}$ stream element. Let $R_0$ denote the value of the query's interval at the time it was registered. Then 
+    $$v(e_n) \in R_n \iff f^{-1}_{(n)}(e_n)\in R_0$$
+    where $f^{-1}_{(n)} = \underbrace{f^{-1}\cdots f^{-1}}_{n \text{ times}}(v(e_n))$
+\end{lemma}
+
+We will refer to the procedure of applying the shifting lemma to a stream element as a \textit{shift} or as \textit{shifting}. 
+
+Sticking with our example of the \textit{Equal-Step DRTS}, suppose that the endpoint function of each query is $f(x) = x+\Delta$. So for a given query registered with interval $R_0 = [a,b]$, after $n$ time steps the interval becomes $R_n = [a + \Delta n, b+\Delta_n]$. By the shifting lemma, we have $v(e_n) \in R_n \iff v(e_n) - \Delta n \in [a,b]$ which we notice is a stabbing query on the in initial interval $R_0$ - suggesting that we can include the shifting lemma as a pre-processing step to element processing, and then run the original DT-algorithm.
+
+The astute reader may now ask what happens for queries registered at different time steps. Consider one interval $R_0 = [a, b]$ registered at time $n$ and another interval $R^\prime_0 = [c,d]$ registered at time $n^\prime \neq n$. Suddenly it becomes unclear whether we should apply the shift $v(e_n) - \Delta n$ or $v(e_n) - \Delta n^\prime$. Fortunately, the logarithmic rebuilding technique we use to enable the register procedure for new queries provides us a means of handling this.
+
+Recall from \cref{sec:logarithmic-rebuilding} and \cref{ssec:unconstrained-DT-algorithm} when a new query is inserted, we find the smallest $i = 1,\dots,h=\log m$ such that $\mathcal{T}_i$ is empty. We then destroy all trees $\mathcal{T}_1,\dots,\mathcal{T}_{i-1}$, and combine their queries, along with the newly registered query into $\mathcal{T}_i$. In the context of the DRTS problem, this presents an opportunity \textit{update} each query in the newly formed $\mathcal{T}_i$ such that they all require the same shift. Suppose that each 
+
+By incorporating the new which incorporates a shift, and enhanced collection of queries upon a new Register$(q)$ operation, the DT+ Algorithm. 
