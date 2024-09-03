@@ -189,14 +189,19 @@ Theorem 4.7 suggests that designing an \textit{exact} DRTS algorithm is difficul
 
 \subsection{Problem Definition}
 
-A $\varepsilon$-fuzzy variant can be formulated for both the RTS and DRTS problems. 
+An $\varepsilon$-fuzzy variant can be formulated for both the RTS and DRTS problems.  Recall that an RTS query $(R, \tau)$ consists of a threshold $\tau \in\mathbb{R}$ and an interval $R \subseteq\mathbb{R}$. For a data stream $e_1,e_2,\dots$ where each stream element contains a value $v(e_t)\in\mathbb{R}$ and weight $w(e_t)\in\mathbb{Z}$ the goal is to report the exact moment that $\sum_{e\in S} w(e) \geq \tau$ where $S$ is the set of stream elements $e$ such that $v(e)\in R$. 
 
-Recall that an RTS query $(R, \tau)$ consists of a threshold $\tau \in\mathbb{R}$ and an interval $R \subseteq\mathbb{R}$. For a data stream $e_1,e_2,\dots$ where each stream element contains a value $v(e_t)\in\mathbb{R}$ and weight $w(e_t)\in\mathbb{Z}$ the goal is to report the exact moment that $\sum_{e\in S} w(e) \geq \tau$ where $S$ is the set of stream elements $e$ such that $v(e)\in R$. 
+For a given RTS query $(R, \tau)$ we can define the $\varepsilon$-\textit{fuzzy} version of the query as follows. Let $R = [l, r]$ the original interval, and define the \textit{$\varepsilon$ core interval} as $\text{core}(R) := [l+\varepsilon/2, r-\varepsilon/2]$. In the case that $R\subseteq\mathbb{R}^d$, the core interval is defined analogously on each axis $1,\dots,d$.  
 
-For a given RTS query $(R, \tau)$ we can define the $\varepsilon$-\textit{fuzzy} version of the query as follows. Let $R = [l, r]$ the original interval, and define the \textit{$\varepsilon$ core interval} as $\text{core}(R) := [l+\varepsilon/2, r-\varepsilon/2]$. As before, the goal is to report the exact moment when $\sum_{e\in S}w(e)\geq\tau$, though now $S$ consists of stream elements $e$ that stab the core interval $v(e) \in \text{core}(R)$, and \textit{possibly} stab the left or right outer-core which we define as $[l-\varepsilon/2, l+\varepsilon/2)$ and $(r-\varepsilon/2, r+\varepsilon/2]$. To be clear what we mean by \textit{possibly}, all stream elements that stab $\text{core}(R)$ are included in $S$, however
-as the result of some algorithm, stream elements that stab either of the outer core regions may be included, or may not be included in $S$.
+If the query is issued after receiving $e_j$ for some $j\geq 1$ then for $t\geq j+1$ we define $S(q,t)$ to represent the elements $e_{j+1},e_{j+2},\dots,e_t$ that \textit{stab} core($R$). That is, 
+$$S(q, t) := \{e_i | j < i \leq t \text{ and } e_i \in \text{core}(R)\}$$
+Analogously define $S^\prime$ to be the set of stream elements $e_{j+1},e_{j+2},\dots$ that stab the interval in general
+$$S^\prime(q, t) := \{e_i | j < i \leq t \text{ and } e_i \in R\}$$
+Define
+$$W(q, t) := \sum_{e\in S(q,t)}w(e) \quad \text{ and } \quad W^\prime(q, t) := \sum_{e\in S^\prime(q,t)}w(e)$$
+The goal of the the $\varepsilon$-fuzzy Range Threshold on Streams problem is to report the first moment that $\tau\geq W(q,t)$ or $\tau \geq W^\prime(q,t)$.
 
-The next evolution of RTS queries which we have studied is the so-called dynamic RTS query $(R, \tau, \Delta)$ where at each timestep, the endpoints of $R = [l, r]$ are updated according to $l \leftarrow l + \Delta$ and $r\leftarrow r+ \Delta$ respectively. Naturally, one can extend the definition of $\varepsilon$-fuzzy intervals above to define an $\varepsilon$-fuzzy dynamic RTS query. Below, we provide an algorithm for efficiently processing $\varepsilon$-fuzzy dynamic RTS queries on a data stream.
+That is, in the $\varepsilon$-fuzzy variant, we record all stream elements that stab $\text{core}(R)$, but may also possible record elements that stab the outer core of the interval as well. We  extend the definition of $\varepsilon$-fuzzy intervals above to define an $\varepsilon$-fuzzy dynamic RTS query analogously. 
 
 \subsection{Novel Bucketing Algorithm}
 We now propose our algorithm for the $\varepsilon$-fuzzy DRTS problem. The intuition behind our algorithm is that we can now bucket queries that don't share the exact same endpoint function, but they are \textit{approximately} close for long enough time so that the core region of each interval remains \textit{covered}. Over the course of our algorithm, we provide simple corrective measures to ensure our this approximated cover is well maintained. 
