@@ -60,16 +60,223 @@ The crucial observation is that in the non-distinct DRTS problem, we can map the
 
 \begin{lemma}[Shifting Lemma]
     let $(R_n, \tau, f)$ be an RTS query such that $f$ is invertable and $e_n$ be the $n^{th}$ stream element. Let $R_0$ denote the value of the query's interval at the time it was registered. Then 
-    $$v(e_n) \in R_n \iff f^{-1}_{(n)}(e_n)\in R_0$$
+    $$v(e_n) \in R_n \iff f^{-1}_{(n)}(v(e_n))\in R_0$$
     where $f^{-1}_{(n)} = \underbrace{f^{-1}\cdots f^{-1}}_{n \text{ times}}(v(e_n))$
 \end{lemma}
 
-We will refer to the procedure of applying the shifting lemma to a stream element as a \textit{shift} or as \textit{shifting}. 
+To describe our algorithms, we will also use the following definitions
+
+\begin{definition}[Shifting, Shift]
+    For a given query $(R, \tau, f)$ registered at time $n$ and a stream element $e_{n^\prime}$ with $n^\prime > n$ we refer to the operation $v(e_{n^\prime})\gets f^{-1}_{(n^\prime - n)}(v(e_{n^\prime}))$ as \textit{shifting $v(e_{n^\prime})$} or simply as performing a \textit{shift}
+\end{definition}
 
 Sticking with our example of the \textit{Equal-Step DRTS}, suppose that the endpoint function of each query is $f(x) = x+\Delta$. So for a given query registered with interval $R_0 = [a,b]$, after $n$ time steps the interval becomes $R_n = [a + \Delta n, b+\Delta_n]$. By the shifting lemma, we have $v(e_n) \in R_n \iff v(e_n) - \Delta n \in [a,b]$ which we notice is a stabbing query on the in initial interval $R_0$ - suggesting that we can include the shifting lemma as a pre-processing step to element processing, and then run the original DT-algorithm.
 
 The astute reader may now ask what happens for queries registered at different time steps. Consider one interval $R_0 = [a, b]$ registered at time $n$ and another interval $R^\prime_0 = [c,d]$ registered at time $n^\prime \neq n$. Suddenly it becomes unclear whether we should apply the shift $v(e_n) - \Delta n$ or $v(e_n) - \Delta n^\prime$. Fortunately, the logarithmic rebuilding technique we use to enable the register procedure for new queries provides us a means of handling this.
 
-Recall from \cref{sec:logarithmic-rebuilding} and \cref{ssec:unconstrained-DT-algorithm} when a new query is inserted, we find the smallest $i = 1,\dots,h=\log m$ such that $\mathcal{T}_i$ is empty. We then destroy all trees $\mathcal{T}_1,\dots,\mathcal{T}_{i-1}$, and combine their queries, along with the newly registered query into $\mathcal{T}_i$. In the context of the DRTS problem, this presents an opportunity \textit{update} each query in the newly formed $\mathcal{T}_i$ such that they all require the same shift. Suppose that each 
+Recall from \cref{sec:logarithmic-rebuilding} and \cref{ssec:unconstrained-DT-algorithm} when a new query is inserted, we find the smallest $i = 1,\dots,h=\log m$ such that $\mathcal{T}_i$ is empty. We then destroy all trees $\mathcal{T}_1,\dots,\mathcal{T}_{i-1}$, and combine their queries, along with the newly registered query into $\mathcal{T}_i$. In the context of the DRTS problem, this presents an opportunity \textit{update} each query in the newly formed $\mathcal{T}_i$ such that they all require the same shift. To illustrate this, suppose that the query sets on trees $\mathcal{T}_1,\dots,\mathcal{T}_{i-1}$ require shifts $f^{-1}_{(n_1)},\dots,f^{-1}_{(n_{j-1})}$. When the queries are grouped together to construct $\mathcal{T}_{j}$, first update the endpoints of the registered query to $f_{(n_1)}, \dots, f_{(n_{j-1})}$. This allows us to effectively consider all queries in $\mathcal{T}_j$ being registered simultaneously, and thus require the same shift. We formalise this with the following procedure for performing a register
 
-By incorporating the new which incorporates a shift, and enhanced collection of queries upon a new Register$(q)$ operation, the DT+ Algorithm. 
+\begin{algorithm}\label{alg:DT+-register}
+\begin{algorithmic}[1]
+\Procedure{DRTS::Register}{$q$}
+\State \text{Determine smallest $i$ such that $\mathcal{T}_i = \emptyset$}
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+Necessary to show the correctness of our algorithm, we formalise and prove the following lemma.
+
+\begin{lemma}
+    
+\end{lemma}
+\begin{proof}
+    We show the claim with a simple induction argument on $n$, the number of Register operations performed. The base case occurs at the commencement of the algorithm, when all queries are initially registered and placed into a singular tree.
+\end{proof}
+
+By incorporating the two techniques of first applying the shifting lemma, and then updating the endpoints of queries when performing register operations, we arrive at the DT+ Algorithm. 
+
+\begin{algorithm}
+\caption{DT+ Algorothm}\label{alg:DT+-algorithm}
+\begin{algorithmic}[1]
+\Require $Q^* \gets m$ \text{ RTS queries $(R_q, \tau_q)$}
+\State \text{Build end point tree $\mathcal{T}$ from endpoints in $Q^*$}
+\For{ $q \in Q^*$}
+    \State \text{Find canonical node set $U_q$}
+    \State \text{Create instance of \cref{alg:dist-tracking} on $U_q$}
+\EndFor
+\State \text{Commence data stream} 
+\For{$e_t$ for $t = 1,2,\dots$}
+    \For{\text{endpoint tree $\mathcal{T}_1,\dots,\mathcal{T}_{\log m}$}}
+    \State \text{Shift $v(e_t)$ based on $\mathcal{T}_i$}
+    \State \text{Trace $e_t$ through $\mathcal{T}$ based on Jurisdiction Interval}
+    \State \text{Update node counters $c(v) \gets c(v)+1$ for each $v\in V(\mathcal{T})$ traced}
+    \State \text{Perform \cref{alg:slack-inspection} for each $v\in V(\mathcal{T})$ traced}
+    \EndFor
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+\cref{alg:DT+-algorithm} and the provides an illuminating characterisation of when we can extend the DT algorithm to solve the DRTS problem, namely, we need to be able to perform the shifting operation and be able to do so quickly. We close our discussion with the following theorem:
+
+\begin{theorem}[Correctness \& Runtime]
+    Consider $m$ DRTS queries with equal endpoint function $f$. If $f$ is invertable and $f^{-1}$ can be computed in $O(1)$ time then \cref{alg:DT+-algorithm} correctly solves the Non-distinct DRTS problem in $O(n\log^{d+1}m + m\log^{d+1}m\log\tau_{\max})$
+\end{theorem}
+\begin{proof}
+    Correctness follows from the shifting lemma and Lemma 4.5. reducing the problem to an instance of Range Thresholding on Streams, which is solved by \cref{alg:DT+-algorithm}. The only difference between \cref{alg:DT+-algorithm} and the original DT algorithm is the inclusion of step 9, which by assumption can be performed in $O(1)$. 
+\end{proof}
+
+\newpage
+\subsection{Distinct DRTS}
+\label{ssec:distinc-DRTS}
+We now turn our attention to more general distinct DRTS problem, in which the endpoint function may differ between registered query. Clearly, we can no longer apply the shifting technique when dealing with an endpoint tree containing queries with different endpoint functions. Instead, we need to consider how to best \textit{group} or \textit{bucket} the queries such that we can run instances of \cref{alg:DT+-algorithm} on the resulting group.
+
+The most straightforward approach is to simply bucket the queries based on their end point function. That is, divide the query set into disjoint subsets $S_1,\dots, S_k$ such each query in $S_i$ shares the same endpoint function $f$. Then create an instance of \cref{alg:DT+-algorithm} on $S_1,\dots,S_k$. Each incoming stream element is then passed through each instance. That is
+
+\begin{algorithm}
+\caption{DRTS-Bucketing I}\label{alg:DRTS-bucketing}
+\begin{algorithmic}[1]
+\Require $Q^* \gets m$ \text{ RTS queries $(R_q, \tau_q, f_q)$}
+\State \text{Form query set $Q_1,\dots,Q_k$ based on $f_q$}
+\State \text{$DT(Q_i) \gets $ instance of \cref{alg:DT+-algorithm} on $Q_i$ for $i=1,\dots,k$}
+\For{$e_t$ for $t=1,2,\dots$}
+    \State \text{Process $e_t$ on $DT(Q_i)$ for $i=1,\dots,k$} 
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+Recalling that our goal is to avoid a quadratic $O(nm)$ runtime, we now ask how many different endpoint functions can \cref{alg:DRTS-bucketing} allow before falling into the quadratic trap?  
+
+ As before let $Q$ be a set of equal-step queries, though now $Q$ is comprised of queries with $k$ different shift factors; $\Delta_1, \dots, \Delta_k$. As before, we can partition $Q$ into queries of equal shift factor, which we write as $Q_{\Delta_1}, \dots, Q_{\Delta_k}$. As $Q_{\Delta_i}$ are disjoint we have 
+$\sum_{i=1}^{k} |Q_{\Delta_i}| = |Q| = m$. As above, we build DT instances on each of the partitions of $Q$. To process an incoming data element, we pass the element through the endpoint tree of $Q_{\Delta_1},\dots, Q_{\Delta_k}$. The total runtime of our algorithm on a stream of $n$ elements is therefore
+
+\begin{align*}
+\sum_{i=1}^{k}\text{run-time}(Q_{\Delta_i}) &= \sum_{i=1}^{k} n\log |Q_{\Delta_i}| + |Q_{\Delta_i}|\log^2 |Q_{\Delta_i}| \log\tau_{max} \\
+&= \sum_{i=1}^{k} n\log |Q_{\Delta_i}| + \sum_{i=1}^{k}  |Q_{\Delta_i}|\log^2 |Q_{\Delta_i}| \log\tau_{max} 
+\end{align*}
+Recall the first summation corresponds to the element processing cost, and the latter summation corresponds to the communication cost of each distributed tracking instance. Let's examine the first term
+\begin{align*}
+    \sum_{i=1}^{k} n\log |Q_{\Delta_i}| &= n\sum_{i=1}^{k}\log |Q_{\Delta_i}| \\
+    &= n \log \left(\prod_{i=1}^{k}|Q_{\Delta_i}| \right)
+\end{align*}
+We can bound the product using the arithmetic mean-geometric mean inequality which states that: 
+$\sqrt[n]{\prod_{i=1}^{n} s_i} \leq \frac{1}{n}\sum_{i=1}^{n}s_i$. Applying to the above we have
+\begin{align*}
+     n \log \left(\prod_{i=1}^{k}|Q_{\Delta_i}| \right) &\leq n \log\left(
+     \frac{1}{k}\sum_{i=1}^{k}|Q_{\Delta_i}|\right)^k \\
+     &= n\log^k (m/k) \\ 
+     &= nk\log (m/k)
+\end{align*}
+The second summation is a little more trickier to tightly analyse, but we make some simple upper bounds. First, the $\log\tau_{max}$ term in the summation technically corresponds to the maximum threshold among each $Q_{\Delta_{i}}$ set, though clearly each of these will be less than or equaly to the global maximum threshold over all $Q_{\Delta_i}$, so we let $\tau_{max}$ denote this global threshold. Secondly, let $|Q_{\Delta}^*| = \max_{1\leq i \leq k} |Q_{|\Delta_i}|\leq m$ it now follows that 
+\begin{align*}
+    \sum_{i=1}^{k}  |Q_{\Delta_i}|\log^2 |Q_{\Delta_i}| \log\tau_{max} &\leq \sum_{i=1}^{k}  |Q_{\Delta_i}|\log^2 |Q_{\Delta}^*| \log\tau_{max} \\
+    &= m\log^2 |Q_{\Delta}^*| \log\tau_{max} \\
+    &\leq m\log^2 m \log\tau_{max}
+\end{align*}
+Which is the same in terms of big-$O$ as before. This makes sense, as splitting up and processing an element over each of the $k$ DT instances may increase the element processing cost, but it would not alter the total messaging cost of the algorithm. This brings the total runtime analysis to: 
+$$O(nk\log (m/k) + m\log^2 m \log\tau_{max})$$
+which the worst case depricates to $O(nm)$ runtime. It is now clear that so long as $k = O(\log m)$ we can preserve a runtime of $\Tilde{O}(n+m)$. We conclude the analysis of this section with the following theorem. 
+
+\begin{theorem}[Correctness and Runtime]
+    For a collection of $m$ DRTS queries with $k$ distinct endpoint functions, and a stream of length $n$, \cref{alg:DRTS-bucketing} correctly solves the DRTS problem in runtime $O(nk\log(m/k) + m\log^2 m\log\tau_{\max})$. In the case that $k = O(\log m)$ the runtime is polylogarithmic.
+\end{theorem}
+
+
+
+\newpage
+\section{$\varepsilon$ - Fuzzy Dynamic Range Thresholding on Streams}
+
+Theorem 4.7 suggests that designing an \textit{exact} DRTS algorithm is difficult for problem instances with a large number of distinct endpoint functions. We now ask, can we bucket our queries in such a way that we trade some accuracy for speed? In this following section, we formalise an approximated version of the DRTS problem, and propose (as far as we know) an entirely novel approach to grouping DRTS queries to solve the problem.
+
+\subsection{Problem Definition}
+
+A $\varepsilon$-fuzzy variant can be formulated for both the RTS and DRTS problems. 
+
+Recall that an RTS query $(R, \tau)$ consists of a threshold $\tau \in\mathbb{R}$ and an interval $R \subseteq\mathbb{R}$. For a data stream $e_1,e_2,\dots$ where each stream element contains a value $v(e_t)\in\mathbb{R}$ and weight $w(e_t)\in\mathbb{Z}$ the goal is to report the exact moment that $\sum_{e\in S} w(e) \geq \tau$ where $S$ is the set of stream elements $e$ such that $v(e)\in R$. 
+
+For a given RTS query $(R, \tau)$ we can define the $\varepsilon$-\textit{fuzzy} version of the query as follows. Let $R = [l, r]$ the original interval, and define the \textit{$\varepsilon$ core interval} as $\text{core}(R) := [l+\varepsilon/2, r-\varepsilon/2]$. As before, the goal is to report the exact moment when $\sum_{e\in S}w(e)\geq\tau$, though now $S$ consists of stream elements $e$ that stab the core interval $v(e) \in \text{core}(R)$, and \textit{possibly} stab the left or right outer-core which we define as $[l-\varepsilon/2, l+\varepsilon/2)$ and $(r-\varepsilon/2, r+\varepsilon/2]$. To be clear what we mean by \textit{possibly}, all stream elements that stab $\text{core}(R)$ are included in $S$, however
+as the result of some algorithm, stream elements that stab either of the outer core regions may be included, or may not be included in $S$.
+
+The next evolution of RTS queries which we have studied is the so-called dynamic RTS query $(R, \tau, \Delta)$ where at each timestep, the endpoints of $R = [l, r]$ are updated according to $l \leftarrow l + \Delta$ and $r\leftarrow r+ \Delta$ respectively. Naturally, one can extend the definition of $\varepsilon$-fuzzy intervals above to define an $\varepsilon$-fuzzy dynamic RTS query. Below, we provide an algorithm for efficiently processing $\varepsilon$-fuzzy dynamic RTS queries on a data stream.
+
+\subsection{Novel Bucketing Algorithm}
+We now propose our algorithm for the $\varepsilon$-fuzzy DRTS problem. The intuition behind our algorithm is that we can now bucket queries that don't share the exact same endpoint function, but they are \textit{approximately} close for long enough time so that the core region of each interval remains \textit{covered}. Over the course of our algorithm, we provide simple corrective measures to ensure our this approximated cover is well maintained. 
+
+We describe our algorithm below in psuedocode before proving its runtime and correctness. 
+
+
+Input: a collection of $m$ DRTS queries of the form $(R_i, \tau_i, \Delta_i)$ and core threshold $\varepsilon$
+
+\begin{enumerate}
+    \item For each query set the approximated shift factor $\Delta_i^\prime \leftarrow \lceil\Delta_i\rceil_2$
+
+    \item Form groups of queries $Q_1, \dots, Q_k$ such that any queries $i,j\in Q$, $\Delta_i^\prime = \Delta_j^\prime$. Denote by $\Delta^\prime_{Q_i}$ the common approximation shift factor for the group.
+
+    \item For each group of queries, set 
+    \begin{align*}
+        & t^{(1)}_{Q} \leftarrow \min_{i\in Q} \lfloor\varepsilon/2(\Delta_i^\prime - \Delta_i) \rfloor \\
+        & t^{(2)}_{Q} \leftarrow \min_{i\in Q} \lfloor-\varepsilon/2(\Delta_i/2^\prime - \Delta_i)\rfloor
+    \end{align*}
+
+    \item For each query set $Q_i$, instantiate an instance of the DT+ Algorithm on the the elements of $Q_i$, with shifting factor $\Delta^\prime_{Q_i}$
+
+    \item Commence the data stream for $t=1,2,\dots$. For each Query set $Q_1,\dots,Q_k$ every $t_Q^{(1)}$ time stamps set $\Delta_Q^\prime \leftarrow \Delta_Q^\prime / 2$, then every $t_Q^{(2)}$ time stamps set $\Delta_Q^\prime \leftarrow \Delta_Q^\prime \times 2$. Repeat this altenating throughout the life of the algorithm. \\
+    \\
+    Once $\Delta^\prime_{Q_1}, \dots, \Delta^\prime_{Q_k}$ have been checked and possibly updated, process the incoming stream element through instance of the DT+ algorithm on $Q_1, \dots, Q_k$, reporting query maturation through the DT+ algorithm.
+\end{enumerate}
+
+We now demonstrate the correctness of our algorithm, and formally prove that it escapes the quadratic trap with a polylogarithmic $\Tilde{O}(n+m)$ runtime. 
+
+\begin{lemma}[Correctness ]For each query $(R_i, \tau_i, \Delta_i)$ The algorithm correctly maintains a count of all stream elements that stab the $\varepsilon$-core of $R_i$
+    
+\end{lemma}
+
+\begin{proof}
+    For a given query $(R_i, \tau_i, \Delta_i)$, let $l(t), r(t)$ be the left and right endpoints of the original interval at time $t$. Let  $l^\prime(t), r^\prime(t)$ be the the left and right endpoints of the approximated interval maintained by the algorithm at time $t$. \\
+    \\
+    We note that in order for the core interval to be maintained, it must always lay within the approximated interval $[l^\prime(t), r^\prime(t)]$. We now show that this is always the case. \\
+    \\
+    For each query, the initial approximation factor $\Delta_i$ is approximated by $\Delta_i^\prime = \lceil \Delta_i\rceil_2 \geq \Delta_i$. As the approximated interval is moving rightward \textit{faster}, there must be a time at which $l^\prime(t)$ will extend beyond the left endpoint of the core interval $l(t) + \varepsilon/2$. To identify when this occurs we find 
+    \begin{align*}
+        l^\prime(t) &= l(0) + \Delta_i^\prime t > l(0) + \varepsilon/2 + \Delta_i t \\
+        &\implies (\Delta_i^\prime - \Delta_i) t > \varepsilon/2 \\
+        & \implies t > \frac{\varepsilon}{2(\Delta_i^\prime - \Delta_i)} \quad\quad (1)
+    \end{align*}
+    Similarly, throughout the running of our algorithm, the approximation factor changes to $\Delta_i^\prime = \lfloor \Delta_i \rfloor_2 \leq \Delta_i$, in which case the approximated interval moves \textit{slower} than the original interval.By noting that the core interval is maintained by the approximated interval so long as $r^\prime(t)\geq r(t) - \varepsilon/2$. By similar argument to above we find that this is violated when 
+    $$ t > \frac{-\varepsilon}{2(\Delta_i^\prime - \Delta_i)}  \quad\quad (2)$$
+    We note that $(1)$ and $(2)$ are calculated by steps 3 of the algorithm. Moreover, the updating of $\Delta_Q^\prime$ in step 5 of the algorithm ensures that no condition is violated
+\end{proof}
+
+\textbf{Lemma} (Runtime). \textit{For a set of $m$ queries $(R_i, \tau_i, \Delta_i)$  
+ and a data stream of length $n$, the Algorithm runs in $O(nk\log (m/k) + m\log^2 m \log\tau_{\text{max}})$ where $k = O(\log \Delta_{\text{max}})$} 
+ \begin{proof}
+    Steps 1 through to 4 of the algorithm can be viewed as \textit{preprocessing}, all of which can be readily seen to require $\Theta(m)$ time. The bulk of the run time can be attributed to step 5; which requires that we check and update each approximation factor $\Delta^\prime_{Q_i}$, and then process the stream element on each of the DT+ instances running on $Q_1,\dots, Q_k$. \\
+    \\
+    Firstly, as each $Q_1,\dots, Q_k$ is formed by the approximation factors $\lceil \Delta_i\rceil_2$, we have $k\leq \log_2\Delta_{\text{max}}$ where $\Delta_{\text{max}}$ is the largest $\Delta_i$ in our query set. Step 5 of the algorithm therefore requires a loop over the $O(\log\Delta_{\text{max}})$ groups to check violation conditions, then the cost of the DT algorithm on each group $Q_1,\dots,Q_k$. As we have shown earlier in our analysis of the DT algorithm we can write this total run time as: 
+    \begin{align*}
+        \sum_{j=1}^{k}\text{run-time}(Q_{j}) &= \sum_{j=1}^{k} n\log |Q_j| + |Q_j|\log^2 |Q_j| \log\tau_{max} \\
+        &= \sum_{i=1}^{k} n\log |Q_j| + \sum_{i=1}^{k}  |Q_j|\log^2 |Q_j| \log\tau_{max} 
+    \end{align*}
+    which we recall to have shown as $O(nk\log (m/k) + m\log^2 m \log\tau_{\text{max}})$ from our earlier work on dynamic RTS queries.
+\end{proof} 
+
+\textbf{Lemma} (Approximation Factor). \textit{Assuming for each stream element $w(e_t)=1$ and $v(e_t)$ is distributed uniformly, the approximated count of stream elements that have stabbed a given interval maintained by the algorithm differs from the exact count with expectation 0.} 
+\\
+\begin{proof}
+    Without loss of generality, we may assume that $\Delta_i^\prime \geq \Delta_i$ as the alternative case holds by symmetry. 
+    By our first lemma, all stream elements that stab the core interval are counted. Therefore the maintained count can only deviate from the \textit{exact} count when either: 
+    \begin{enumerate}
+        \item A false negative occurs: $v(e_t) \in [l, l^\prime]$ and the approximated count differs from the exact count by -1
+        \item A false positive occurs: $v(e_t) \in [r, r^\prime]$ and the approximated count differs from the exact count by +1
+    \end{enumerate}
+    Let $FN$ and $FP$ denote the total number of false negatives and false positives respectively that occur over the course of the data stream which can be written as
+    $$FN = \sum_{t=1}^{n}1\{v(e_t) \in [l, l^\prime]\} \quad \quad FP = \sum_{t=1}^{n}1\{v(e_t) \in [r, r^\prime]\}$$
+    Finally, the deviation between the exact count and the approximated count maintained by the algorithm is $FP - FN$ which in expectation:
+    \begin{align*}
+        \mathbb{E}[FP - FN] &= \sum_{t=1}^{n} \mathbb{P}(v(e_t) \in [l, l^\prime]) - \mathbb{P}(v(e_t) \in [r, r^\prime]) \\
+        &= 0
+    \end{align*}
+    where the last inequality comes from the fact that by shifting both end points equally at each iteration, the length of the intervals $[l, l^\prime]$ and $[r, r^\prime]$ are always the same which implies $\mathbb{P}(v(e_t) \in [l, l^\prime]) = \mathbb{P}(v(e_t) \in [r, r^\prime])$
+\end{proof} 
+
+\newpage
+\section{Experimental Results}
