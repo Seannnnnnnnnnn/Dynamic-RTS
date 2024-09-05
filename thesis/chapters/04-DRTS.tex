@@ -265,7 +265,6 @@ We now demonstrate the correctness of our algorithm, and formally prove that it 
 \end{proof} 
 
 \textbf{Lemma} (Approximation Factor). \textit{Assuming for each stream element $w(e_t)=1$ and $v(e_t)$ is distributed uniformly, the approximated count of stream elements that have stabbed a given interval maintained by the algorithm differs from the exact count with expectation 0.} 
-\\
 \begin{proof}
     Without loss of generality, we may assume that $\Delta_i^\prime \geq \Delta_i$ as the alternative case holds by symmetry. 
     By our first lemma, all stream elements that stab the core interval are counted. Therefore the maintained count can only deviate from the \textit{exact} count when either: 
