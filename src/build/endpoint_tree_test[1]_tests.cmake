@@ -1,0 +1,7 @@
+add_test([=[EndpointTreeTest.LeftEndpointIsMinimum]=]  C:/Users/seanl/Dynamic-RTS/src/build/endpoint_tree_test.exe [==[--gtest_filter=EndpointTreeTest.LeftEndpointIsMinimum]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[EndpointTreeTest.LeftEndpointIsMinimum]=]  PROPERTIES WORKING_DIRECTORY C:/Users/seanl/Dynamic-RTS/src/build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test([=[EndpointTreeTest.RightEndpointIsInfinity]=]  C:/Users/seanl/Dynamic-RTS/src/build/endpoint_tree_test.exe [==[--gtest_filter=EndpointTreeTest.RightEndpointIsInfinity]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[EndpointTreeTest.RightEndpointIsInfinity]=]  PROPERTIES WORKING_DIRECTORY C:/Users/seanl/Dynamic-RTS/src/build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test([=[EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals]=]  C:/Users/seanl/Dynamic-RTS/src/build/endpoint_tree_test.exe [==[--gtest_filter=EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals]=]  PROPERTIES WORKING_DIRECTORY C:/Users/seanl/Dynamic-RTS/src/build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+set(  endpoint_tree_test_TESTS EndpointTreeTest.LeftEndpointIsMinimum EndpointTreeTest.RightEndpointIsInfinity EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals)

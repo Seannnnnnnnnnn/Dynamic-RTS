@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/hello_test.dir/hello_test.cc.obj"
-  "CMakeFiles/hello_test.dir/hello_test.cc.obj.d"
+  "CMakeFiles/hello_test.dir/tests/hello_test.cc.obj"
+  "CMakeFiles/hello_test.dir/tests/hello_test.cc.obj.d"
   "hello_test.exe"
   "hello_test.exe.manifest"
   "hello_test.pdb"

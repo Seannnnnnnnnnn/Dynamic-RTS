@@ -68,29 +68,29 @@ include CMakeFiles/hello_test.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/hello_test.dir/flags.make
 
-CMakeFiles/hello_test.dir/hello_test.cc.obj: CMakeFiles/hello_test.dir/flags.make
-CMakeFiles/hello_test.dir/hello_test.cc.obj: CMakeFiles/hello_test.dir/includes_CXX.rsp
-CMakeFiles/hello_test.dir/hello_test.cc.obj: C:/Users/seanl/Dynamic-RTS/src/hello_test.cc
-CMakeFiles/hello_test.dir/hello_test.cc.obj: CMakeFiles/hello_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\seanl\Dynamic-RTS\src\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/hello_test.dir/hello_test.cc.obj"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/hello_test.dir/hello_test.cc.obj -MF CMakeFiles\hello_test.dir\hello_test.cc.obj.d -o CMakeFiles\hello_test.dir\hello_test.cc.obj -c C:\Users\seanl\Dynamic-RTS\src\hello_test.cc
+CMakeFiles/hello_test.dir/tests/hello_test.cc.obj: CMakeFiles/hello_test.dir/flags.make
+CMakeFiles/hello_test.dir/tests/hello_test.cc.obj: CMakeFiles/hello_test.dir/includes_CXX.rsp
+CMakeFiles/hello_test.dir/tests/hello_test.cc.obj: C:/Users/seanl/Dynamic-RTS/src/tests/hello_test.cc
+CMakeFiles/hello_test.dir/tests/hello_test.cc.obj: CMakeFiles/hello_test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\seanl\Dynamic-RTS\src\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/hello_test.dir/tests/hello_test.cc.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/hello_test.dir/tests/hello_test.cc.obj -MF CMakeFiles\hello_test.dir\tests\hello_test.cc.obj.d -o CMakeFiles\hello_test.dir\tests\hello_test.cc.obj -c C:\Users\seanl\Dynamic-RTS\src\tests\hello_test.cc
 
-CMakeFiles/hello_test.dir/hello_test.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/hello_test.dir/hello_test.cc.i"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\seanl\Dynamic-RTS\src\hello_test.cc > CMakeFiles\hello_test.dir\hello_test.cc.i
+CMakeFiles/hello_test.dir/tests/hello_test.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/hello_test.dir/tests/hello_test.cc.i"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\seanl\Dynamic-RTS\src\tests\hello_test.cc > CMakeFiles\hello_test.dir\tests\hello_test.cc.i
 
-CMakeFiles/hello_test.dir/hello_test.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/hello_test.dir/hello_test.cc.s"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\seanl\Dynamic-RTS\src\hello_test.cc -o CMakeFiles\hello_test.dir\hello_test.cc.s
+CMakeFiles/hello_test.dir/tests/hello_test.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/hello_test.dir/tests/hello_test.cc.s"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\seanl\Dynamic-RTS\src\tests\hello_test.cc -o CMakeFiles\hello_test.dir\tests\hello_test.cc.s
 
 # Object files for target hello_test
 hello_test_OBJECTS = \
-"CMakeFiles/hello_test.dir/hello_test.cc.obj"
+"CMakeFiles/hello_test.dir/tests/hello_test.cc.obj"
 
 # External object files for target hello_test
 hello_test_EXTERNAL_OBJECTS =
 
-hello_test.exe: CMakeFiles/hello_test.dir/hello_test.cc.obj
+hello_test.exe: CMakeFiles/hello_test.dir/tests/hello_test.cc.obj
 hello_test.exe: CMakeFiles/hello_test.dir/build.make
 hello_test.exe: lib/libgtest.a
 hello_test.exe: CMakeFiles/hello_test.dir/linkLibs.rsp

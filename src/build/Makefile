@@ -171,30 +171,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named drts
+# Target rules for targets named main
 
 # Build rule for target.
-drts: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 drts
-.PHONY : drts
+main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 main
+.PHONY : main
 
 # fast build rule for target.
-drts/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\drts.dir\build.make CMakeFiles/drts.dir/build
-.PHONY : drts/fast
+main/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
 
 #=============================================================================
-# Target rules for targets named hello_test
+# Target rules for targets named endpoint_tree_test
 
 # Build rule for target.
-hello_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 hello_test
-.PHONY : hello_test
+endpoint_tree_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 endpoint_tree_test
+.PHONY : endpoint_tree_test
 
 # fast build rule for target.
-hello_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\hello_test.dir\build.make CMakeFiles/hello_test.dir/build
-.PHONY : hello_test/fast
+endpoint_tree_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/build
+.PHONY : endpoint_tree_test/fast
 
 #=============================================================================
 # Target rules for targets named gmock
@@ -248,36 +248,66 @@ gtest_main/fast:
 	$(MAKE) $(MAKESILENT) -f googletest\googletest\CMakeFiles\gtest_main.dir\build.make googletest/googletest/CMakeFiles/gtest_main.dir/build
 .PHONY : gtest_main/fast
 
-hello_test.obj: hello_test.cc.obj
-.PHONY : hello_test.obj
+EndpointTree.obj: EndpointTree.cpp.obj
+.PHONY : EndpointTree.obj
 
 # target to build an object file
-hello_test.cc.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\hello_test.dir\build.make CMakeFiles/hello_test.dir/hello_test.cc.obj
-.PHONY : hello_test.cc.obj
+EndpointTree.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/EndpointTree.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/EndpointTree.cpp.obj
+.PHONY : EndpointTree.cpp.obj
 
-hello_test.i: hello_test.cc.i
-.PHONY : hello_test.i
+EndpointTree.i: EndpointTree.cpp.i
+.PHONY : EndpointTree.i
 
 # target to preprocess a source file
-hello_test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\hello_test.dir\build.make CMakeFiles/hello_test.dir/hello_test.cc.i
-.PHONY : hello_test.cc.i
+EndpointTree.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/EndpointTree.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/EndpointTree.cpp.i
+.PHONY : EndpointTree.cpp.i
 
-hello_test.s: hello_test.cc.s
-.PHONY : hello_test.s
+EndpointTree.s: EndpointTree.cpp.s
+.PHONY : EndpointTree.s
 
 # target to generate assembly for a file
-hello_test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\hello_test.dir\build.make CMakeFiles/hello_test.dir/hello_test.cc.s
-.PHONY : hello_test.cc.s
+EndpointTree.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/EndpointTree.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/EndpointTree.cpp.s
+.PHONY : EndpointTree.cpp.s
+
+Query.obj: Query.cpp.obj
+.PHONY : Query.obj
+
+# target to build an object file
+Query.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/Query.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/Query.cpp.obj
+.PHONY : Query.cpp.obj
+
+Query.i: Query.cpp.i
+.PHONY : Query.i
+
+# target to preprocess a source file
+Query.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/Query.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/Query.cpp.i
+.PHONY : Query.cpp.i
+
+Query.s: Query.cpp.s
+.PHONY : Query.s
+
+# target to generate assembly for a file
+Query.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/Query.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/Query.cpp.s
+.PHONY : Query.cpp.s
 
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
 # target to build an object file
 main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\drts.dir\build.make CMakeFiles/drts.dir/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -285,7 +315,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\drts.dir\build.make CMakeFiles/drts.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -293,8 +323,32 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\drts.dir\build.make CMakeFiles/drts.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/main.cpp.s
 .PHONY : main.cpp.s
+
+tests/test_endpoint_tree.obj: tests/test_endpoint_tree.cpp.obj
+.PHONY : tests/test_endpoint_tree.obj
+
+# target to build an object file
+tests/test_endpoint_tree.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/tests/test_endpoint_tree.cpp.obj
+.PHONY : tests/test_endpoint_tree.cpp.obj
+
+tests/test_endpoint_tree.i: tests/test_endpoint_tree.cpp.i
+.PHONY : tests/test_endpoint_tree.i
+
+# target to preprocess a source file
+tests/test_endpoint_tree.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/tests/test_endpoint_tree.cpp.i
+.PHONY : tests/test_endpoint_tree.cpp.i
+
+tests/test_endpoint_tree.s: tests/test_endpoint_tree.cpp.s
+.PHONY : tests/test_endpoint_tree.s
+
+# target to generate assembly for a file
+tests/test_endpoint_tree.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/tests/test_endpoint_tree.cpp.s
+.PHONY : tests/test_endpoint_tree.cpp.s
 
 # Help Target
 help:
@@ -309,18 +363,24 @@ help:
 	@echo ... list_install_components
 	@echo ... rebuild_cache
 	@echo ... test
-	@echo ... drts
+	@echo ... endpoint_tree_test
 	@echo ... gmock
 	@echo ... gmock_main
 	@echo ... gtest
 	@echo ... gtest_main
-	@echo ... hello_test
-	@echo ... hello_test.obj
-	@echo ... hello_test.i
-	@echo ... hello_test.s
+	@echo ... main
+	@echo ... EndpointTree.obj
+	@echo ... EndpointTree.i
+	@echo ... EndpointTree.s
+	@echo ... Query.obj
+	@echo ... Query.i
+	@echo ... Query.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... tests/test_endpoint_tree.obj
+	@echo ... tests/test_endpoint_tree.i
+	@echo ... tests/test_endpoint_tree.s
 .PHONY : help
 
 

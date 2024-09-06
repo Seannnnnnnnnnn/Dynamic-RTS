@@ -62,8 +62,8 @@ CMAKE_BINARY_DIR = C:\Users\seanl\Dynamic-RTS\src\build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/drts.dir/all
-all: CMakeFiles/hello_test.dir/all
+all: CMakeFiles/main.dir/all
+all: CMakeFiles/endpoint_tree_test.dir/all
 all: googletest/all
 .PHONY : all
 
@@ -72,8 +72,8 @@ preinstall: googletest/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/drts.dir/clean
-clean: CMakeFiles/hello_test.dir/clean
+clean: CMakeFiles/main.dir/clean
+clean: CMakeFiles/endpoint_tree_test.dir/clean
 clean: googletest/clean
 .PHONY : clean
 
@@ -129,56 +129,56 @@ googletest/googletest/clean: googletest/googletest/CMakeFiles/gtest_main.dir/cle
 .PHONY : googletest/googletest/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/drts.dir
+# Target rules for target CMakeFiles/main.dir
 
 # All Build rule for target.
-CMakeFiles/drts.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\drts.dir\build.make CMakeFiles/drts.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\drts.dir\build.make CMakeFiles/drts.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\seanl\Dynamic-RTS\src\build\CMakeFiles --progress-num=1,2 "Built target drts"
-.PHONY : CMakeFiles/drts.dir/all
+CMakeFiles/main.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\seanl\Dynamic-RTS\src\build\CMakeFiles --progress-num=13,14,15,16 "Built target main"
+.PHONY : CMakeFiles/main.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/drts.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\seanl\Dynamic-RTS\src\build\CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/drts.dir/all
+CMakeFiles/main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\seanl\Dynamic-RTS\src\build\CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\seanl\Dynamic-RTS\src\build\CMakeFiles 0
-.PHONY : CMakeFiles/drts.dir/rule
+.PHONY : CMakeFiles/main.dir/rule
 
 # Convenience name for target.
-drts: CMakeFiles/drts.dir/rule
-.PHONY : drts
+main: CMakeFiles/main.dir/rule
+.PHONY : main
 
 # clean rule for target.
-CMakeFiles/drts.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\drts.dir\build.make CMakeFiles/drts.dir/clean
-.PHONY : CMakeFiles/drts.dir/clean
+CMakeFiles/main.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/clean
+.PHONY : CMakeFiles/main.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/hello_test.dir
+# Target rules for target CMakeFiles/endpoint_tree_test.dir
 
 # All Build rule for target.
-CMakeFiles/hello_test.dir/all: googletest/googletest/CMakeFiles/gtest.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\hello_test.dir\build.make CMakeFiles/hello_test.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\hello_test.dir\build.make CMakeFiles/hello_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\seanl\Dynamic-RTS\src\build\CMakeFiles --progress-num=11,12 "Built target hello_test"
-.PHONY : CMakeFiles/hello_test.dir/all
+CMakeFiles/endpoint_tree_test.dir/all: googletest/googletest/CMakeFiles/gtest.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\seanl\Dynamic-RTS\src\build\CMakeFiles --progress-num=1,2,3,4 "Built target endpoint_tree_test"
+.PHONY : CMakeFiles/endpoint_tree_test.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/hello_test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\seanl\Dynamic-RTS\src\build\CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/hello_test.dir/all
+CMakeFiles/endpoint_tree_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\seanl\Dynamic-RTS\src\build\CMakeFiles 6
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/endpoint_tree_test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\seanl\Dynamic-RTS\src\build\CMakeFiles 0
-.PHONY : CMakeFiles/hello_test.dir/rule
+.PHONY : CMakeFiles/endpoint_tree_test.dir/rule
 
 # Convenience name for target.
-hello_test: CMakeFiles/hello_test.dir/rule
-.PHONY : hello_test
+endpoint_tree_test: CMakeFiles/endpoint_tree_test.dir/rule
+.PHONY : endpoint_tree_test
 
 # clean rule for target.
-CMakeFiles/hello_test.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\hello_test.dir\build.make CMakeFiles/hello_test.dir/clean
-.PHONY : CMakeFiles/hello_test.dir/clean
+CMakeFiles/endpoint_tree_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/clean
+.PHONY : CMakeFiles/endpoint_tree_test.dir/clean
 
 #=============================================================================
 # Target rules for target googletest/googlemock/CMakeFiles/gmock.dir
@@ -187,7 +187,7 @@ CMakeFiles/hello_test.dir/clean:
 googletest/googlemock/CMakeFiles/gmock.dir/all: googletest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f googletest\googlemock\CMakeFiles\gmock.dir\build.make googletest/googlemock/CMakeFiles/gmock.dir/depend
 	$(MAKE) $(MAKESILENT) -f googletest\googlemock\CMakeFiles\gmock.dir\build.make googletest/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\seanl\Dynamic-RTS\src\build\CMakeFiles --progress-num=3,4 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\seanl\Dynamic-RTS\src\build\CMakeFiles --progress-num=5,6 "Built target gmock"
 .PHONY : googletest/googlemock/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
@@ -214,7 +214,7 @@ googletest/googlemock/CMakeFiles/gmock_main.dir/all: googletest/googlemock/CMake
 googletest/googlemock/CMakeFiles/gmock_main.dir/all: googletest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f googletest\googlemock\CMakeFiles\gmock_main.dir\build.make googletest/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f googletest\googlemock\CMakeFiles\gmock_main.dir\build.make googletest/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\seanl\Dynamic-RTS\src\build\CMakeFiles --progress-num=5,6 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\seanl\Dynamic-RTS\src\build\CMakeFiles --progress-num=7,8 "Built target gmock_main"
 .PHONY : googletest/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -240,7 +240,7 @@ googletest/googlemock/CMakeFiles/gmock_main.dir/clean:
 googletest/googletest/CMakeFiles/gtest.dir/all:
 	$(MAKE) $(MAKESILENT) -f googletest\googletest\CMakeFiles\gtest.dir\build.make googletest/googletest/CMakeFiles/gtest.dir/depend
 	$(MAKE) $(MAKESILENT) -f googletest\googletest\CMakeFiles\gtest.dir\build.make googletest/googletest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\seanl\Dynamic-RTS\src\build\CMakeFiles --progress-num=7,8 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\seanl\Dynamic-RTS\src\build\CMakeFiles --progress-num=9,10 "Built target gtest"
 .PHONY : googletest/googletest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -266,7 +266,7 @@ googletest/googletest/CMakeFiles/gtest.dir/clean:
 googletest/googletest/CMakeFiles/gtest_main.dir/all: googletest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f googletest\googletest\CMakeFiles\gtest_main.dir\build.make googletest/googletest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f googletest\googletest\CMakeFiles\gtest_main.dir\build.make googletest/googletest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\seanl\Dynamic-RTS\src\build\CMakeFiles --progress-num=9,10 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\seanl\Dynamic-RTS\src\build\CMakeFiles --progress-num=11,12 "Built target gtest_main"
 .PHONY : googletest/googletest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
