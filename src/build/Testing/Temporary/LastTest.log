@@ -1,0 +1,81 @@
+Start testing: Sep 06 12:36 AUS Eastern Standard Time
+----------------------------------------------------------
+1/3 Testing: EndpointTreeTest.LeftEndpointIsMinimum
+1/3 Test: EndpointTreeTest.LeftEndpointIsMinimum
+Command: "C:/Users/seanl/Dynamic-RTS/src/build/endpoint_tree_test.exe" "--gtest_filter=EndpointTreeTest.LeftEndpointIsMinimum" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/seanl/Dynamic-RTS/src/build
+"EndpointTreeTest.LeftEndpointIsMinimum" start time: Sep 06 12:36 AUS Eastern Standard Time
+Output:
+----------------------------------------------------------
+Note: Google Test filter = EndpointTreeTest.LeftEndpointIsMinimum
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EndpointTreeTest
+[ RUN      ] EndpointTreeTest.LeftEndpointIsMinimum
+[       OK ] EndpointTreeTest.LeftEndpointIsMinimum (0 ms)
+[----------] 1 test from EndpointTreeTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"EndpointTreeTest.LeftEndpointIsMinimum" end time: Sep 06 12:36 AUS Eastern Standard Time
+"EndpointTreeTest.LeftEndpointIsMinimum" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/3 Testing: EndpointTreeTest.RightEndpointIsInfinity
+2/3 Test: EndpointTreeTest.RightEndpointIsInfinity
+Command: "C:/Users/seanl/Dynamic-RTS/src/build/endpoint_tree_test.exe" "--gtest_filter=EndpointTreeTest.RightEndpointIsInfinity" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/seanl/Dynamic-RTS/src/build
+"EndpointTreeTest.RightEndpointIsInfinity" start time: Sep 06 12:36 AUS Eastern Standard Time
+Output:
+----------------------------------------------------------
+Note: Google Test filter = EndpointTreeTest.RightEndpointIsInfinity
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EndpointTreeTest
+[ RUN      ] EndpointTreeTest.RightEndpointIsInfinity
+[       OK ] EndpointTreeTest.RightEndpointIsInfinity (0 ms)
+[----------] 1 test from EndpointTreeTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"EndpointTreeTest.RightEndpointIsInfinity" end time: Sep 06 12:36 AUS Eastern Standard Time
+"EndpointTreeTest.RightEndpointIsInfinity" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/3 Testing: EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals
+3/3 Test: EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals
+Command: "C:/Users/seanl/Dynamic-RTS/src/build/endpoint_tree_test.exe" "--gtest_filter=EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/seanl/Dynamic-RTS/src/build
+"EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals" start time: Sep 06 12:36 AUS Eastern Standard Time
+Output:
+----------------------------------------------------------
+Note: Google Test filter = EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EndpointTreeTest
+[ RUN      ] EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals
+[       OK ] EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals (0 ms)
+[----------] 1 test from EndpointTreeTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals" end time: Sep 06 12:36 AUS Eastern Standard Time
+"EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Sep 06 12:36 AUS Eastern Standard Time
