@@ -4,6 +4,6 @@ struct StreamElement {
     int weight; 
     int value;
 
-    StreamElement(int weight, int value) : 
-        weight(weight), value(value) {}
+    StreamElement(int value, int weight) : 
+        value(value), weight(weight) {}
 };

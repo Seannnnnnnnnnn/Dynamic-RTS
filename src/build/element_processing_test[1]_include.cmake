@@ -1,0 +1,5 @@
+if(EXISTS "C:/Users/seanl/Dynamic-RTS/src/build/element_processing_test[1]_tests.cmake")
+  include("C:/Users/seanl/Dynamic-RTS/src/build/element_processing_test[1]_tests.cmake")
+else()
+  add_test(element_processing_test_NOT_BUILT element_processing_test_NOT_BUILT)
+endif()

@@ -18,6 +18,24 @@ TEST(EndpointTreeTest, LeftEndpointIsMinimum) {
     EXPECT_EQ(root->jurisdictionLeft, 1); // The minimum endpoint is 1
 }
 
+
+TEST(EndpointTreeTest, SetCorrectMaximumMinimum) {
+    std::vector<Query> queries = {
+        Query(1, 5, 10),
+        Query(2, 6, 15),
+        Query(4, 8, 20),
+        Query(7, 9, 5),
+        Query(-1, 100, 10),
+    };
+
+    EndpointTree tree(queries);
+    TreeNode* root = tree.getRoot().get();
+
+    ASSERT_EQ(tree.maximum_endpoint, 100);
+    ASSERT_EQ(tree.minimum_endpoint, -1);
+}
+ 
+ 
 // Test case for the right endpoint of the jurisdiction interval
 TEST(EndpointTreeTest, RightEndpointIsInfinity) {
     std::vector<Query> queries = {

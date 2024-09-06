@@ -210,6 +210,19 @@ canconical_node_test/fast:
 .PHONY : canconical_node_test/fast
 
 #=============================================================================
+# Target rules for targets named element_processing_test
+
+# Build rule for target.
+element_processing_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 element_processing_test
+.PHONY : element_processing_test
+
+# fast build rule for target.
+element_processing_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\element_processing_test.dir\build.make CMakeFiles/element_processing_test.dir/build
+.PHONY : element_processing_test/fast
+
+#=============================================================================
 # Target rules for targets named gmock
 
 # Build rule for target.
@@ -269,6 +282,7 @@ EndpointTree.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/EndpointTree.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/EndpointTree.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/EndpointTree.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\element_processing_test.dir\build.make CMakeFiles/element_processing_test.dir/EndpointTree.cpp.obj
 .PHONY : EndpointTree.cpp.obj
 
 EndpointTree.i: EndpointTree.cpp.i
@@ -279,6 +293,7 @@ EndpointTree.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/EndpointTree.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/EndpointTree.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/EndpointTree.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\element_processing_test.dir\build.make CMakeFiles/element_processing_test.dir/EndpointTree.cpp.i
 .PHONY : EndpointTree.cpp.i
 
 EndpointTree.s: EndpointTree.cpp.s
@@ -289,6 +304,7 @@ EndpointTree.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/EndpointTree.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/EndpointTree.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/EndpointTree.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\element_processing_test.dir\build.make CMakeFiles/element_processing_test.dir/EndpointTree.cpp.s
 .PHONY : EndpointTree.cpp.s
 
 Query.obj: Query.cpp.obj
@@ -299,6 +315,7 @@ Query.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/Query.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/Query.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/Query.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\element_processing_test.dir\build.make CMakeFiles/element_processing_test.dir/Query.cpp.obj
 .PHONY : Query.cpp.obj
 
 Query.i: Query.cpp.i
@@ -309,6 +326,7 @@ Query.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/Query.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/Query.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/Query.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\element_processing_test.dir\build.make CMakeFiles/element_processing_test.dir/Query.cpp.i
 .PHONY : Query.cpp.i
 
 Query.s: Query.cpp.s
@@ -319,6 +337,7 @@ Query.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/Query.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/Query.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/Query.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\element_processing_test.dir\build.make CMakeFiles/element_processing_test.dir/Query.cpp.s
 .PHONY : Query.cpp.s
 
 TreeNode.obj: TreeNode.cpp.obj
@@ -329,6 +348,7 @@ TreeNode.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/TreeNode.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/TreeNode.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/TreeNode.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\element_processing_test.dir\build.make CMakeFiles/element_processing_test.dir/TreeNode.cpp.obj
 .PHONY : TreeNode.cpp.obj
 
 TreeNode.i: TreeNode.cpp.i
@@ -339,6 +359,7 @@ TreeNode.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/TreeNode.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/TreeNode.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/TreeNode.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\element_processing_test.dir\build.make CMakeFiles/element_processing_test.dir/TreeNode.cpp.i
 .PHONY : TreeNode.cpp.i
 
 TreeNode.s: TreeNode.cpp.s
@@ -349,6 +370,7 @@ TreeNode.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/TreeNode.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/TreeNode.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/TreeNode.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\element_processing_test.dir\build.make CMakeFiles/element_processing_test.dir/TreeNode.cpp.s
 .PHONY : TreeNode.cpp.s
 
 main.obj: main.cpp.obj
@@ -399,6 +421,30 @@ tests/test_canoncial_node_set.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/tests/test_canoncial_node_set.cpp.s
 .PHONY : tests/test_canoncial_node_set.cpp.s
 
+tests/test_element_processing.obj: tests/test_element_processing.cpp.obj
+.PHONY : tests/test_element_processing.obj
+
+# target to build an object file
+tests/test_element_processing.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\element_processing_test.dir\build.make CMakeFiles/element_processing_test.dir/tests/test_element_processing.cpp.obj
+.PHONY : tests/test_element_processing.cpp.obj
+
+tests/test_element_processing.i: tests/test_element_processing.cpp.i
+.PHONY : tests/test_element_processing.i
+
+# target to preprocess a source file
+tests/test_element_processing.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\element_processing_test.dir\build.make CMakeFiles/element_processing_test.dir/tests/test_element_processing.cpp.i
+.PHONY : tests/test_element_processing.cpp.i
+
+tests/test_element_processing.s: tests/test_element_processing.cpp.s
+.PHONY : tests/test_element_processing.s
+
+# target to generate assembly for a file
+tests/test_element_processing.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\element_processing_test.dir\build.make CMakeFiles/element_processing_test.dir/tests/test_element_processing.cpp.s
+.PHONY : tests/test_element_processing.cpp.s
+
 tests/test_endpoint_tree.obj: tests/test_endpoint_tree.cpp.obj
 .PHONY : tests/test_endpoint_tree.obj
 
@@ -437,6 +483,7 @@ help:
 	@echo ... rebuild_cache
 	@echo ... test
 	@echo ... canconical_node_test
+	@echo ... element_processing_test
 	@echo ... endpoint_tree_test
 	@echo ... gmock
 	@echo ... gmock_main
@@ -458,6 +505,9 @@ help:
 	@echo ... tests/test_canoncial_node_set.obj
 	@echo ... tests/test_canoncial_node_set.i
 	@echo ... tests/test_canoncial_node_set.s
+	@echo ... tests/test_element_processing.obj
+	@echo ... tests/test_element_processing.i
+	@echo ... tests/test_element_processing.s
 	@echo ... tests/test_endpoint_tree.obj
 	@echo ... tests/test_endpoint_tree.i
 	@echo ... tests/test_endpoint_tree.s

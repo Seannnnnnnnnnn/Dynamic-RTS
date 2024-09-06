@@ -33,9 +33,18 @@ add_executable(canconical_node_test
             Query.cpp
             StreamElement.h)
 
+add_executable(element_processing_test 
+            tests/test_element_processing.cpp
+            EndpointTree.cpp
+            TreeNode.cpp
+            Query.cpp
+            StreamElement.h)
+
 target_link_libraries(endpoint_tree_test PRIVATE gtest)
 target_link_libraries(canconical_node_test PRIVATE gtest)
+target_link_libraries(element_processing_test PRIVATE gtest)
 
 include(GoogleTest)
 gtest_discover_tests(endpoint_tree_test)
 gtest_discover_tests(canconical_node_test)
+gtest_discover_tests(element_processing_test)

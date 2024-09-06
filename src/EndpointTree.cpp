@@ -11,6 +11,8 @@ EndpointTree::EndpointTree(const std::vector<Query>& queries) {
     }
     endpoints.assign(uniqueEndpoints.begin(), uniqueEndpoints.end());
     root = std::make_unique<TreeNode>();
+    minimum_endpoint = endpoints[0];  // assign smallest endpoint upon creation
+    maximum_endpoint = endpoints[endpoints.size() - 1];
     buildTree(root, 0, endpoints.size() - 1);
 }
 
@@ -87,19 +89,25 @@ std::vector<TreeNode*> EndpointTree::findCanonicalNodeSet(const Query& query) co
     return result;
 }
 
-void EndpointTree::processElement(const StreamElement& element) const {
+int EndpointTree::processElement(const StreamElement& element) const {
+    // returns the number of nodes satbbed for unit testing
     TreeNode* current = root.get();
     int value  = element.value;
     int weight = element.weight;
     
-    while (current) {
-        // TODO: update counter in current node
-        TreeNode* left = current->left.get();
+    if (value < minimum_endpoint || value > maximum_endpoint) { return 0; }  // don't process if it's not in the tree
 
+    int num_nodes_stabbed = 1;
+
+    while (current->left && current->right) {
+        num_nodes_stabbed++;
+        current->incrementCounter(weight);
+        TreeNode* left = current->left.get();
         if (left->stabsJurisdictionInterval(value)){
             current = left;
         } else {
             current = current->right.get();
         }
     }
+    return num_nodes_stabbed;
 }

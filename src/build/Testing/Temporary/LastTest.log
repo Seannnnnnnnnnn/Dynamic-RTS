@@ -1,10 +1,10 @@
-Start testing: Sep 06 15:21 AUS Eastern Standard Time
+Start testing: Sep 06 15:56 AUS Eastern Standard Time
 ----------------------------------------------------------
-1/4 Testing: EndpointTreeTest.LeftEndpointIsMinimum
-1/4 Test: EndpointTreeTest.LeftEndpointIsMinimum
+1/6 Testing: EndpointTreeTest.LeftEndpointIsMinimum
+1/6 Test: EndpointTreeTest.LeftEndpointIsMinimum
 Command: "C:/Users/seanl/Dynamic-RTS/src/build/endpoint_tree_test.exe" "--gtest_filter=EndpointTreeTest.LeftEndpointIsMinimum" "--gtest_also_run_disabled_tests"
 Directory: C:/Users/seanl/Dynamic-RTS/src/build
-"EndpointTreeTest.LeftEndpointIsMinimum" start time: Sep 06 15:21 AUS Eastern Standard Time
+"EndpointTreeTest.LeftEndpointIsMinimum" start time: Sep 06 15:56 AUS Eastern Standard Time
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = EndpointTreeTest.LeftEndpointIsMinimum
@@ -22,15 +22,41 @@ Note: Google Test filter = EndpointTreeTest.LeftEndpointIsMinimum
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"EndpointTreeTest.LeftEndpointIsMinimum" end time: Sep 06 15:21 AUS Eastern Standard Time
+"EndpointTreeTest.LeftEndpointIsMinimum" end time: Sep 06 15:56 AUS Eastern Standard Time
 "EndpointTreeTest.LeftEndpointIsMinimum" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-2/4 Testing: EndpointTreeTest.RightEndpointIsInfinity
-2/4 Test: EndpointTreeTest.RightEndpointIsInfinity
+2/6 Testing: EndpointTreeTest.SetCorrectMaximumMinimum
+2/6 Test: EndpointTreeTest.SetCorrectMaximumMinimum
+Command: "C:/Users/seanl/Dynamic-RTS/src/build/endpoint_tree_test.exe" "--gtest_filter=EndpointTreeTest.SetCorrectMaximumMinimum" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/seanl/Dynamic-RTS/src/build
+"EndpointTreeTest.SetCorrectMaximumMinimum" start time: Sep 06 15:56 AUS Eastern Standard Time
+Output:
+----------------------------------------------------------
+Note: Google Test filter = EndpointTreeTest.SetCorrectMaximumMinimum
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EndpointTreeTest
+[ RUN      ] EndpointTreeTest.SetCorrectMaximumMinimum
+[       OK ] EndpointTreeTest.SetCorrectMaximumMinimum (0 ms)
+[----------] 1 test from EndpointTreeTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"EndpointTreeTest.SetCorrectMaximumMinimum" end time: Sep 06 15:56 AUS Eastern Standard Time
+"EndpointTreeTest.SetCorrectMaximumMinimum" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/6 Testing: EndpointTreeTest.RightEndpointIsInfinity
+3/6 Test: EndpointTreeTest.RightEndpointIsInfinity
 Command: "C:/Users/seanl/Dynamic-RTS/src/build/endpoint_tree_test.exe" "--gtest_filter=EndpointTreeTest.RightEndpointIsInfinity" "--gtest_also_run_disabled_tests"
 Directory: C:/Users/seanl/Dynamic-RTS/src/build
-"EndpointTreeTest.RightEndpointIsInfinity" start time: Sep 06 15:21 AUS Eastern Standard Time
+"EndpointTreeTest.RightEndpointIsInfinity" start time: Sep 06 15:56 AUS Eastern Standard Time
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = EndpointTreeTest.RightEndpointIsInfinity
@@ -48,15 +74,15 @@ Note: Google Test filter = EndpointTreeTest.RightEndpointIsInfinity
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"EndpointTreeTest.RightEndpointIsInfinity" end time: Sep 06 15:21 AUS Eastern Standard Time
+"EndpointTreeTest.RightEndpointIsInfinity" end time: Sep 06 15:56 AUS Eastern Standard Time
 "EndpointTreeTest.RightEndpointIsInfinity" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-3/4 Testing: EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals
-3/4 Test: EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals
+4/6 Testing: EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals
+4/6 Test: EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals
 Command: "C:/Users/seanl/Dynamic-RTS/src/build/endpoint_tree_test.exe" "--gtest_filter=EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals" "--gtest_also_run_disabled_tests"
 Directory: C:/Users/seanl/Dynamic-RTS/src/build
-"EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals" start time: Sep 06 15:21 AUS Eastern Standard Time
+"EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals" start time: Sep 06 15:56 AUS Eastern Standard Time
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals
@@ -74,15 +100,15 @@ Note: Google Test filter = EndpointTreeTest.LeavesHaveCorrectJurisdictionInterva
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals" end time: Sep 06 15:21 AUS Eastern Standard Time
+"EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals" end time: Sep 06 15:56 AUS Eastern Standard Time
 "EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-4/4 Testing: EndpointTreeTest.HasCorrectCanonicalNodeSet
-4/4 Test: EndpointTreeTest.HasCorrectCanonicalNodeSet
+5/6 Testing: EndpointTreeTest.HasCorrectCanonicalNodeSet
+5/6 Test: EndpointTreeTest.HasCorrectCanonicalNodeSet
 Command: "C:/Users/seanl/Dynamic-RTS/src/build/canconical_node_test.exe" "--gtest_filter=EndpointTreeTest.HasCorrectCanonicalNodeSet" "--gtest_also_run_disabled_tests"
 Directory: C:/Users/seanl/Dynamic-RTS/src/build
-"EndpointTreeTest.HasCorrectCanonicalNodeSet" start time: Sep 06 15:21 AUS Eastern Standard Time
+"EndpointTreeTest.HasCorrectCanonicalNodeSet" start time: Sep 06 15:56 AUS Eastern Standard Time
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = EndpointTreeTest.HasCorrectCanonicalNodeSet
@@ -100,8 +126,34 @@ Note: Google Test filter = EndpointTreeTest.HasCorrectCanonicalNodeSet
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"EndpointTreeTest.HasCorrectCanonicalNodeSet" end time: Sep 06 15:21 AUS Eastern Standard Time
+"EndpointTreeTest.HasCorrectCanonicalNodeSet" end time: Sep 06 15:56 AUS Eastern Standard Time
 "EndpointTreeTest.HasCorrectCanonicalNodeSet" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Sep 06 15:21 AUS Eastern Standard Time
+6/6 Testing: EndpointTreeTest.StabsCorrectNumberOfNodes
+6/6 Test: EndpointTreeTest.StabsCorrectNumberOfNodes
+Command: "C:/Users/seanl/Dynamic-RTS/src/build/element_processing_test.exe" "--gtest_filter=EndpointTreeTest.StabsCorrectNumberOfNodes" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/seanl/Dynamic-RTS/src/build
+"EndpointTreeTest.StabsCorrectNumberOfNodes" start time: Sep 06 15:56 AUS Eastern Standard Time
+Output:
+----------------------------------------------------------
+Note: Google Test filter = EndpointTreeTest.StabsCorrectNumberOfNodes
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EndpointTreeTest
+[ RUN      ] EndpointTreeTest.StabsCorrectNumberOfNodes
+[       OK ] EndpointTreeTest.StabsCorrectNumberOfNodes (0 ms)
+[----------] 1 test from EndpointTreeTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"EndpointTreeTest.StabsCorrectNumberOfNodes" end time: Sep 06 15:56 AUS Eastern Standard Time
+"EndpointTreeTest.StabsCorrectNumberOfNodes" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Sep 06 15:56 AUS Eastern Standard Time
