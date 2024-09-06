@@ -197,6 +197,19 @@ endpoint_tree_test/fast:
 .PHONY : endpoint_tree_test/fast
 
 #=============================================================================
+# Target rules for targets named canconical_node_test
+
+# Build rule for target.
+canconical_node_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 canconical_node_test
+.PHONY : canconical_node_test
+
+# fast build rule for target.
+canconical_node_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/build
+.PHONY : canconical_node_test/fast
+
+#=============================================================================
 # Target rules for targets named gmock
 
 # Build rule for target.
@@ -255,6 +268,7 @@ EndpointTree.obj: EndpointTree.cpp.obj
 EndpointTree.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/EndpointTree.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/EndpointTree.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/EndpointTree.cpp.obj
 .PHONY : EndpointTree.cpp.obj
 
 EndpointTree.i: EndpointTree.cpp.i
@@ -264,6 +278,7 @@ EndpointTree.i: EndpointTree.cpp.i
 EndpointTree.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/EndpointTree.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/EndpointTree.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/EndpointTree.cpp.i
 .PHONY : EndpointTree.cpp.i
 
 EndpointTree.s: EndpointTree.cpp.s
@@ -273,6 +288,7 @@ EndpointTree.s: EndpointTree.cpp.s
 EndpointTree.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/EndpointTree.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/EndpointTree.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/EndpointTree.cpp.s
 .PHONY : EndpointTree.cpp.s
 
 Query.obj: Query.cpp.obj
@@ -282,6 +298,7 @@ Query.obj: Query.cpp.obj
 Query.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/Query.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/Query.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/Query.cpp.obj
 .PHONY : Query.cpp.obj
 
 Query.i: Query.cpp.i
@@ -291,6 +308,7 @@ Query.i: Query.cpp.i
 Query.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/Query.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/Query.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/Query.cpp.i
 .PHONY : Query.cpp.i
 
 Query.s: Query.cpp.s
@@ -300,7 +318,38 @@ Query.s: Query.cpp.s
 Query.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/Query.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/Query.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/Query.cpp.s
 .PHONY : Query.cpp.s
+
+TreeNode.obj: TreeNode.cpp.obj
+.PHONY : TreeNode.obj
+
+# target to build an object file
+TreeNode.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/TreeNode.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/TreeNode.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/TreeNode.cpp.obj
+.PHONY : TreeNode.cpp.obj
+
+TreeNode.i: TreeNode.cpp.i
+.PHONY : TreeNode.i
+
+# target to preprocess a source file
+TreeNode.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/TreeNode.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/TreeNode.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/TreeNode.cpp.i
+.PHONY : TreeNode.cpp.i
+
+TreeNode.s: TreeNode.cpp.s
+.PHONY : TreeNode.s
+
+# target to generate assembly for a file
+TreeNode.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/TreeNode.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/TreeNode.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/TreeNode.cpp.s
+.PHONY : TreeNode.cpp.s
 
 main.obj: main.cpp.obj
 .PHONY : main.obj
@@ -325,6 +374,30 @@ main.s: main.cpp.s
 main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/main.cpp.s
 .PHONY : main.cpp.s
+
+tests/test_canoncial_node_set.obj: tests/test_canoncial_node_set.cpp.obj
+.PHONY : tests/test_canoncial_node_set.obj
+
+# target to build an object file
+tests/test_canoncial_node_set.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/tests/test_canoncial_node_set.cpp.obj
+.PHONY : tests/test_canoncial_node_set.cpp.obj
+
+tests/test_canoncial_node_set.i: tests/test_canoncial_node_set.cpp.i
+.PHONY : tests/test_canoncial_node_set.i
+
+# target to preprocess a source file
+tests/test_canoncial_node_set.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/tests/test_canoncial_node_set.cpp.i
+.PHONY : tests/test_canoncial_node_set.cpp.i
+
+tests/test_canoncial_node_set.s: tests/test_canoncial_node_set.cpp.s
+.PHONY : tests/test_canoncial_node_set.s
+
+# target to generate assembly for a file
+tests/test_canoncial_node_set.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/tests/test_canoncial_node_set.cpp.s
+.PHONY : tests/test_canoncial_node_set.cpp.s
 
 tests/test_endpoint_tree.obj: tests/test_endpoint_tree.cpp.obj
 .PHONY : tests/test_endpoint_tree.obj
@@ -363,6 +436,7 @@ help:
 	@echo ... list_install_components
 	@echo ... rebuild_cache
 	@echo ... test
+	@echo ... canconical_node_test
 	@echo ... endpoint_tree_test
 	@echo ... gmock
 	@echo ... gmock_main
@@ -375,9 +449,15 @@ help:
 	@echo ... Query.obj
 	@echo ... Query.i
 	@echo ... Query.s
+	@echo ... TreeNode.obj
+	@echo ... TreeNode.i
+	@echo ... TreeNode.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... tests/test_canoncial_node_set.obj
+	@echo ... tests/test_canoncial_node_set.i
+	@echo ... tests/test_canoncial_node_set.s
 	@echo ... tests/test_endpoint_tree.obj
 	@echo ... tests/test_endpoint_tree.i
 	@echo ... tests/test_endpoint_tree.s

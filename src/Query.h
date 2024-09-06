@@ -1,5 +1,4 @@
-#ifndef QUERY_H
-#define QUERY_H
+#pragma once
 
 struct Query {
     int l;      // Left endpoint of the interval
@@ -16,5 +15,3 @@ struct Query {
     int getLeft() const { return l; }
     int getRight() const { return r; }
 };
-
-#endif

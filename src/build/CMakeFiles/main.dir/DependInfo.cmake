@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/seanl/Dynamic-RTS/src/EndpointTree.cpp" "CMakeFiles/main.dir/EndpointTree.cpp.obj" "gcc" "CMakeFiles/main.dir/EndpointTree.cpp.obj.d"
   "C:/Users/seanl/Dynamic-RTS/src/Query.cpp" "CMakeFiles/main.dir/Query.cpp.obj" "gcc" "CMakeFiles/main.dir/Query.cpp.obj.d"
+  "C:/Users/seanl/Dynamic-RTS/src/TreeNode.cpp" "CMakeFiles/main.dir/TreeNode.cpp.obj" "gcc" "CMakeFiles/main.dir/TreeNode.cpp.obj.d"
   "C:/Users/seanl/Dynamic-RTS/src/main.cpp" "CMakeFiles/main.dir/main.cpp.obj" "gcc" "CMakeFiles/main.dir/main.cpp.obj.d"
   )
 

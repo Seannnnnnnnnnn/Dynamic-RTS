@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/main.dir/EndpointTree.cpp.obj.d"
   "CMakeFiles/main.dir/Query.cpp.obj"
   "CMakeFiles/main.dir/Query.cpp.obj.d"
+  "CMakeFiles/main.dir/TreeNode.cpp.obj"
+  "CMakeFiles/main.dir/TreeNode.cpp.obj.d"
   "CMakeFiles/main.dir/main.cpp.obj"
   "CMakeFiles/main.dir/main.cpp.obj.d"
   "libmain.dll.a"

@@ -86,3 +86,20 @@ std::vector<TreeNode*> EndpointTree::findCanonicalNodeSet(const Query& query) co
     
     return result;
 }
+
+void EndpointTree::processElement(const StreamElement& element) const {
+    TreeNode* current = root.get();
+    int value  = element.value;
+    int weight = element.weight;
+    
+    while (current) {
+        // TODO: update counter in current node
+        TreeNode* left = current->left.get();
+
+        if (left->stabsJurisdictionInterval(value)){
+            current = left;
+        } else {
+            current = current->right.get();
+        }
+    }
+}

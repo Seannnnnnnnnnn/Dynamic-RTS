@@ -172,4 +172,6 @@ CMakeFiles/main.dir/main.cpp.obj: C:\Users\seanl\Dynamic-RTS\src\main.cpp \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/ranges_algobase.h \
  C:/msys64/ucrt64/include/c++/14.2.0/pstl/glue_memory_defs.h \
  C:/msys64/ucrt64/include/c++/14.2.0/pstl/execution_defs.h \
- C:/msys64/ucrt64/include/c++/14.2.0/limits
+ C:/msys64/ucrt64/include/c++/14.2.0/limits \
+ C:\Users\seanl\Dynamic-RTS\src\TreeNode.h \
+ C:\Users\seanl\Dynamic-RTS\src\StreamElement.h

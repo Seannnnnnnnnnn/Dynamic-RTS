@@ -98,11 +98,26 @@ CMakeFiles/endpoint_tree_test.dir/EndpointTree.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/endpoint_tree_test.dir/EndpointTree.cpp.s"
 	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\seanl\Dynamic-RTS\src\EndpointTree.cpp -o CMakeFiles\endpoint_tree_test.dir\EndpointTree.cpp.s
 
+CMakeFiles/endpoint_tree_test.dir/TreeNode.cpp.obj: CMakeFiles/endpoint_tree_test.dir/flags.make
+CMakeFiles/endpoint_tree_test.dir/TreeNode.cpp.obj: CMakeFiles/endpoint_tree_test.dir/includes_CXX.rsp
+CMakeFiles/endpoint_tree_test.dir/TreeNode.cpp.obj: C:/Users/seanl/Dynamic-RTS/src/TreeNode.cpp
+CMakeFiles/endpoint_tree_test.dir/TreeNode.cpp.obj: CMakeFiles/endpoint_tree_test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\seanl\Dynamic-RTS\src\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/endpoint_tree_test.dir/TreeNode.cpp.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/endpoint_tree_test.dir/TreeNode.cpp.obj -MF CMakeFiles\endpoint_tree_test.dir\TreeNode.cpp.obj.d -o CMakeFiles\endpoint_tree_test.dir\TreeNode.cpp.obj -c C:\Users\seanl\Dynamic-RTS\src\TreeNode.cpp
+
+CMakeFiles/endpoint_tree_test.dir/TreeNode.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/endpoint_tree_test.dir/TreeNode.cpp.i"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\seanl\Dynamic-RTS\src\TreeNode.cpp > CMakeFiles\endpoint_tree_test.dir\TreeNode.cpp.i
+
+CMakeFiles/endpoint_tree_test.dir/TreeNode.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/endpoint_tree_test.dir/TreeNode.cpp.s"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\seanl\Dynamic-RTS\src\TreeNode.cpp -o CMakeFiles\endpoint_tree_test.dir\TreeNode.cpp.s
+
 CMakeFiles/endpoint_tree_test.dir/Query.cpp.obj: CMakeFiles/endpoint_tree_test.dir/flags.make
 CMakeFiles/endpoint_tree_test.dir/Query.cpp.obj: CMakeFiles/endpoint_tree_test.dir/includes_CXX.rsp
 CMakeFiles/endpoint_tree_test.dir/Query.cpp.obj: C:/Users/seanl/Dynamic-RTS/src/Query.cpp
 CMakeFiles/endpoint_tree_test.dir/Query.cpp.obj: CMakeFiles/endpoint_tree_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\seanl\Dynamic-RTS\src\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/endpoint_tree_test.dir/Query.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\seanl\Dynamic-RTS\src\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/endpoint_tree_test.dir/Query.cpp.obj"
 	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/endpoint_tree_test.dir/Query.cpp.obj -MF CMakeFiles\endpoint_tree_test.dir\Query.cpp.obj.d -o CMakeFiles\endpoint_tree_test.dir\Query.cpp.obj -c C:\Users\seanl\Dynamic-RTS\src\Query.cpp
 
 CMakeFiles/endpoint_tree_test.dir/Query.cpp.i: cmake_force
@@ -117,6 +132,7 @@ CMakeFiles/endpoint_tree_test.dir/Query.cpp.s: cmake_force
 endpoint_tree_test_OBJECTS = \
 "CMakeFiles/endpoint_tree_test.dir/tests/test_endpoint_tree.cpp.obj" \
 "CMakeFiles/endpoint_tree_test.dir/EndpointTree.cpp.obj" \
+"CMakeFiles/endpoint_tree_test.dir/TreeNode.cpp.obj" \
 "CMakeFiles/endpoint_tree_test.dir/Query.cpp.obj"
 
 # External object files for target endpoint_tree_test
@@ -124,13 +140,14 @@ endpoint_tree_test_EXTERNAL_OBJECTS =
 
 endpoint_tree_test.exe: CMakeFiles/endpoint_tree_test.dir/tests/test_endpoint_tree.cpp.obj
 endpoint_tree_test.exe: CMakeFiles/endpoint_tree_test.dir/EndpointTree.cpp.obj
+endpoint_tree_test.exe: CMakeFiles/endpoint_tree_test.dir/TreeNode.cpp.obj
 endpoint_tree_test.exe: CMakeFiles/endpoint_tree_test.dir/Query.cpp.obj
 endpoint_tree_test.exe: CMakeFiles/endpoint_tree_test.dir/build.make
 endpoint_tree_test.exe: lib/libgtest.a
 endpoint_tree_test.exe: CMakeFiles/endpoint_tree_test.dir/linkLibs.rsp
 endpoint_tree_test.exe: CMakeFiles/endpoint_tree_test.dir/objects1.rsp
 endpoint_tree_test.exe: CMakeFiles/endpoint_tree_test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\seanl\Dynamic-RTS\src\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable endpoint_tree_test.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\seanl\Dynamic-RTS\src\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable endpoint_tree_test.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\endpoint_tree_test.dir\link.txt --verbose=$(VERBOSE)
 	"C:\Program Files\CMake\bin\cmake.exe" -D TEST_TARGET=endpoint_tree_test -D TEST_EXECUTABLE=C:/Users/seanl/Dynamic-RTS/src/build/endpoint_tree_test.exe -D TEST_EXECUTOR= -D TEST_WORKING_DIR=C:/Users/seanl/Dynamic-RTS/src/build -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_FILTER= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=endpoint_tree_test_TESTS -D CTEST_FILE=C:/Users/seanl/Dynamic-RTS/src/build/endpoint_tree_test[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -D TEST_XML_OUTPUT_DIR= -P "C:/Program Files/CMake/share/cmake-3.30/Modules/GoogleTestAddTests.cmake"
 
