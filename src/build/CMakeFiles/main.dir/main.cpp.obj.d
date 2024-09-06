@@ -142,12 +142,13 @@ CMakeFiles/main.dir/main.cpp.obj: C:\Users\seanl\Dynamic-RTS\src\main.cpp \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/ostream.tcc \
  C:/msys64/ucrt64/include/c++/14.2.0/istream \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/istream.tcc \
+ C:\Users\seanl\Dynamic-RTS\src\Query.h \
+ C:\Users\seanl\Dynamic-RTS\src\EndpointTree.h \
  C:/msys64/ucrt64/include/c++/14.2.0/vector \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_uninitialized.h \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_vector.h \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_bvector.h \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/vector.tcc \
- C:\Users\seanl\Dynamic-RTS\src\EndpointTree.h \
  C:/msys64/ucrt64/include/c++/14.2.0/memory \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_tempbuf.h \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_raw_storage_iter.h \
@@ -171,5 +172,4 @@ CMakeFiles/main.dir/main.cpp.obj: C:\Users\seanl\Dynamic-RTS\src\main.cpp \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/ranges_algobase.h \
  C:/msys64/ucrt64/include/c++/14.2.0/pstl/glue_memory_defs.h \
  C:/msys64/ucrt64/include/c++/14.2.0/pstl/execution_defs.h \
- C:/msys64/ucrt64/include/c++/14.2.0/limits \
- C:\Users\seanl\Dynamic-RTS\src\Query.h
+ C:/msys64/ucrt64/include/c++/14.2.0/limits

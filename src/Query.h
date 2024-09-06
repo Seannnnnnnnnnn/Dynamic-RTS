@@ -8,7 +8,6 @@ struct Query {
     int count;  // Running count of weights
     bool alive; // Status of the query
 
-
     Query(int l, int r, int tau);
 
     bool isAlive() const;

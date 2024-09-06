@@ -12,11 +12,6 @@ add_executable(main
 
 target_include_directories(main PUBLIC "${PROJECT_SOURCE_DIR}")
 
-# Specify that we are building a console application (not a GUI application)
-if (WIN32)
-    target_link_libraries(main PRIVATE -mconsole)
-endif()
-
 # testing
 enable_testing()
 add_subdirectory(googletest)
