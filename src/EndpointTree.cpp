@@ -89,7 +89,7 @@ std::vector<TreeNode*> EndpointTree::findCanonicalNodeSet(const Query& query) co
     return result;
 }
 
-int EndpointTree::processElement(const StreamElement& element) const {
+int EndpointTree::processElement(const StreamElement& element){
     // returns the number of nodes satbbed for unit testing
     TreeNode* current = root.get();
     int value  = element.value;

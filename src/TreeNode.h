@@ -2,9 +2,9 @@
 #include <memory>
 
 
-class TreeNode {
-public:
+struct TreeNode {
     int counter;
+    int last_signal_counter;  // used for distributed tracking
     int endpoint;
     int jurisdictionLeft;
     int jurisdictionRight;
@@ -15,7 +15,7 @@ public:
 
     bool stabsJurisdictionInterval(int value);
     void incrementCounter(int weight);
+    int getCounter() { return counter; }
+    inline int getLastSignalCounter() const { return last_signal_counter; }
+    inline void setLastSignalCounter(int new_value ) { last_signal_counter = new_value; }
 };
-
-
-
