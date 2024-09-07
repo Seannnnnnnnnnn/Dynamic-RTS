@@ -12,11 +12,13 @@ DTAlgorithm::DTAlgorithm(std::vector<Query>& queries)
         dtInstances.push_back(dtInstancePtr); 
 
         for (TreeNode* node : canonicalNodes) {
-            node->dtInstances.push_back(dtInstancePtr);  // Store raw pointer to DT instance
-            node->dtSlacks.push_back(dtInstancePtr->getSlack());
+            node->dtInstances.push_back(dtInstancePtr);
+            node->dtSlacks.push_back(dtInstancePtr->getSlack()); 
+            node->initialiseHeap();
         }
     }
 }
+
 
 void DTAlgorithm::processElement(const StreamElement& streamElement) {
     // overrides the element processing of the EndpointTree class, as we now use 
@@ -41,26 +43,30 @@ void DTAlgorithm::processElement(const StreamElement& streamElement) {
 
 
 void DTAlgorithm::manageCounterUpdate(TreeNode* treeNode) {
-    // new algorithm  - use heaps to avoid a linear scan over DT instances each time via the following: 
-    
-    // maintain a min-heap of dtInstances on each treeNode organised by key: dtInstance->getSlack() + treeNode->last_signal_counter
-    // instead of a linear scan do the following: 
-    // 1. Find the minimum key in the heap in O(1) time
-    // 2. if treeNode->counter < minimum key then we are done
-    // 3. otherwise: pop min, and perform the logic in our if statement. repeat from step 1.
+    while(!treeNode->dtHeap.empty()){
 
+        int minKey = treeNode->dtHeap.top().first;
 
-    // Alg: for each DT instance which has treeNode in their participant set, update signal with new counter 
-    for (auto& dtInstance : treeNode->dtInstances) {
+        if (treeNode->counter < minKey){
+            break;
+        }
+        
+        auto minPair = treeNode->dtHeap.top();
+        treeNode->dtHeap.pop();
+
+        DistributedTracking* dtInstance = minPair.second;
         int slack = dtInstance->getSlack();
-        if (dtInstance->isAlive() && slack == 1 || (treeNode->counter - treeNode->last_signal_counter) >= slack) {
-            // processSignal will assign a new slack to the node, so remove the current slack associated with it's dt instance
-            auto newEnd = std::remove(treeNode->dtSlacks.begin(), treeNode->dtSlacks.end(), slack);
-            treeNode->dtSlacks.erase(newEnd, treeNode->dtSlacks.end());
-            dtInstance->processSignal();
-        } 
+
+        auto newEnd = std::remove(treeNode->dtSlacks.begin(), treeNode->dtSlacks.end(), slack);
+        treeNode->dtSlacks.erase(newEnd, treeNode->dtSlacks.end());
+        dtInstance->processSignal();
+
+        // After processing, push the updated slack value into the heap if still alive
+        if (dtInstance->isAlive()){
+            int newKey = dtInstance->getSlack() + treeNode->last_signal_counter;
+            treeNode->dtHeap.emplace(newKey, dtInstance);
+        }
     }
-    return;
 }
 
 

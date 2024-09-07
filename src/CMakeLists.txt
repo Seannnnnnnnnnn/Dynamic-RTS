@@ -8,7 +8,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 add_executable(main 
             main.cpp
             EndpointTree.cpp
-            TreeNode.h
+            TreeNode.cpp
             Query.cpp
             StreamElement.h
             DistributedTracking.cpp
@@ -24,7 +24,7 @@ include_directories(googletest/include)
 add_executable(endpoint_tree_test 
             tests/test_endpoint_tree.cpp
             EndpointTree.cpp
-            TreeNode.h
+            TreeNode.cpp
             Query.cpp
             StreamElement.h
             DistributedTracking.cpp
@@ -33,7 +33,7 @@ add_executable(endpoint_tree_test
 add_executable(canconical_node_test 
             tests/test_canoncial_node_set.cpp
             EndpointTree.cpp
-            TreeNode.h
+            TreeNode.cpp
             Query.cpp
             StreamElement.h
             DistributedTracking.cpp
@@ -42,7 +42,7 @@ add_executable(canconical_node_test
 add_executable(element_processing_test 
             tests/test_element_processing.cpp
             EndpointTree.cpp
-            TreeNode.h
+            TreeNode.cpp
             Query.cpp
             StreamElement.h
             DistributedTracking.cpp
