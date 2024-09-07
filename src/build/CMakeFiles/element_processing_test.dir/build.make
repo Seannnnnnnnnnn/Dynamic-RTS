@@ -98,26 +98,11 @@ CMakeFiles/element_processing_test.dir/EndpointTree.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/element_processing_test.dir/EndpointTree.cpp.s"
 	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\seanl\Dynamic-RTS\src\EndpointTree.cpp -o CMakeFiles\element_processing_test.dir\EndpointTree.cpp.s
 
-CMakeFiles/element_processing_test.dir/TreeNode.cpp.obj: CMakeFiles/element_processing_test.dir/flags.make
-CMakeFiles/element_processing_test.dir/TreeNode.cpp.obj: CMakeFiles/element_processing_test.dir/includes_CXX.rsp
-CMakeFiles/element_processing_test.dir/TreeNode.cpp.obj: C:/Users/seanl/Dynamic-RTS/src/TreeNode.cpp
-CMakeFiles/element_processing_test.dir/TreeNode.cpp.obj: CMakeFiles/element_processing_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\seanl\Dynamic-RTS\src\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/element_processing_test.dir/TreeNode.cpp.obj"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/element_processing_test.dir/TreeNode.cpp.obj -MF CMakeFiles\element_processing_test.dir\TreeNode.cpp.obj.d -o CMakeFiles\element_processing_test.dir\TreeNode.cpp.obj -c C:\Users\seanl\Dynamic-RTS\src\TreeNode.cpp
-
-CMakeFiles/element_processing_test.dir/TreeNode.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/element_processing_test.dir/TreeNode.cpp.i"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\seanl\Dynamic-RTS\src\TreeNode.cpp > CMakeFiles\element_processing_test.dir\TreeNode.cpp.i
-
-CMakeFiles/element_processing_test.dir/TreeNode.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/element_processing_test.dir/TreeNode.cpp.s"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\seanl\Dynamic-RTS\src\TreeNode.cpp -o CMakeFiles\element_processing_test.dir\TreeNode.cpp.s
-
 CMakeFiles/element_processing_test.dir/Query.cpp.obj: CMakeFiles/element_processing_test.dir/flags.make
 CMakeFiles/element_processing_test.dir/Query.cpp.obj: CMakeFiles/element_processing_test.dir/includes_CXX.rsp
 CMakeFiles/element_processing_test.dir/Query.cpp.obj: C:/Users/seanl/Dynamic-RTS/src/Query.cpp
 CMakeFiles/element_processing_test.dir/Query.cpp.obj: CMakeFiles/element_processing_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\seanl\Dynamic-RTS\src\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/element_processing_test.dir/Query.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\seanl\Dynamic-RTS\src\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/element_processing_test.dir/Query.cpp.obj"
 	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/element_processing_test.dir/Query.cpp.obj -MF CMakeFiles\element_processing_test.dir\Query.cpp.obj.d -o CMakeFiles\element_processing_test.dir\Query.cpp.obj -c C:\Users\seanl\Dynamic-RTS\src\Query.cpp
 
 CMakeFiles/element_processing_test.dir/Query.cpp.i: cmake_force
@@ -128,20 +113,35 @@ CMakeFiles/element_processing_test.dir/Query.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/element_processing_test.dir/Query.cpp.s"
 	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\seanl\Dynamic-RTS\src\Query.cpp -o CMakeFiles\element_processing_test.dir\Query.cpp.s
 
+CMakeFiles/element_processing_test.dir/DistributedTracking.cpp.obj: CMakeFiles/element_processing_test.dir/flags.make
+CMakeFiles/element_processing_test.dir/DistributedTracking.cpp.obj: CMakeFiles/element_processing_test.dir/includes_CXX.rsp
+CMakeFiles/element_processing_test.dir/DistributedTracking.cpp.obj: C:/Users/seanl/Dynamic-RTS/src/DistributedTracking.cpp
+CMakeFiles/element_processing_test.dir/DistributedTracking.cpp.obj: CMakeFiles/element_processing_test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\seanl\Dynamic-RTS\src\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/element_processing_test.dir/DistributedTracking.cpp.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/element_processing_test.dir/DistributedTracking.cpp.obj -MF CMakeFiles\element_processing_test.dir\DistributedTracking.cpp.obj.d -o CMakeFiles\element_processing_test.dir\DistributedTracking.cpp.obj -c C:\Users\seanl\Dynamic-RTS\src\DistributedTracking.cpp
+
+CMakeFiles/element_processing_test.dir/DistributedTracking.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/element_processing_test.dir/DistributedTracking.cpp.i"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\seanl\Dynamic-RTS\src\DistributedTracking.cpp > CMakeFiles\element_processing_test.dir\DistributedTracking.cpp.i
+
+CMakeFiles/element_processing_test.dir/DistributedTracking.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/element_processing_test.dir/DistributedTracking.cpp.s"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\seanl\Dynamic-RTS\src\DistributedTracking.cpp -o CMakeFiles\element_processing_test.dir\DistributedTracking.cpp.s
+
 # Object files for target element_processing_test
 element_processing_test_OBJECTS = \
 "CMakeFiles/element_processing_test.dir/tests/test_element_processing.cpp.obj" \
 "CMakeFiles/element_processing_test.dir/EndpointTree.cpp.obj" \
-"CMakeFiles/element_processing_test.dir/TreeNode.cpp.obj" \
-"CMakeFiles/element_processing_test.dir/Query.cpp.obj"
+"CMakeFiles/element_processing_test.dir/Query.cpp.obj" \
+"CMakeFiles/element_processing_test.dir/DistributedTracking.cpp.obj"
 
 # External object files for target element_processing_test
 element_processing_test_EXTERNAL_OBJECTS =
 
 element_processing_test.exe: CMakeFiles/element_processing_test.dir/tests/test_element_processing.cpp.obj
 element_processing_test.exe: CMakeFiles/element_processing_test.dir/EndpointTree.cpp.obj
-element_processing_test.exe: CMakeFiles/element_processing_test.dir/TreeNode.cpp.obj
 element_processing_test.exe: CMakeFiles/element_processing_test.dir/Query.cpp.obj
+element_processing_test.exe: CMakeFiles/element_processing_test.dir/DistributedTracking.cpp.obj
 element_processing_test.exe: CMakeFiles/element_processing_test.dir/build.make
 element_processing_test.exe: lib/libgtest.a
 element_processing_test.exe: CMakeFiles/element_processing_test.dir/linkLibs.rsp

@@ -172,6 +172,7 @@ CMakeFiles/element_processing_test.dir/EndpointTree.cpp.obj: \
  C:/msys64/ucrt64/include/c++/14.2.0/pstl/execution_defs.h \
  C:/msys64/ucrt64/include/c++/14.2.0/limits \
  C:\Users\seanl\Dynamic-RTS\src\TreeNode.h \
+ C:\Users\seanl\Dynamic-RTS\src\DistributedTracking.h \
  C:\Users\seanl\Dynamic-RTS\src\Query.h \
  C:\Users\seanl\Dynamic-RTS\src\StreamElement.h \
  C:/msys64/ucrt64/include/c++/14.2.0/algorithm \

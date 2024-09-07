@@ -3,6 +3,10 @@
 #include <set>
 #include <vector>
 
+TreeNode* EndpointTree::getRoot() const {
+    return root.get();
+}
+
 EndpointTree::EndpointTree(const std::vector<Query>& queries) {
     std::set<int> uniqueEndpoints;
     for (const auto& query : queries) {

@@ -2,24 +2,22 @@
 
 #include <vector>
 #include "Query.h"
-#include "TreeNode.h"
 #include "StreamElement.h"
 
+struct TreeNode;  // forward decleration to avoid circular dependancy
 
 class DistributedTracking {
 public:
-    DistributedTracking(Query& coordinator, std::vector<TreeNode*>& participants);
-
-    void processElement(const StreamElement& element);
-    bool isThresholdMet() const;
+    DistributedTracking(const Query& coordinator, std::vector<TreeNode*>& participants);
+    void processCounterIncrement(const int increment);
+    bool isAlive() const;  // flag for if the DistributedTracking instance is still alive
 
 private:
-    Query& coordinator;
+    const Query& coordinator;
     std::vector<TreeNode*> participants;
     int slack;
     int numSignalsReceived;
     int totalCounter;
 
     void calculateSlack();
-    void updateSignals();
 };

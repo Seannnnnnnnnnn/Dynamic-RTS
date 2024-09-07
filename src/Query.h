@@ -17,6 +17,6 @@ struct Query {
     int getRight() const { return r; }
 
     // methods for distributed tracking
-    void updateThreshold(int weight) { dt_threshold += weight; };
+    void updateThreshold(int weight);
     int getThreshold() const { return dt_threshold; };
 };

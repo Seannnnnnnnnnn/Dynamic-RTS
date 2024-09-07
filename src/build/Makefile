@@ -274,6 +274,39 @@ gtest_main/fast:
 	$(MAKE) $(MAKESILENT) -f googletest\googletest\CMakeFiles\gtest_main.dir\build.make googletest/googletest/CMakeFiles/gtest_main.dir/build
 .PHONY : gtest_main/fast
 
+DistributedTracking.obj: DistributedTracking.cpp.obj
+.PHONY : DistributedTracking.obj
+
+# target to build an object file
+DistributedTracking.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/DistributedTracking.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/DistributedTracking.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/DistributedTracking.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\element_processing_test.dir\build.make CMakeFiles/element_processing_test.dir/DistributedTracking.cpp.obj
+.PHONY : DistributedTracking.cpp.obj
+
+DistributedTracking.i: DistributedTracking.cpp.i
+.PHONY : DistributedTracking.i
+
+# target to preprocess a source file
+DistributedTracking.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/DistributedTracking.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/DistributedTracking.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/DistributedTracking.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\element_processing_test.dir\build.make CMakeFiles/element_processing_test.dir/DistributedTracking.cpp.i
+.PHONY : DistributedTracking.cpp.i
+
+DistributedTracking.s: DistributedTracking.cpp.s
+.PHONY : DistributedTracking.s
+
+# target to generate assembly for a file
+DistributedTracking.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/DistributedTracking.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/DistributedTracking.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/DistributedTracking.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\element_processing_test.dir\build.make CMakeFiles/element_processing_test.dir/DistributedTracking.cpp.s
+.PHONY : DistributedTracking.cpp.s
+
 EndpointTree.obj: EndpointTree.cpp.obj
 .PHONY : EndpointTree.obj
 
@@ -339,39 +372,6 @@ Query.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/Query.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\element_processing_test.dir\build.make CMakeFiles/element_processing_test.dir/Query.cpp.s
 .PHONY : Query.cpp.s
-
-TreeNode.obj: TreeNode.cpp.obj
-.PHONY : TreeNode.obj
-
-# target to build an object file
-TreeNode.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/TreeNode.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/TreeNode.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/TreeNode.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\element_processing_test.dir\build.make CMakeFiles/element_processing_test.dir/TreeNode.cpp.obj
-.PHONY : TreeNode.cpp.obj
-
-TreeNode.i: TreeNode.cpp.i
-.PHONY : TreeNode.i
-
-# target to preprocess a source file
-TreeNode.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/TreeNode.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/TreeNode.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/TreeNode.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\element_processing_test.dir\build.make CMakeFiles/element_processing_test.dir/TreeNode.cpp.i
-.PHONY : TreeNode.cpp.i
-
-TreeNode.s: TreeNode.cpp.s
-.PHONY : TreeNode.s
-
-# target to generate assembly for a file
-TreeNode.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/TreeNode.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/TreeNode.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/TreeNode.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\element_processing_test.dir\build.make CMakeFiles/element_processing_test.dir/TreeNode.cpp.s
-.PHONY : TreeNode.cpp.s
 
 main.obj: main.cpp.obj
 .PHONY : main.obj
@@ -490,15 +490,15 @@ help:
 	@echo ... gtest
 	@echo ... gtest_main
 	@echo ... main
+	@echo ... DistributedTracking.obj
+	@echo ... DistributedTracking.i
+	@echo ... DistributedTracking.s
 	@echo ... EndpointTree.obj
 	@echo ... EndpointTree.i
 	@echo ... EndpointTree.s
 	@echo ... Query.obj
 	@echo ... Query.i
 	@echo ... Query.s
-	@echo ... TreeNode.obj
-	@echo ... TreeNode.i
-	@echo ... TreeNode.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

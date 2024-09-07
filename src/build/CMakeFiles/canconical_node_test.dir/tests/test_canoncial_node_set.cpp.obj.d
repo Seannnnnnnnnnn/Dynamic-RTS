@@ -255,5 +255,6 @@ CMakeFiles/canconical_node_test.dir/tests/test_canoncial_node_set.cpp.obj: \
  C:/Users/seanl/Dynamic-RTS/src/googletest/googletest/include/gtest/gtest_prod.h \
  C:/Users/seanl/Dynamic-RTS/src/EndpointTree.h \
  C:/Users/seanl/Dynamic-RTS/src/TreeNode.h \
+ C:/Users/seanl/Dynamic-RTS/src/DistributedTracking.h \
  C:/Users/seanl/Dynamic-RTS/src/Query.h \
  C:/Users/seanl/Dynamic-RTS/src/StreamElement.h

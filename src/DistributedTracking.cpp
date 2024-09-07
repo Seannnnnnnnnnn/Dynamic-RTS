@@ -1,8 +1,8 @@
 #include "DistributedTracking.h"
+#include "TreeNode.h"
 
-DistributedTracking::DistributedTracking(Query& coordinator, std::vector<TreeNode*>& participants)
-    : coordinator(coordinator), participants(participants), numSignalsReceived(0), totalCounter(0) {
-    calculateSlack();
+DistributedTracking::DistributedTracking(const Query& coordinator, std::vector<TreeNode*>& participants)
+    : coordinator(coordinator), participants(participants) {
 }
 
 void DistributedTracking::calculateSlack() {
@@ -15,34 +15,13 @@ void DistributedTracking::calculateSlack() {
     }
 }
 
-void DistributedTracking::processElement(const StreamElement& element) {
-    for (auto& participant : participants) {
-        if (participant->stabsJurisdictionInterval(element.value)) {
-            participant->incrementCounter(element.weight);
 
-            // Check if we need to send a signal based on the slack value
-            if (participant->getCounter() >= participant->getLastSignalCounter() + slack) {
-                numSignalsReceived++;
-                participant->getLastSignalCounter();
-            }
-        }
-    }
-    updateSignals();
-}
-
-void DistributedTracking::updateSignals() {
-    if (numSignalsReceived >= participants.size()) {
-        // All participants have sent their signals, check total counter
-        totalCounter = 0;
-        for (auto& participant : participants) {
-            totalCounter += participant->getCounter();
-        }
-        numSignalsReceived = 0;  // Reset for next round
-        coordinator.updateThreshold(coordinator.getThreshold() - totalCounter);
-        calculateSlack();  // Recalculate slack for next round
-    }
-}
-
-bool DistributedTracking::isThresholdMet() const {
+bool DistributedTracking::isAlive() const {
     return coordinator.getThreshold() <= 0;
+}
+
+
+void DistributedTracking::processCounterIncrement(const int increment) {
+    // TODO: 
+    return;
 }

@@ -98,26 +98,11 @@ CMakeFiles/canconical_node_test.dir/EndpointTree.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/canconical_node_test.dir/EndpointTree.cpp.s"
 	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\seanl\Dynamic-RTS\src\EndpointTree.cpp -o CMakeFiles\canconical_node_test.dir\EndpointTree.cpp.s
 
-CMakeFiles/canconical_node_test.dir/TreeNode.cpp.obj: CMakeFiles/canconical_node_test.dir/flags.make
-CMakeFiles/canconical_node_test.dir/TreeNode.cpp.obj: CMakeFiles/canconical_node_test.dir/includes_CXX.rsp
-CMakeFiles/canconical_node_test.dir/TreeNode.cpp.obj: C:/Users/seanl/Dynamic-RTS/src/TreeNode.cpp
-CMakeFiles/canconical_node_test.dir/TreeNode.cpp.obj: CMakeFiles/canconical_node_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\seanl\Dynamic-RTS\src\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/canconical_node_test.dir/TreeNode.cpp.obj"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/canconical_node_test.dir/TreeNode.cpp.obj -MF CMakeFiles\canconical_node_test.dir\TreeNode.cpp.obj.d -o CMakeFiles\canconical_node_test.dir\TreeNode.cpp.obj -c C:\Users\seanl\Dynamic-RTS\src\TreeNode.cpp
-
-CMakeFiles/canconical_node_test.dir/TreeNode.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/canconical_node_test.dir/TreeNode.cpp.i"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\seanl\Dynamic-RTS\src\TreeNode.cpp > CMakeFiles\canconical_node_test.dir\TreeNode.cpp.i
-
-CMakeFiles/canconical_node_test.dir/TreeNode.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/canconical_node_test.dir/TreeNode.cpp.s"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\seanl\Dynamic-RTS\src\TreeNode.cpp -o CMakeFiles\canconical_node_test.dir\TreeNode.cpp.s
-
 CMakeFiles/canconical_node_test.dir/Query.cpp.obj: CMakeFiles/canconical_node_test.dir/flags.make
 CMakeFiles/canconical_node_test.dir/Query.cpp.obj: CMakeFiles/canconical_node_test.dir/includes_CXX.rsp
 CMakeFiles/canconical_node_test.dir/Query.cpp.obj: C:/Users/seanl/Dynamic-RTS/src/Query.cpp
 CMakeFiles/canconical_node_test.dir/Query.cpp.obj: CMakeFiles/canconical_node_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\seanl\Dynamic-RTS\src\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/canconical_node_test.dir/Query.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\seanl\Dynamic-RTS\src\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/canconical_node_test.dir/Query.cpp.obj"
 	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/canconical_node_test.dir/Query.cpp.obj -MF CMakeFiles\canconical_node_test.dir\Query.cpp.obj.d -o CMakeFiles\canconical_node_test.dir\Query.cpp.obj -c C:\Users\seanl\Dynamic-RTS\src\Query.cpp
 
 CMakeFiles/canconical_node_test.dir/Query.cpp.i: cmake_force
@@ -128,20 +113,35 @@ CMakeFiles/canconical_node_test.dir/Query.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/canconical_node_test.dir/Query.cpp.s"
 	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\seanl\Dynamic-RTS\src\Query.cpp -o CMakeFiles\canconical_node_test.dir\Query.cpp.s
 
+CMakeFiles/canconical_node_test.dir/DistributedTracking.cpp.obj: CMakeFiles/canconical_node_test.dir/flags.make
+CMakeFiles/canconical_node_test.dir/DistributedTracking.cpp.obj: CMakeFiles/canconical_node_test.dir/includes_CXX.rsp
+CMakeFiles/canconical_node_test.dir/DistributedTracking.cpp.obj: C:/Users/seanl/Dynamic-RTS/src/DistributedTracking.cpp
+CMakeFiles/canconical_node_test.dir/DistributedTracking.cpp.obj: CMakeFiles/canconical_node_test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\seanl\Dynamic-RTS\src\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/canconical_node_test.dir/DistributedTracking.cpp.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/canconical_node_test.dir/DistributedTracking.cpp.obj -MF CMakeFiles\canconical_node_test.dir\DistributedTracking.cpp.obj.d -o CMakeFiles\canconical_node_test.dir\DistributedTracking.cpp.obj -c C:\Users\seanl\Dynamic-RTS\src\DistributedTracking.cpp
+
+CMakeFiles/canconical_node_test.dir/DistributedTracking.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/canconical_node_test.dir/DistributedTracking.cpp.i"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\seanl\Dynamic-RTS\src\DistributedTracking.cpp > CMakeFiles\canconical_node_test.dir\DistributedTracking.cpp.i
+
+CMakeFiles/canconical_node_test.dir/DistributedTracking.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/canconical_node_test.dir/DistributedTracking.cpp.s"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\seanl\Dynamic-RTS\src\DistributedTracking.cpp -o CMakeFiles\canconical_node_test.dir\DistributedTracking.cpp.s
+
 # Object files for target canconical_node_test
 canconical_node_test_OBJECTS = \
 "CMakeFiles/canconical_node_test.dir/tests/test_canoncial_node_set.cpp.obj" \
 "CMakeFiles/canconical_node_test.dir/EndpointTree.cpp.obj" \
-"CMakeFiles/canconical_node_test.dir/TreeNode.cpp.obj" \
-"CMakeFiles/canconical_node_test.dir/Query.cpp.obj"
+"CMakeFiles/canconical_node_test.dir/Query.cpp.obj" \
+"CMakeFiles/canconical_node_test.dir/DistributedTracking.cpp.obj"
 
 # External object files for target canconical_node_test
 canconical_node_test_EXTERNAL_OBJECTS =
 
 canconical_node_test.exe: CMakeFiles/canconical_node_test.dir/tests/test_canoncial_node_set.cpp.obj
 canconical_node_test.exe: CMakeFiles/canconical_node_test.dir/EndpointTree.cpp.obj
-canconical_node_test.exe: CMakeFiles/canconical_node_test.dir/TreeNode.cpp.obj
 canconical_node_test.exe: CMakeFiles/canconical_node_test.dir/Query.cpp.obj
+canconical_node_test.exe: CMakeFiles/canconical_node_test.dir/DistributedTracking.cpp.obj
 canconical_node_test.exe: CMakeFiles/canconical_node_test.dir/build.make
 canconical_node_test.exe: lib/libgtest.a
 canconical_node_test.exe: CMakeFiles/canconical_node_test.dir/linkLibs.rsp

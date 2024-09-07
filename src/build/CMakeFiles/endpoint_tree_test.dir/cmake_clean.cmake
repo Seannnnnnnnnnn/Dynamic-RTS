@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/endpoint_tree_test.dir/DistributedTracking.cpp.obj"
+  "CMakeFiles/endpoint_tree_test.dir/DistributedTracking.cpp.obj.d"
   "CMakeFiles/endpoint_tree_test.dir/EndpointTree.cpp.obj"
   "CMakeFiles/endpoint_tree_test.dir/EndpointTree.cpp.obj.d"
   "CMakeFiles/endpoint_tree_test.dir/Query.cpp.obj"
   "CMakeFiles/endpoint_tree_test.dir/Query.cpp.obj.d"
-  "CMakeFiles/endpoint_tree_test.dir/TreeNode.cpp.obj"
-  "CMakeFiles/endpoint_tree_test.dir/TreeNode.cpp.obj.d"
   "CMakeFiles/endpoint_tree_test.dir/tests/test_endpoint_tree.cpp.obj"
   "CMakeFiles/endpoint_tree_test.dir/tests/test_endpoint_tree.cpp.obj.d"
   "endpoint_tree_test.exe"

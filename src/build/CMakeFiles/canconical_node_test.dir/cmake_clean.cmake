@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/canconical_node_test.dir/DistributedTracking.cpp.obj"
+  "CMakeFiles/canconical_node_test.dir/DistributedTracking.cpp.obj.d"
   "CMakeFiles/canconical_node_test.dir/EndpointTree.cpp.obj"
   "CMakeFiles/canconical_node_test.dir/EndpointTree.cpp.obj.d"
   "CMakeFiles/canconical_node_test.dir/Query.cpp.obj"
   "CMakeFiles/canconical_node_test.dir/Query.cpp.obj.d"
-  "CMakeFiles/canconical_node_test.dir/TreeNode.cpp.obj"
-  "CMakeFiles/canconical_node_test.dir/TreeNode.cpp.obj.d"
   "CMakeFiles/canconical_node_test.dir/tests/test_canoncial_node_set.cpp.obj"
   "CMakeFiles/canconical_node_test.dir/tests/test_canoncial_node_set.cpp.obj.d"
   "canconical_node_test.exe"

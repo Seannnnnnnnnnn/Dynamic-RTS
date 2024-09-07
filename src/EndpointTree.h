@@ -19,6 +19,9 @@ public:
     std::vector<TreeNode*> findCanonicalNodeSet(const Query& query) const;
     int processElement(const StreamElement& element);
 
+protected:
+    TreeNode* getRoot() const;
+
 private:
     std::vector<int> endpoints;
     std::unique_ptr<TreeNode> root;
