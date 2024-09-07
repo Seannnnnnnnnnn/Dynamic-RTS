@@ -41,6 +41,14 @@ void DTAlgorithm::processElement(const StreamElement& streamElement) {
 
 
 void DTAlgorithm::manageCounterUpdate(TreeNode* treeNode) {
+    // new algorithm  - use heaps to avoid a linear scan over DT instances each time via the following: 
+    
+    // maintain a min-heap of dtInstances on each treeNode organised by key: dtInstance->getSlack() + treeNode->last_signal_counter
+    // instead of a linear scan do the following: 
+    // 1. Find the minimum key in the heap in O(1) time
+    // 2. if treeNode->counter < minimum key then we are done
+    // 3. otherwise: pop min, and perform the logic in our if statement. repeat from step 1.
+
 
     // Alg: for each DT instance which has treeNode in their participant set, update signal with new counter 
     for (auto& dtInstance : treeNode->dtInstances) {

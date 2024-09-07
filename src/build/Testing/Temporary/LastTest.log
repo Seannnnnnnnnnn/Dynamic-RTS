@@ -1,10 +1,10 @@
-Start testing: Sep 07 14:03 AEST
+Start testing: Sep 07 15:17 AEST
 ----------------------------------------------------------
 1/6 Testing: EndpointTreeTest.LeftEndpointIsMinimum
 1/6 Test: EndpointTreeTest.LeftEndpointIsMinimum
 Command: "/Users/sean/Dynamic-RTS/src/build/endpoint_tree_test" "--gtest_filter=EndpointTreeTest.LeftEndpointIsMinimum" "--gtest_also_run_disabled_tests"
 Directory: /Users/sean/Dynamic-RTS/src/build
-"EndpointTreeTest.LeftEndpointIsMinimum" start time: Sep 07 14:03 AEST
+"EndpointTreeTest.LeftEndpointIsMinimum" start time: Sep 07 15:17 AEST
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = EndpointTreeTest.LeftEndpointIsMinimum
@@ -22,7 +22,7 @@ Note: Google Test filter = EndpointTreeTest.LeftEndpointIsMinimum
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"EndpointTreeTest.LeftEndpointIsMinimum" end time: Sep 07 14:03 AEST
+"EndpointTreeTest.LeftEndpointIsMinimum" end time: Sep 07 15:17 AEST
 "EndpointTreeTest.LeftEndpointIsMinimum" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -30,7 +30,7 @@ Test Passed.
 2/6 Test: EndpointTreeTest.SetCorrectMaximumMinimum
 Command: "/Users/sean/Dynamic-RTS/src/build/endpoint_tree_test" "--gtest_filter=EndpointTreeTest.SetCorrectMaximumMinimum" "--gtest_also_run_disabled_tests"
 Directory: /Users/sean/Dynamic-RTS/src/build
-"EndpointTreeTest.SetCorrectMaximumMinimum" start time: Sep 07 14:03 AEST
+"EndpointTreeTest.SetCorrectMaximumMinimum" start time: Sep 07 15:17 AEST
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = EndpointTreeTest.SetCorrectMaximumMinimum
@@ -45,10 +45,10 @@ Note: Google Test filter = EndpointTreeTest.SetCorrectMaximumMinimum
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.01 sec
+Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"EndpointTreeTest.SetCorrectMaximumMinimum" end time: Sep 07 14:03 AEST
+"EndpointTreeTest.SetCorrectMaximumMinimum" end time: Sep 07 15:17 AEST
 "EndpointTreeTest.SetCorrectMaximumMinimum" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -56,7 +56,7 @@ Test Passed.
 3/6 Test: EndpointTreeTest.RightEndpointIsInfinity
 Command: "/Users/sean/Dynamic-RTS/src/build/endpoint_tree_test" "--gtest_filter=EndpointTreeTest.RightEndpointIsInfinity" "--gtest_also_run_disabled_tests"
 Directory: /Users/sean/Dynamic-RTS/src/build
-"EndpointTreeTest.RightEndpointIsInfinity" start time: Sep 07 14:03 AEST
+"EndpointTreeTest.RightEndpointIsInfinity" start time: Sep 07 15:17 AEST
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = EndpointTreeTest.RightEndpointIsInfinity
@@ -71,10 +71,10 @@ Note: Google Test filter = EndpointTreeTest.RightEndpointIsInfinity
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.01 sec
+Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"EndpointTreeTest.RightEndpointIsInfinity" end time: Sep 07 14:03 AEST
+"EndpointTreeTest.RightEndpointIsInfinity" end time: Sep 07 15:17 AEST
 "EndpointTreeTest.RightEndpointIsInfinity" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -82,7 +82,7 @@ Test Passed.
 4/6 Test: EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals
 Command: "/Users/sean/Dynamic-RTS/src/build/endpoint_tree_test" "--gtest_filter=EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals" "--gtest_also_run_disabled_tests"
 Directory: /Users/sean/Dynamic-RTS/src/build
-"EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals" start time: Sep 07 14:03 AEST
+"EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals" start time: Sep 07 15:17 AEST
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals
@@ -97,10 +97,10 @@ Note: Google Test filter = EndpointTreeTest.LeavesHaveCorrectJurisdictionInterva
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.00 sec
+Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals" end time: Sep 07 14:03 AEST
+"EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals" end time: Sep 07 15:17 AEST
 "EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -108,7 +108,7 @@ Test Passed.
 5/6 Test: EndpointTreeTest.HasCorrectCanonicalNodeSet
 Command: "/Users/sean/Dynamic-RTS/src/build/canconical_node_test" "--gtest_filter=EndpointTreeTest.HasCorrectCanonicalNodeSet" "--gtest_also_run_disabled_tests"
 Directory: /Users/sean/Dynamic-RTS/src/build
-"EndpointTreeTest.HasCorrectCanonicalNodeSet" start time: Sep 07 14:03 AEST
+"EndpointTreeTest.HasCorrectCanonicalNodeSet" start time: Sep 07 15:17 AEST
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = EndpointTreeTest.HasCorrectCanonicalNodeSet
@@ -126,7 +126,7 @@ Note: Google Test filter = EndpointTreeTest.HasCorrectCanonicalNodeSet
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"EndpointTreeTest.HasCorrectCanonicalNodeSet" end time: Sep 07 14:03 AEST
+"EndpointTreeTest.HasCorrectCanonicalNodeSet" end time: Sep 07 15:17 AEST
 "EndpointTreeTest.HasCorrectCanonicalNodeSet" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -134,7 +134,7 @@ Test Passed.
 6/6 Test: EndpointTreeTest.StabsCorrectNumberOfNodes
 Command: "/Users/sean/Dynamic-RTS/src/build/element_processing_test" "--gtest_filter=EndpointTreeTest.StabsCorrectNumberOfNodes" "--gtest_also_run_disabled_tests"
 Directory: /Users/sean/Dynamic-RTS/src/build
-"EndpointTreeTest.StabsCorrectNumberOfNodes" start time: Sep 07 14:03 AEST
+"EndpointTreeTest.StabsCorrectNumberOfNodes" start time: Sep 07 15:17 AEST
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = EndpointTreeTest.StabsCorrectNumberOfNodes
@@ -152,8 +152,8 @@ Note: Google Test filter = EndpointTreeTest.StabsCorrectNumberOfNodes
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"EndpointTreeTest.StabsCorrectNumberOfNodes" end time: Sep 07 14:03 AEST
+"EndpointTreeTest.StabsCorrectNumberOfNodes" end time: Sep 07 15:17 AEST
 "EndpointTreeTest.StabsCorrectNumberOfNodes" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Sep 07 14:03 AEST
+End testing: Sep 07 15:17 AEST
