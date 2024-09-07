@@ -2,6 +2,7 @@
 #include "Query.h"
 #include "EndpointTree.h"
 #include "StreamElement.h"
+#include "DTAlgorithm.h"
 
 int main() {
     // Define some example queries
@@ -16,26 +17,17 @@ int main() {
         Query(10, 12, 10),
     };
     
-    // Create an EndpointTree from the queries
-    EndpointTree tree(queries);
+    DTAlgorithm DT(queries);
     
-    // Define a query to test
-    Query testQuery(5, 15, 10);
+    StreamElement streamElement(2, 100);
     
-    // Get the canonical node set for the test query
-    std::vector<TreeNode*> canonicalNodes = tree.findCanonicalNodeSet(testQuery);
-    
-    // Output the results
-    std::cout << "Canonical nodes for query [5, 15):\n";
-    for (auto node : canonicalNodes) {
-        std::cout << "Node with endpoint: " << node->endpoint 
-                  << ", jurisdictionLeft: " << node->jurisdictionLeft 
-                  << ", jurisdictionRight: " << node->jurisdictionRight << "\n";
+    std::cout<<"processed a stream element"<<std::endl;
+
+    for (auto query : DT.getQuerySet()) {
+        if (not query.alive) {
+            std::cout<<"Matured query"<<std::endl;
+        }
     }
 
-    // build a stream element and pass it through the tree: 
-    StreamElement element(2, 10);
-    tree.processElement(element);
-    std::cout<<"processed a stream element";
     return 0;
 }

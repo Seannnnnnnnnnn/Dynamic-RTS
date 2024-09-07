@@ -7,7 +7,7 @@ TreeNode* EndpointTree::getRoot() const {
     return root.get();
 }
 
-EndpointTree::EndpointTree(const std::vector<Query>& queries) {
+EndpointTree::EndpointTree(std::vector<Query>& queries) {
     std::set<int> uniqueEndpoints;
     for (const auto& query : queries) {
         uniqueEndpoints.insert(query.l);
@@ -94,7 +94,7 @@ std::vector<TreeNode*> EndpointTree::findCanonicalNodeSet(const Query& query) co
 }
 
 int EndpointTree::processElement(const StreamElement& element){
-    // returns the number of nodes satbbed for unit testing
+    // returns the number of nodes stabbed for unit testing
     TreeNode* current = root.get();
     int value  = element.value;
     int weight = element.weight;

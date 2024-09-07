@@ -1,17 +1,17 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/canconical_node_test.dir/DistributedTracking.cpp.obj"
-  "CMakeFiles/canconical_node_test.dir/DistributedTracking.cpp.obj.d"
-  "CMakeFiles/canconical_node_test.dir/EndpointTree.cpp.obj"
-  "CMakeFiles/canconical_node_test.dir/EndpointTree.cpp.obj.d"
-  "CMakeFiles/canconical_node_test.dir/Query.cpp.obj"
-  "CMakeFiles/canconical_node_test.dir/Query.cpp.obj.d"
-  "CMakeFiles/canconical_node_test.dir/tests/test_canoncial_node_set.cpp.obj"
-  "CMakeFiles/canconical_node_test.dir/tests/test_canoncial_node_set.cpp.obj.d"
-  "canconical_node_test.exe"
-  "canconical_node_test.exe.manifest"
+  "CMakeFiles/canconical_node_test.dir/DTAlgorithm.cpp.o"
+  "CMakeFiles/canconical_node_test.dir/DTAlgorithm.cpp.o.d"
+  "CMakeFiles/canconical_node_test.dir/DistributedTracking.cpp.o"
+  "CMakeFiles/canconical_node_test.dir/DistributedTracking.cpp.o.d"
+  "CMakeFiles/canconical_node_test.dir/EndpointTree.cpp.o"
+  "CMakeFiles/canconical_node_test.dir/EndpointTree.cpp.o.d"
+  "CMakeFiles/canconical_node_test.dir/Query.cpp.o"
+  "CMakeFiles/canconical_node_test.dir/Query.cpp.o.d"
+  "CMakeFiles/canconical_node_test.dir/tests/test_canoncial_node_set.cpp.o"
+  "CMakeFiles/canconical_node_test.dir/tests/test_canoncial_node_set.cpp.o.d"
+  "canconical_node_test"
   "canconical_node_test.pdb"
   "canconical_node_test[1]_tests.cmake"
-  "libcanconical_node_test.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

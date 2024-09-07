@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.30)
+cmake_minimum_required(VERSION 3.20)
 
 project(drts)
 
@@ -11,7 +11,8 @@ add_executable(main
             TreeNode.h
             Query.cpp
             StreamElement.h
-            DistributedTracking.cpp)
+            DistributedTracking.cpp
+            DTAlgorithm.cpp)
 
 target_include_directories(main PUBLIC "${PROJECT_SOURCE_DIR}")
 
@@ -26,7 +27,8 @@ add_executable(endpoint_tree_test
             TreeNode.h
             Query.cpp
             StreamElement.h
-            DistributedTracking.cpp)
+            DistributedTracking.cpp
+            DTAlgorithm.cpp)
 
 add_executable(canconical_node_test 
             tests/test_canoncial_node_set.cpp
@@ -34,7 +36,8 @@ add_executable(canconical_node_test
             TreeNode.h
             Query.cpp
             StreamElement.h
-            DistributedTracking.cpp)
+            DistributedTracking.cpp
+            DTAlgorithm.cpp)
 
 add_executable(element_processing_test 
             tests/test_element_processing.cpp
@@ -42,7 +45,8 @@ add_executable(element_processing_test
             TreeNode.h
             Query.cpp
             StreamElement.h
-            DistributedTracking.cpp)
+            DistributedTracking.cpp
+            DTAlgorithm.cpp)
 
 target_link_libraries(endpoint_tree_test PRIVATE gtest)
 target_link_libraries(canconical_node_test PRIVATE gtest)

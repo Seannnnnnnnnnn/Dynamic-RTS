@@ -14,7 +14,7 @@ public:
     int minimum_endpoint; 
     int maximum_endpoint;
     
-    explicit EndpointTree(const std::vector<Query>& queries);
+    explicit EndpointTree(std::vector<Query>& queries);
     std::unique_ptr<TreeNode>& getRoot();
     std::vector<TreeNode*> findCanonicalNodeSet(const Query& query) const;
     int processElement(const StreamElement& element);

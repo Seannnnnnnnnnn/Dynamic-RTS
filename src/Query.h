@@ -6,7 +6,6 @@ struct Query {
     int tau;    // Threshold value
     int count;  // Running count of weights
     bool alive; // Status of the query
-    int dt_threshold;  // Distributed Tracking threshold
 
     Query(int l, int r, int tau);
 
@@ -18,5 +17,5 @@ struct Query {
 
     // methods for distributed tracking
     void updateThreshold(int weight);
-    int getThreshold() const { return dt_threshold; };
+    int getThreshold() const { return tau; };
 };

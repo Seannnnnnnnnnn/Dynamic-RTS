@@ -1,15 +1,19 @@
 #include "DTAlgorithm.h"
 
-DTAlgorithm::DTAlgorithm(const std::vector<Query>& queries)
-    : EndpointTree(queries) {
-    // also find canonical node set for each query and set associated dtInstances for each node
+DTAlgorithm::DTAlgorithm(std::vector<Query>& queries)
+    : EndpointTree(queries), querySet(queries) {
+    // builds the Endpoint Tree and DT instances for registered queries
     for (auto query : queries) {
         std::vector<TreeNode*> canonicalNodes = findCanonicalNodeSet(query);
-        DistributedTracking dtInstance(query, canonicalNodes);
-        dtInstances.push_back(dtInstance);
+        auto dtInstance = std::make_unique<DistributedTracking>(query, canonicalNodes);
         
+        // Store raw pointer in the vector
+        DistributedTracking* dtInstancePtr = dtInstance.get();
+        dtInstances.push_back(dtInstancePtr); 
+
         for (TreeNode* node : canonicalNodes) {
-            node->dtInstances.push_back(dtInstance);
+            node->dtInstances.push_back(dtInstancePtr);  // Store raw pointer to DT instance
+            node->dtSlacks.push_back(dtInstancePtr->getSlack());
         }
     }
 }
@@ -22,10 +26,9 @@ void DTAlgorithm::processElement(const StreamElement& streamElement) {
     int weight = streamElement.weight;
     
     if (value < minimum_endpoint || value > maximum_endpoint) { return; }  // don't process if it's not in the tree
-
     while (current->left && current->right) {
         current->incrementCounter(weight);
-        manageCounterUpdate(current, weight);  
+        manageCounterUpdate(current);  
         TreeNode* left = current->left.get();
         if (left->stabsJurisdictionInterval(value)){
             current = left;
@@ -37,15 +40,22 @@ void DTAlgorithm::processElement(const StreamElement& streamElement) {
 }
 
 
-void manageCounterUpdate(TreeNode* treeNode, int increment) {
-    // called upon counter updates - responsible for managing communication for DT
-    // TODO: update to use heaps
-    
+void DTAlgorithm::manageCounterUpdate(TreeNode* treeNode) {
+
     // Alg: for each DT instance which has treeNode in their participant set, update signal with new counter 
     for (auto& dtInstance : treeNode->dtInstances) {
-        if (dtInstance.isAlive()) {
-            dtInstance.processCounterIncrement(increment);  // TODO: finalise 
+        int slack = dtInstance->getSlack();
+        if (dtInstance->isAlive() && slack == 1 || (treeNode->counter - treeNode->last_signal_counter) >= slack) {
+            // processSignal will assign a new slack to the node, so remove the current slack associated with it's dt instance
+            auto newEnd = std::remove(treeNode->dtSlacks.begin(), treeNode->dtSlacks.end(), slack);
+            treeNode->dtSlacks.erase(newEnd, treeNode->dtSlacks.end());
+            dtInstance->processSignal();
         } 
     }
     return;
+}
+
+
+std::vector<Query>& DTAlgorithm::getQuerySet() {
+    return querySet;
 }
