@@ -29,7 +29,7 @@ int DistributedTracking::getSlack() const {
 void DistributedTracking::processSignal(){
     numSignalsReceived++;
     int h = participants.size();
-    // if we receive h messages, rebuild with new slack
+    // if we receive h messages, collect counters and rebuild with new slack
     if (numSignalsReceived % h == 0){
         // get counters from all participants 
         int total_counters = 0;
@@ -47,7 +47,7 @@ void DistributedTracking::processSignal(){
 
         // assign new slack to each participant
         for (auto participant : participants) {
-            participant->processNewSlack(new_slack);
+            participant->updateSlack(this, new_slack);
         }
     }
 }
@@ -57,15 +57,25 @@ void DistributedTracking::processMaturity() {
     coordinator.alive = false;
 
     for (auto participant : participants) {
-        // Remove the current slack associated with this DT instance.
-        auto newSlackEnd = std::remove(participant->dtSlacks.begin(), participant->dtSlacks.end(), getSlack());
-        participant->dtSlacks.erase(newSlackEnd, participant->dtSlacks.end());
+        // Remove the current slack associated with this DT instance from the participant's map.
+        auto it = participant->dtInstanceDataMap.find(this);
+        if (it != participant->dtInstanceDataMap.end()) {
+            // Remove slack value associated with this DT instance.
+            int slack = it->second.second;
+            auto slackIt = std::find_if(
+                participant->dtInstanceDataMap.begin(),
+                participant->dtInstanceDataMap.end(),
+                [slack](const auto& pair) { return pair.second.second == slack; });
 
-        // Directly use 'this' to remove the DT instance from the participant's dtInstances.
-        auto dtInstanceEnd = std::remove(participant->dtInstances.begin(), participant->dtInstances.end(), this);
+            if (slackIt != participant->dtInstanceDataMap.end()) {
+                participant->dtInstanceDataMap.erase(slackIt);
+            }
 
-        if (dtInstanceEnd != participant->dtInstances.end()) {
-            participant->dtInstances.erase(dtInstanceEnd, participant->dtInstances.end());
+            // Remove the DT instance from the map.
+            participant->dtInstanceDataMap.erase(it);
         }
+
+        // Rebuild the heap since the DT instance has been removed and slack values changed.
+        participant->initialiseHeap();
     }
 }

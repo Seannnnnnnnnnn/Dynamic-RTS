@@ -7,20 +7,21 @@
 int main() {
     // Define some example queries
     std::vector<Query> queries = {
-        Query(1, 11, 10),
-        Query(2, 16, 10),
-        Query(3, 13, 10),
-        Query(4, 9, 10),
-        Query(5, 15, 10),
-        Query(6, 8, 10),
-        Query(7, 14, 10),
-        Query(10, 12, 10),
+        Query(1, 11, 1),
+        Query(2, 16, 1),
+        Query(3, 13, 1),
+        Query(4, 9, 1),
+        Query(5, 15, 1),
+        Query(6, 8, 1),
+        Query(7, 14, 1),
+        Query(10, 12, 1),
     };
     
     DTAlgorithm DT(queries);
     
-    StreamElement streamElement(2, 100);
-    
+    StreamElement streamElement(1, 100);
+    DT.processElement(streamElement);
+
     std::cout<<"processed a stream element"<<std::endl;
 
     for (auto query : DT.getQuerySet()) {

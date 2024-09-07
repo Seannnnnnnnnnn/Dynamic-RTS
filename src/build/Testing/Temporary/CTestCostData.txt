@@ -1,10 +1,10 @@
 hello_test_NOT_BUILT 0 0
 HelloTest.BasicAssertions 1 0.0127394
-EndpointTreeTest.LeftEndpointIsMinimum 28 0.000187475
-EndpointTreeTest.RightEndpointIsInfinity 27 0.000177799
+EndpointTreeTest.LeftEndpointIsMinimum 29 0.000462907
+EndpointTreeTest.RightEndpointIsInfinity 28 0.000473711
 EndpointTreeTest.CorrectTreeStructure 2 0
-EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals 25 0.000258428
-EndpointTreeTest.HasCorrectCanonicalNodeSet 18 0.000279747
-EndpointTreeTest.SetCorrectMaximumMinimum 16 0.000279596
-EndpointTreeTest.StabsCorrectNumberOfNodes 13 0.000509741
+EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals 26 0.000474858
+EndpointTreeTest.HasCorrectCanonicalNodeSet 19 0.000766563
+EndpointTreeTest.SetCorrectMaximumMinimum 17 0.0007603
+EndpointTreeTest.StabsCorrectNumberOfNodes 14 0.000886221
 ---

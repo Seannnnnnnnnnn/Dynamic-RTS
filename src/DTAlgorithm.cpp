@@ -11,9 +11,9 @@ DTAlgorithm::DTAlgorithm(std::vector<Query>& queries)
         DistributedTracking* dtInstancePtr = dtInstance.get();
         dtInstances.push_back(dtInstancePtr); 
 
-        for (TreeNode* node : canonicalNodes) {
-            node->dtInstances.push_back(dtInstancePtr);
-            node->dtSlacks.push_back(dtInstancePtr->getSlack()); 
+         for (TreeNode* node : canonicalNodes) {
+            // initialise with last signal counter = 0
+            node->dtInstanceDataMap[dtInstancePtr] = {0, dtInstancePtr->getSlack()};
             node->initialiseHeap();
         }
     }
@@ -43,29 +43,26 @@ void DTAlgorithm::processElement(const StreamElement& streamElement) {
 
 
 void DTAlgorithm::manageCounterUpdate(TreeNode* treeNode) {
+    // TODO: may need to update the logic here
     while(!treeNode->dtHeap.empty()){
 
-        int minKey = treeNode->dtHeap.top().first;
+        auto [minimumKey, dtInstance] = treeNode->dtHeap.top();
+        
+        // Retrieve the specific last counter and slack for this DT instance
+        auto& instanceData = treeNode->dtInstanceDataMap[dtInstance];
 
-        if (treeNode->counter < minKey){
+        if (treeNode->counter < minimumKey){
             break;
         }
-        
-        auto minPair = treeNode->dtHeap.top();
-        treeNode->dtHeap.pop();
 
-        DistributedTracking* dtInstance = minPair.second;
-        int slack = dtInstance->getSlack();
-
-        auto newEnd = std::remove(treeNode->dtSlacks.begin(), treeNode->dtSlacks.end(), slack);
-        treeNode->dtSlacks.erase(newEnd, treeNode->dtSlacks.end());
+        treeNode->dtHeap.pop();  
         dtInstance->processSignal();
 
-        // After processing, push the updated slack value into the heap if still alive
-        if (dtInstance->isAlive()){
-            int newKey = dtInstance->getSlack() + treeNode->last_signal_counter;
-            treeNode->dtHeap.emplace(newKey, dtInstance);
-        }
+        // Update the new slack value after processing the signal
+        int newSlack = dtInstance->getSlack();
+        int newKey = newSlack + treeNode->counter;
+        treeNode->dtInstanceDataMap[dtInstance] = {treeNode->counter, newSlack};
+        treeNode->dtHeap.push({newKey, dtInstance});
     }
 }
 
