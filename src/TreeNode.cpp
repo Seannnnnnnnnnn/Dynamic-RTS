@@ -1,4 +1,5 @@
 #include "TreeNode.h"
+#include <iostream>
 
 void TreeNode::initializeDTInstanceData(DistributedTracking* dtInstance) {
     dtInstanceDataMap[dtInstance] = {0, 0};  // Initialize with default values

@@ -2,6 +2,8 @@ C:/Users/seanl/Dynamic-RTS/src/build/CMakeFiles/main.dir
 C:/Users/seanl/Dynamic-RTS/src/build/CMakeFiles/endpoint_tree_test.dir
 C:/Users/seanl/Dynamic-RTS/src/build/CMakeFiles/canconical_node_test.dir
 C:/Users/seanl/Dynamic-RTS/src/build/CMakeFiles/element_processing_test.dir
+C:/Users/seanl/Dynamic-RTS/src/build/CMakeFiles/distributed_tracking_test.dir
+C:/Users/seanl/Dynamic-RTS/src/build/CMakeFiles/DT_algorithm_test.dir
 C:/Users/seanl/Dynamic-RTS/src/build/CMakeFiles/test.dir
 C:/Users/seanl/Dynamic-RTS/src/build/CMakeFiles/edit_cache.dir
 C:/Users/seanl/Dynamic-RTS/src/build/CMakeFiles/rebuild_cache.dir

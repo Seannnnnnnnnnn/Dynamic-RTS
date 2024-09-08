@@ -1,4 +1,6 @@
+#include <iostream>
 #include "DTAlgorithm.h"
+
 
 DTAlgorithm::DTAlgorithm(std::vector<Query>& queries)
     : EndpointTree(queries), querySet(queries) {
@@ -28,8 +30,10 @@ void DTAlgorithm::processElement(const StreamElement& streamElement) {
     int weight = streamElement.weight;
     
     if (value < minimum_endpoint || value > maximum_endpoint) { return; }  // don't process if it's not in the tree
+
     while (current->left && current->right) {
-        current->incrementCounter(weight);
+        
+        current->counter+=weight;
         manageCounterUpdate(current);  
         TreeNode* left = current->left.get();
         if (left->stabsJurisdictionInterval(value)){
@@ -38,25 +42,27 @@ void DTAlgorithm::processElement(const StreamElement& streamElement) {
             current = current->right.get();
         }
     }
+
     return;
 }
 
 
 void DTAlgorithm::manageCounterUpdate(TreeNode* treeNode) {
-    // TODO: may need to update the logic here
+    
     while(!treeNode->dtHeap.empty()){
 
         auto [minimumKey, dtInstance] = treeNode->dtHeap.top();
         
-        // Retrieve the specific last counter and slack for this DT instance
-        auto& instanceData = treeNode->dtInstanceDataMap[dtInstance];
-
         if (treeNode->counter < minimumKey){
             break;
         }
 
+
+        // TODO: fix up this logic because it is broken! 
+        std::cout<<"processing!"<<std::endl;
+        
         treeNode->dtHeap.pop();  
-        dtInstance->processSignal();
+        dtInstance->processSignal();  // in particular - you! 
 
         // Update the new slack value after processing the signal
         int newSlack = dtInstance->getSlack();
@@ -64,9 +70,15 @@ void DTAlgorithm::manageCounterUpdate(TreeNode* treeNode) {
         treeNode->dtInstanceDataMap[dtInstance] = {treeNode->counter, newSlack};
         treeNode->dtHeap.push({newKey, dtInstance});
     }
+    return;
 }
 
 
 std::vector<Query>& DTAlgorithm::getQuerySet() {
     return querySet;
+}
+
+
+std::vector<DistributedTracking*> DTAlgorithm::getDTInstances() {
+    return dtInstances;
 }

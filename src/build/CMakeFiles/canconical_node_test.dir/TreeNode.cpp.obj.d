@@ -193,4 +193,7 @@ CMakeFiles/canconical_node_test.dir/TreeNode.cpp.obj: \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/ranges_algo.h \
  C:/msys64/ucrt64/include/c++/14.2.0/pstl/glue_algorithm_defs.h \
  C:\Users\seanl\Dynamic-RTS\src\Query.h \
- C:\Users\seanl\Dynamic-RTS\src\StreamElement.h
+ C:\Users\seanl\Dynamic-RTS\src\StreamElement.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/iostream \
+ C:/msys64/ucrt64/include/c++/14.2.0/istream \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/istream.tcc

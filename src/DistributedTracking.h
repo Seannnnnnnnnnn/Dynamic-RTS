@@ -13,6 +13,8 @@ public:
     void processSignal();  // called when receiving signal
     bool isAlive() const;  // flag for if the DistributedTracking instance is still alive
     int getSlack() const;
+    int getThreshold() const;
+    std::vector<TreeNode*> getParticipants();
 
 private:
     Query& coordinator;

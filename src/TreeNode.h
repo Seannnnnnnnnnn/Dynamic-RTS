@@ -37,7 +37,7 @@ struct TreeNode {
         left(nullptr), right(nullptr), counter(0) {}
 
     int getCounter() { return counter; }
-    inline bool stabsJurisdictionInterval(int value) { return jurisdictionLeft <= value <= jurisdictionRight; }
+    inline bool stabsJurisdictionInterval(int value) { return jurisdictionLeft <= value < jurisdictionRight; }
     inline void incrementCounter(int weight) { counter += weight; }
 
     // Distributed Tracking methods and attributes

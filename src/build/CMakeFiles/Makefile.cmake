@@ -77,6 +77,8 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/endpoint_tree_test.dir/DependInfo.cmake"
   "CMakeFiles/canconical_node_test.dir/DependInfo.cmake"
   "CMakeFiles/element_processing_test.dir/DependInfo.cmake"
+  "CMakeFiles/distributed_tracking_test.dir/DependInfo.cmake"
+  "CMakeFiles/DT_algorithm_test.dir/DependInfo.cmake"
   "googletest/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake"
   "googletest/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake"
   "googletest/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"

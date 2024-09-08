@@ -3,7 +3,11 @@
 
 DistributedTracking::DistributedTracking(Query& coordinator, std::vector<TreeNode*>& participants)
     : coordinator(coordinator), participants(participants), threshold(coordinator.getThreshold()), 
-      numSignalsReceived(0) {}
+      numSignalsReceived(0) 
+      { 
+        calculateSlack();
+      }
+
 
 int DistributedTracking::calculateSlack() {
     int h = participants.size();
@@ -13,6 +17,11 @@ int DistributedTracking::calculateSlack() {
         slack = threshold / (2 * h);
     }
     return slack;
+}
+
+
+std::vector<TreeNode*> DistributedTracking::getParticipants(){
+    return participants;
 }
 
 
@@ -26,7 +35,13 @@ int DistributedTracking::getSlack() const {
 }
 
 
+int DistributedTracking::getThreshold() const {
+    return threshold;
+}
+
+
 void DistributedTracking::processSignal(){
+    // TODO: update this to fit with the new slack messaging! 
     numSignalsReceived++;
     int h = participants.size();
     // if we receive h messages, collect counters and rebuild with new slack
@@ -50,6 +65,7 @@ void DistributedTracking::processSignal(){
             participant->updateSlack(this, new_slack);
         }
     }
+    return;
 }
 
 void DistributedTracking::processMaturity() {
@@ -78,4 +94,5 @@ void DistributedTracking::processMaturity() {
         // Rebuild the heap since the DT instance has been removed and slack values changed.
         participant->initialiseHeap();
     }
+    return;
 }

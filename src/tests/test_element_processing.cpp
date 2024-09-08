@@ -33,6 +33,19 @@ TEST(EndpointTreeTest, StabsCorrectNumberOfNodes) {
 
 }
 
+
+TEST(EndpointTreeTest, StabsCorrectNumberOfNodesSmallTree) {
+    std::vector<Query> queries = {
+        Query(1, 11, 10),
+    };
+    EndpointTree tree(queries);
+
+    // elements within tree
+    StreamElement element(1, 1);
+    ASSERT_EQ(2, tree.processElement(element));
+}
+
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

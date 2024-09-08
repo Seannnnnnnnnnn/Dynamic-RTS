@@ -1,10 +1,10 @@
-Start testing: Sep 07 19:19 AUS Eastern Standard Time
+Start testing: Sep 08 13:48 AUS Eastern Standard Time
 ----------------------------------------------------------
-1/6 Testing: EndpointTreeTest.LeftEndpointIsMinimum
-1/6 Test: EndpointTreeTest.LeftEndpointIsMinimum
+1/15 Testing: EndpointTreeTest.LeftEndpointIsMinimum
+1/15 Test: EndpointTreeTest.LeftEndpointIsMinimum
 Command: "C:/Users/seanl/Dynamic-RTS/src/build/endpoint_tree_test.exe" "--gtest_filter=EndpointTreeTest.LeftEndpointIsMinimum" "--gtest_also_run_disabled_tests"
 Directory: C:/Users/seanl/Dynamic-RTS/src/build
-"EndpointTreeTest.LeftEndpointIsMinimum" start time: Sep 07 19:19 AUS Eastern Standard Time
+"EndpointTreeTest.LeftEndpointIsMinimum" start time: Sep 08 13:48 AUS Eastern Standard Time
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = EndpointTreeTest.LeftEndpointIsMinimum
@@ -19,18 +19,18 @@ Note: Google Test filter = EndpointTreeTest.LeftEndpointIsMinimum
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.01 sec
+Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"EndpointTreeTest.LeftEndpointIsMinimum" end time: Sep 07 19:19 AUS Eastern Standard Time
+"EndpointTreeTest.LeftEndpointIsMinimum" end time: Sep 08 13:48 AUS Eastern Standard Time
 "EndpointTreeTest.LeftEndpointIsMinimum" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-2/6 Testing: EndpointTreeTest.SetCorrectMaximumMinimum
-2/6 Test: EndpointTreeTest.SetCorrectMaximumMinimum
+2/15 Testing: EndpointTreeTest.SetCorrectMaximumMinimum
+2/15 Test: EndpointTreeTest.SetCorrectMaximumMinimum
 Command: "C:/Users/seanl/Dynamic-RTS/src/build/endpoint_tree_test.exe" "--gtest_filter=EndpointTreeTest.SetCorrectMaximumMinimum" "--gtest_also_run_disabled_tests"
 Directory: C:/Users/seanl/Dynamic-RTS/src/build
-"EndpointTreeTest.SetCorrectMaximumMinimum" start time: Sep 07 19:19 AUS Eastern Standard Time
+"EndpointTreeTest.SetCorrectMaximumMinimum" start time: Sep 08 13:48 AUS Eastern Standard Time
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = EndpointTreeTest.SetCorrectMaximumMinimum
@@ -48,15 +48,15 @@ Note: Google Test filter = EndpointTreeTest.SetCorrectMaximumMinimum
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"EndpointTreeTest.SetCorrectMaximumMinimum" end time: Sep 07 19:19 AUS Eastern Standard Time
+"EndpointTreeTest.SetCorrectMaximumMinimum" end time: Sep 08 13:48 AUS Eastern Standard Time
 "EndpointTreeTest.SetCorrectMaximumMinimum" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-3/6 Testing: EndpointTreeTest.RightEndpointIsInfinity
-3/6 Test: EndpointTreeTest.RightEndpointIsInfinity
+3/15 Testing: EndpointTreeTest.RightEndpointIsInfinity
+3/15 Test: EndpointTreeTest.RightEndpointIsInfinity
 Command: "C:/Users/seanl/Dynamic-RTS/src/build/endpoint_tree_test.exe" "--gtest_filter=EndpointTreeTest.RightEndpointIsInfinity" "--gtest_also_run_disabled_tests"
 Directory: C:/Users/seanl/Dynamic-RTS/src/build
-"EndpointTreeTest.RightEndpointIsInfinity" start time: Sep 07 19:19 AUS Eastern Standard Time
+"EndpointTreeTest.RightEndpointIsInfinity" start time: Sep 08 13:48 AUS Eastern Standard Time
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = EndpointTreeTest.RightEndpointIsInfinity
@@ -74,15 +74,15 @@ Note: Google Test filter = EndpointTreeTest.RightEndpointIsInfinity
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"EndpointTreeTest.RightEndpointIsInfinity" end time: Sep 07 19:19 AUS Eastern Standard Time
+"EndpointTreeTest.RightEndpointIsInfinity" end time: Sep 08 13:48 AUS Eastern Standard Time
 "EndpointTreeTest.RightEndpointIsInfinity" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-4/6 Testing: EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals
-4/6 Test: EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals
+4/15 Testing: EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals
+4/15 Test: EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals
 Command: "C:/Users/seanl/Dynamic-RTS/src/build/endpoint_tree_test.exe" "--gtest_filter=EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals" "--gtest_also_run_disabled_tests"
 Directory: C:/Users/seanl/Dynamic-RTS/src/build
-"EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals" start time: Sep 07 19:19 AUS Eastern Standard Time
+"EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals" start time: Sep 08 13:48 AUS Eastern Standard Time
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals
@@ -100,15 +100,15 @@ Note: Google Test filter = EndpointTreeTest.LeavesHaveCorrectJurisdictionInterva
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals" end time: Sep 07 19:19 AUS Eastern Standard Time
+"EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals" end time: Sep 08 13:48 AUS Eastern Standard Time
 "EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-5/6 Testing: EndpointTreeTest.HasCorrectCanonicalNodeSet
-5/6 Test: EndpointTreeTest.HasCorrectCanonicalNodeSet
+5/15 Testing: EndpointTreeTest.HasCorrectCanonicalNodeSet
+5/15 Test: EndpointTreeTest.HasCorrectCanonicalNodeSet
 Command: "C:/Users/seanl/Dynamic-RTS/src/build/canconical_node_test.exe" "--gtest_filter=EndpointTreeTest.HasCorrectCanonicalNodeSet" "--gtest_also_run_disabled_tests"
 Directory: C:/Users/seanl/Dynamic-RTS/src/build
-"EndpointTreeTest.HasCorrectCanonicalNodeSet" start time: Sep 07 19:19 AUS Eastern Standard Time
+"EndpointTreeTest.HasCorrectCanonicalNodeSet" start time: Sep 08 13:48 AUS Eastern Standard Time
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = EndpointTreeTest.HasCorrectCanonicalNodeSet
@@ -126,15 +126,15 @@ Note: Google Test filter = EndpointTreeTest.HasCorrectCanonicalNodeSet
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"EndpointTreeTest.HasCorrectCanonicalNodeSet" end time: Sep 07 19:19 AUS Eastern Standard Time
+"EndpointTreeTest.HasCorrectCanonicalNodeSet" end time: Sep 08 13:48 AUS Eastern Standard Time
 "EndpointTreeTest.HasCorrectCanonicalNodeSet" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-6/6 Testing: EndpointTreeTest.StabsCorrectNumberOfNodes
-6/6 Test: EndpointTreeTest.StabsCorrectNumberOfNodes
+6/15 Testing: EndpointTreeTest.StabsCorrectNumberOfNodes
+6/15 Test: EndpointTreeTest.StabsCorrectNumberOfNodes
 Command: "C:/Users/seanl/Dynamic-RTS/src/build/element_processing_test.exe" "--gtest_filter=EndpointTreeTest.StabsCorrectNumberOfNodes" "--gtest_also_run_disabled_tests"
 Directory: C:/Users/seanl/Dynamic-RTS/src/build
-"EndpointTreeTest.StabsCorrectNumberOfNodes" start time: Sep 07 19:19 AUS Eastern Standard Time
+"EndpointTreeTest.StabsCorrectNumberOfNodes" start time: Sep 08 13:48 AUS Eastern Standard Time
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = EndpointTreeTest.StabsCorrectNumberOfNodes
@@ -152,8 +152,472 @@ Note: Google Test filter = EndpointTreeTest.StabsCorrectNumberOfNodes
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"EndpointTreeTest.StabsCorrectNumberOfNodes" end time: Sep 07 19:19 AUS Eastern Standard Time
+"EndpointTreeTest.StabsCorrectNumberOfNodes" end time: Sep 08 13:48 AUS Eastern Standard Time
 "EndpointTreeTest.StabsCorrectNumberOfNodes" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Sep 07 19:19 AUS Eastern Standard Time
+7/15 Testing: EndpointTreeTest.StabsCorrectNumberOfNodesSmallTree
+7/15 Test: EndpointTreeTest.StabsCorrectNumberOfNodesSmallTree
+Command: "C:/Users/seanl/Dynamic-RTS/src/build/element_processing_test.exe" "--gtest_filter=EndpointTreeTest.StabsCorrectNumberOfNodesSmallTree" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/seanl/Dynamic-RTS/src/build
+"EndpointTreeTest.StabsCorrectNumberOfNodesSmallTree" start time: Sep 08 13:48 AUS Eastern Standard Time
+Output:
+----------------------------------------------------------
+Note: Google Test filter = EndpointTreeTest.StabsCorrectNumberOfNodesSmallTree
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EndpointTreeTest
+[ RUN      ] EndpointTreeTest.StabsCorrectNumberOfNodesSmallTree
+[       OK ] EndpointTreeTest.StabsCorrectNumberOfNodesSmallTree (0 ms)
+[----------] 1 test from EndpointTreeTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"EndpointTreeTest.StabsCorrectNumberOfNodesSmallTree" end time: Sep 08 13:48 AUS Eastern Standard Time
+"EndpointTreeTest.StabsCorrectNumberOfNodesSmallTree" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/15 Testing: DistributedTrackingTest.BuildsCorrectly
+8/15 Test: DistributedTrackingTest.BuildsCorrectly
+Command: "C:/Users/seanl/Dynamic-RTS/src/build/distributed_tracking_test.exe" "--gtest_filter=DistributedTrackingTest.BuildsCorrectly" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/seanl/Dynamic-RTS/src/build
+"DistributedTrackingTest.BuildsCorrectly" start time: Sep 08 13:48 AUS Eastern Standard Time
+Output:
+----------------------------------------------------------
+Note: Google Test filter = DistributedTrackingTest.BuildsCorrectly
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from DistributedTrackingTest
+[ RUN      ] DistributedTrackingTest.BuildsCorrectly
+[       OK ] DistributedTrackingTest.BuildsCorrectly (0 ms)
+[----------] 1 test from DistributedTrackingTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"DistributedTrackingTest.BuildsCorrectly" end time: Sep 08 13:48 AUS Eastern Standard Time
+"DistributedTrackingTest.BuildsCorrectly" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/15 Testing: DistributedTrackingTest.CreatesCorrectSlackWhenSmall
+9/15 Test: DistributedTrackingTest.CreatesCorrectSlackWhenSmall
+Command: "C:/Users/seanl/Dynamic-RTS/src/build/distributed_tracking_test.exe" "--gtest_filter=DistributedTrackingTest.CreatesCorrectSlackWhenSmall" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/seanl/Dynamic-RTS/src/build
+"DistributedTrackingTest.CreatesCorrectSlackWhenSmall" start time: Sep 08 13:48 AUS Eastern Standard Time
+Output:
+----------------------------------------------------------
+Note: Google Test filter = DistributedTrackingTest.CreatesCorrectSlackWhenSmall
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from DistributedTrackingTest
+[ RUN      ] DistributedTrackingTest.CreatesCorrectSlackWhenSmall
+[       OK ] DistributedTrackingTest.CreatesCorrectSlackWhenSmall (0 ms)
+[----------] 1 test from DistributedTrackingTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"DistributedTrackingTest.CreatesCorrectSlackWhenSmall" end time: Sep 08 13:48 AUS Eastern Standard Time
+"DistributedTrackingTest.CreatesCorrectSlackWhenSmall" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/15 Testing: DistributedTrackingTest.CreatesCorrectSlackWhenBig
+10/15 Test: DistributedTrackingTest.CreatesCorrectSlackWhenBig
+Command: "C:/Users/seanl/Dynamic-RTS/src/build/distributed_tracking_test.exe" "--gtest_filter=DistributedTrackingTest.CreatesCorrectSlackWhenBig" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/seanl/Dynamic-RTS/src/build
+"DistributedTrackingTest.CreatesCorrectSlackWhenBig" start time: Sep 08 13:48 AUS Eastern Standard Time
+Output:
+----------------------------------------------------------
+Note: Google Test filter = DistributedTrackingTest.CreatesCorrectSlackWhenBig
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from DistributedTrackingTest
+[ RUN      ] DistributedTrackingTest.CreatesCorrectSlackWhenBig
+[       OK ] DistributedTrackingTest.CreatesCorrectSlackWhenBig (0 ms)
+[----------] 1 test from DistributedTrackingTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"DistributedTrackingTest.CreatesCorrectSlackWhenBig" end time: Sep 08 13:48 AUS Eastern Standard Time
+"DistributedTrackingTest.CreatesCorrectSlackWhenBig" time elapsed: 00:00:00
+----------------------------------------------------------
+
+11/15 Testing: DTAlgorithmTest.BuildsDTInstances
+11/15 Test: DTAlgorithmTest.BuildsDTInstances
+Command: "C:/Users/seanl/Dynamic-RTS/src/build/DT_algorithm_test.exe" "--gtest_filter=DTAlgorithmTest.BuildsDTInstances" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/seanl/Dynamic-RTS/src/build
+"DTAlgorithmTest.BuildsDTInstances" start time: Sep 08 13:48 AUS Eastern Standard Time
+Output:
+----------------------------------------------------------
+Note: Google Test filter = DTAlgorithmTest.BuildsDTInstances
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from DTAlgorithmTest
+[ RUN      ] DTAlgorithmTest.BuildsDTInstances
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+Created dtInstance on  :6participants
+Initialisig with Slack :1
+Created dtInstance on  :6participants
+Initialisig with Slack :1
+Created dtInstance on  :6participants
+Initialisig with Slack :1
+Created dtInstance on  :6participants
+Initialisig with Slack :1
+Created dtInstance on  :6participants
+Initialisig with Slack :1
+Created dtInstance on  :6participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+[       OK ] DTAlgorithmTest.BuildsDTInstances (0 ms)
+[----------] 1 test from DTAlgorithmTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"DTAlgorithmTest.BuildsDTInstances" end time: Sep 08 13:48 AUS Eastern Standard Time
+"DTAlgorithmTest.BuildsDTInstances" time elapsed: 00:00:00
+----------------------------------------------------------
+
+12/15 Testing: DTAlgorithmTest.BuildsDTInstancesInNodes
+12/15 Test: DTAlgorithmTest.BuildsDTInstancesInNodes
+Command: "C:/Users/seanl/Dynamic-RTS/src/build/DT_algorithm_test.exe" "--gtest_filter=DTAlgorithmTest.BuildsDTInstancesInNodes" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/seanl/Dynamic-RTS/src/build
+"DTAlgorithmTest.BuildsDTInstancesInNodes" start time: Sep 08 13:48 AUS Eastern Standard Time
+Output:
+----------------------------------------------------------
+Note: Google Test filter = DTAlgorithmTest.BuildsDTInstancesInNodes
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from DTAlgorithmTest
+[ RUN      ] DTAlgorithmTest.BuildsDTInstancesInNodes
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+Created dtInstance on  :6participants
+Initialisig with Slack :1
+Created dtInstance on  :6participants
+Initialisig with Slack :1
+Created dtInstance on  :6participants
+Initialisig with Slack :1
+Created dtInstance on  :6participants
+Initialisig with Slack :1
+Created dtInstance on  :6participants
+Initialisig with Slack :1
+Created dtInstance on  :6participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+[       OK ] DTAlgorithmTest.BuildsDTInstancesInNodes (0 ms)
+[----------] 1 test from DTAlgorithmTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"DTAlgorithmTest.BuildsDTInstancesInNodes" end time: Sep 08 13:48 AUS Eastern Standard Time
+"DTAlgorithmTest.BuildsDTInstancesInNodes" time elapsed: 00:00:00
+----------------------------------------------------------
+
+13/15 Testing: DTAlgorithmTest.NodesAreCorrectlyInitialized
+13/15 Test: DTAlgorithmTest.NodesAreCorrectlyInitialized
+Command: "C:/Users/seanl/Dynamic-RTS/src/build/DT_algorithm_test.exe" "--gtest_filter=DTAlgorithmTest.NodesAreCorrectlyInitialized" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/seanl/Dynamic-RTS/src/build
+"DTAlgorithmTest.NodesAreCorrectlyInitialized" start time: Sep 08 13:48 AUS Eastern Standard Time
+Output:
+----------------------------------------------------------
+Note: Google Test filter = DTAlgorithmTest.NodesAreCorrectlyInitialized
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from DTAlgorithmTest
+[ RUN      ] DTAlgorithmTest.NodesAreCorrectlyInitialized
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+Created dtInstance on  :6participants
+Initialisig with Slack :1
+Created dtInstance on  :6participants
+Initialisig with Slack :1
+Created dtInstance on  :6participants
+Initialisig with Slack :1
+Created dtInstance on  :6participants
+Initialisig with Slack :1
+Created dtInstance on  :6participants
+Initialisig with Slack :1
+Created dtInstance on  :6participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+[       OK ] DTAlgorithmTest.NodesAreCorrectlyInitialized (0 ms)
+[----------] 1 test from DTAlgorithmTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"DTAlgorithmTest.NodesAreCorrectlyInitialized" end time: Sep 08 13:48 AUS Eastern Standard Time
+"DTAlgorithmTest.NodesAreCorrectlyInitialized" time elapsed: 00:00:00
+----------------------------------------------------------
+
+14/15 Testing: DTAlgorithmTest.HeapsAreCorrectlyInitialized
+14/15 Test: DTAlgorithmTest.HeapsAreCorrectlyInitialized
+Command: "C:/Users/seanl/Dynamic-RTS/src/build/DT_algorithm_test.exe" "--gtest_filter=DTAlgorithmTest.HeapsAreCorrectlyInitialized" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/seanl/Dynamic-RTS/src/build
+"DTAlgorithmTest.HeapsAreCorrectlyInitialized" start time: Sep 08 13:48 AUS Eastern Standard Time
+Output:
+----------------------------------------------------------
+Note: Google Test filter = DTAlgorithmTest.HeapsAreCorrectlyInitialized
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from DTAlgorithmTest
+[ RUN      ] DTAlgorithmTest.HeapsAreCorrectlyInitialized
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+Created dtInstance on  :6participants
+Initialisig with Slack :1
+Created dtInstance on  :6participants
+Initialisig with Slack :1
+Created dtInstance on  :6participants
+Initialisig with Slack :1
+Created dtInstance on  :6participants
+Initialisig with Slack :1
+Created dtInstance on  :6participants
+Initialisig with Slack :1
+Created dtInstance on  :6participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+[       OK ] DTAlgorithmTest.HeapsAreCorrectlyInitialized (0 ms)
+[----------] 1 test from DTAlgorithmTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"DTAlgorithmTest.HeapsAreCorrectlyInitialized" end time: Sep 08 13:48 AUS Eastern Standard Time
+"DTAlgorithmTest.HeapsAreCorrectlyInitialized" time elapsed: 00:00:00
+----------------------------------------------------------
+
+15/15 Testing: DTAlgorithmTest.BuildsCorrectNumberOfNodes
+15/15 Test: DTAlgorithmTest.BuildsCorrectNumberOfNodes
+Command: "C:/Users/seanl/Dynamic-RTS/src/build/DT_algorithm_test.exe" "--gtest_filter=DTAlgorithmTest.BuildsCorrectNumberOfNodes" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/seanl/Dynamic-RTS/src/build
+"DTAlgorithmTest.BuildsCorrectNumberOfNodes" start time: Sep 08 13:48 AUS Eastern Standard Time
+Output:
+----------------------------------------------------------
+Note: Google Test filter = DTAlgorithmTest.BuildsCorrectNumberOfNodes
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from DTAlgorithmTest
+[ RUN      ] DTAlgorithmTest.BuildsCorrectNumberOfNodes
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+Created dtInstance on  :6participants
+Initialisig with Slack :1
+Created dtInstance on  :6participants
+Initialisig with Slack :1
+Created dtInstance on  :6participants
+Initialisig with Slack :1
+Created dtInstance on  :6participants
+Initialisig with Slack :1
+Created dtInstance on  :6participants
+Initialisig with Slack :1
+Created dtInstance on  :6participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :3participants
+Initialisig with Slack :1
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+Created dtInstance on  :2participants
+Initialisig with Slack :1
+[       OK ] DTAlgorithmTest.BuildsCorrectNumberOfNodes (0 ms)
+[----------] 1 test from DTAlgorithmTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"DTAlgorithmTest.BuildsCorrectNumberOfNodes" end time: Sep 08 13:48 AUS Eastern Standard Time
+"DTAlgorithmTest.BuildsCorrectNumberOfNodes" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Sep 08 13:48 AUS Eastern Standard Time

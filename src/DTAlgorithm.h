@@ -8,10 +8,13 @@ public:
     DTAlgorithm(std::vector<Query>& queries);
     void processElement(const StreamElement& element);
     std::vector<Query>& getQuerySet();
+    std::vector<DistributedTracking*> getDTInstances();
+
+protected:
+    std::vector<DistributedTracking*> dtInstances;
+    std::vector<Query>& querySet;
 
 private:
-    std::vector<Query>& querySet;
-    std::vector<DistributedTracking*> dtInstances;
     void manageCounterUpdate(TreeNode* node);
 };
 

@@ -223,6 +223,32 @@ element_processing_test/fast:
 .PHONY : element_processing_test/fast
 
 #=============================================================================
+# Target rules for targets named distributed_tracking_test
+
+# Build rule for target.
+distributed_tracking_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 distributed_tracking_test
+.PHONY : distributed_tracking_test
+
+# fast build rule for target.
+distributed_tracking_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\distributed_tracking_test.dir\build.make CMakeFiles/distributed_tracking_test.dir/build
+.PHONY : distributed_tracking_test/fast
+
+#=============================================================================
+# Target rules for targets named DT_algorithm_test
+
+# Build rule for target.
+DT_algorithm_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 DT_algorithm_test
+.PHONY : DT_algorithm_test
+
+# fast build rule for target.
+DT_algorithm_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DT_algorithm_test.dir\build.make CMakeFiles/DT_algorithm_test.dir/build
+.PHONY : DT_algorithm_test/fast
+
+#=============================================================================
 # Target rules for targets named gmock
 
 # Build rule for target.
@@ -283,6 +309,7 @@ DTAlgorithm.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/DTAlgorithm.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/DTAlgorithm.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\element_processing_test.dir\build.make CMakeFiles/element_processing_test.dir/DTAlgorithm.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DT_algorithm_test.dir\build.make CMakeFiles/DT_algorithm_test.dir/DTAlgorithm.cpp.obj
 .PHONY : DTAlgorithm.cpp.obj
 
 DTAlgorithm.i: DTAlgorithm.cpp.i
@@ -294,6 +321,7 @@ DTAlgorithm.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/DTAlgorithm.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/DTAlgorithm.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\element_processing_test.dir\build.make CMakeFiles/element_processing_test.dir/DTAlgorithm.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DT_algorithm_test.dir\build.make CMakeFiles/DT_algorithm_test.dir/DTAlgorithm.cpp.i
 .PHONY : DTAlgorithm.cpp.i
 
 DTAlgorithm.s: DTAlgorithm.cpp.s
@@ -305,6 +333,7 @@ DTAlgorithm.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/DTAlgorithm.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/DTAlgorithm.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\element_processing_test.dir\build.make CMakeFiles/element_processing_test.dir/DTAlgorithm.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DT_algorithm_test.dir\build.make CMakeFiles/DT_algorithm_test.dir/DTAlgorithm.cpp.s
 .PHONY : DTAlgorithm.cpp.s
 
 DistributedTracking.obj: DistributedTracking.cpp.obj
@@ -316,6 +345,8 @@ DistributedTracking.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/DistributedTracking.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/DistributedTracking.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\element_processing_test.dir\build.make CMakeFiles/element_processing_test.dir/DistributedTracking.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\distributed_tracking_test.dir\build.make CMakeFiles/distributed_tracking_test.dir/DistributedTracking.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DT_algorithm_test.dir\build.make CMakeFiles/DT_algorithm_test.dir/DistributedTracking.cpp.obj
 .PHONY : DistributedTracking.cpp.obj
 
 DistributedTracking.i: DistributedTracking.cpp.i
@@ -327,6 +358,8 @@ DistributedTracking.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/DistributedTracking.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/DistributedTracking.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\element_processing_test.dir\build.make CMakeFiles/element_processing_test.dir/DistributedTracking.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\distributed_tracking_test.dir\build.make CMakeFiles/distributed_tracking_test.dir/DistributedTracking.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DT_algorithm_test.dir\build.make CMakeFiles/DT_algorithm_test.dir/DistributedTracking.cpp.i
 .PHONY : DistributedTracking.cpp.i
 
 DistributedTracking.s: DistributedTracking.cpp.s
@@ -338,6 +371,8 @@ DistributedTracking.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/DistributedTracking.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/DistributedTracking.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\element_processing_test.dir\build.make CMakeFiles/element_processing_test.dir/DistributedTracking.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\distributed_tracking_test.dir\build.make CMakeFiles/distributed_tracking_test.dir/DistributedTracking.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DT_algorithm_test.dir\build.make CMakeFiles/DT_algorithm_test.dir/DistributedTracking.cpp.s
 .PHONY : DistributedTracking.cpp.s
 
 EndpointTree.obj: EndpointTree.cpp.obj
@@ -349,6 +384,7 @@ EndpointTree.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/EndpointTree.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/EndpointTree.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\element_processing_test.dir\build.make CMakeFiles/element_processing_test.dir/EndpointTree.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DT_algorithm_test.dir\build.make CMakeFiles/DT_algorithm_test.dir/EndpointTree.cpp.obj
 .PHONY : EndpointTree.cpp.obj
 
 EndpointTree.i: EndpointTree.cpp.i
@@ -360,6 +396,7 @@ EndpointTree.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/EndpointTree.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/EndpointTree.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\element_processing_test.dir\build.make CMakeFiles/element_processing_test.dir/EndpointTree.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DT_algorithm_test.dir\build.make CMakeFiles/DT_algorithm_test.dir/EndpointTree.cpp.i
 .PHONY : EndpointTree.cpp.i
 
 EndpointTree.s: EndpointTree.cpp.s
@@ -371,6 +408,7 @@ EndpointTree.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/EndpointTree.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/EndpointTree.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\element_processing_test.dir\build.make CMakeFiles/element_processing_test.dir/EndpointTree.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DT_algorithm_test.dir\build.make CMakeFiles/DT_algorithm_test.dir/EndpointTree.cpp.s
 .PHONY : EndpointTree.cpp.s
 
 Query.obj: Query.cpp.obj
@@ -382,6 +420,8 @@ Query.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/Query.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/Query.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\element_processing_test.dir\build.make CMakeFiles/element_processing_test.dir/Query.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\distributed_tracking_test.dir\build.make CMakeFiles/distributed_tracking_test.dir/Query.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DT_algorithm_test.dir\build.make CMakeFiles/DT_algorithm_test.dir/Query.cpp.obj
 .PHONY : Query.cpp.obj
 
 Query.i: Query.cpp.i
@@ -393,6 +433,8 @@ Query.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/Query.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/Query.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\element_processing_test.dir\build.make CMakeFiles/element_processing_test.dir/Query.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\distributed_tracking_test.dir\build.make CMakeFiles/distributed_tracking_test.dir/Query.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DT_algorithm_test.dir\build.make CMakeFiles/DT_algorithm_test.dir/Query.cpp.i
 .PHONY : Query.cpp.i
 
 Query.s: Query.cpp.s
@@ -404,6 +446,8 @@ Query.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/Query.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/Query.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\element_processing_test.dir\build.make CMakeFiles/element_processing_test.dir/Query.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\distributed_tracking_test.dir\build.make CMakeFiles/distributed_tracking_test.dir/Query.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DT_algorithm_test.dir\build.make CMakeFiles/DT_algorithm_test.dir/Query.cpp.s
 .PHONY : Query.cpp.s
 
 TreeNode.obj: TreeNode.cpp.obj
@@ -415,6 +459,8 @@ TreeNode.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/TreeNode.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/TreeNode.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\element_processing_test.dir\build.make CMakeFiles/element_processing_test.dir/TreeNode.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\distributed_tracking_test.dir\build.make CMakeFiles/distributed_tracking_test.dir/TreeNode.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DT_algorithm_test.dir\build.make CMakeFiles/DT_algorithm_test.dir/TreeNode.cpp.obj
 .PHONY : TreeNode.cpp.obj
 
 TreeNode.i: TreeNode.cpp.i
@@ -426,6 +472,8 @@ TreeNode.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/TreeNode.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/TreeNode.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\element_processing_test.dir\build.make CMakeFiles/element_processing_test.dir/TreeNode.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\distributed_tracking_test.dir\build.make CMakeFiles/distributed_tracking_test.dir/TreeNode.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DT_algorithm_test.dir\build.make CMakeFiles/DT_algorithm_test.dir/TreeNode.cpp.i
 .PHONY : TreeNode.cpp.i
 
 TreeNode.s: TreeNode.cpp.s
@@ -437,6 +485,8 @@ TreeNode.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\endpoint_tree_test.dir\build.make CMakeFiles/endpoint_tree_test.dir/TreeNode.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/TreeNode.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\element_processing_test.dir\build.make CMakeFiles/element_processing_test.dir/TreeNode.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\distributed_tracking_test.dir\build.make CMakeFiles/distributed_tracking_test.dir/TreeNode.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DT_algorithm_test.dir\build.make CMakeFiles/DT_algorithm_test.dir/TreeNode.cpp.s
 .PHONY : TreeNode.cpp.s
 
 main.obj: main.cpp.obj
@@ -463,6 +513,54 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+tests/DTAlgorithmTest.obj: tests/DTAlgorithmTest.cpp.obj
+.PHONY : tests/DTAlgorithmTest.obj
+
+# target to build an object file
+tests/DTAlgorithmTest.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DT_algorithm_test.dir\build.make CMakeFiles/DT_algorithm_test.dir/tests/DTAlgorithmTest.cpp.obj
+.PHONY : tests/DTAlgorithmTest.cpp.obj
+
+tests/DTAlgorithmTest.i: tests/DTAlgorithmTest.cpp.i
+.PHONY : tests/DTAlgorithmTest.i
+
+# target to preprocess a source file
+tests/DTAlgorithmTest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DT_algorithm_test.dir\build.make CMakeFiles/DT_algorithm_test.dir/tests/DTAlgorithmTest.cpp.i
+.PHONY : tests/DTAlgorithmTest.cpp.i
+
+tests/DTAlgorithmTest.s: tests/DTAlgorithmTest.cpp.s
+.PHONY : tests/DTAlgorithmTest.s
+
+# target to generate assembly for a file
+tests/DTAlgorithmTest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DT_algorithm_test.dir\build.make CMakeFiles/DT_algorithm_test.dir/tests/DTAlgorithmTest.cpp.s
+.PHONY : tests/DTAlgorithmTest.cpp.s
+
+tests/test_DT_algorithm.obj: tests/test_DT_algorithm.cpp.obj
+.PHONY : tests/test_DT_algorithm.obj
+
+# target to build an object file
+tests/test_DT_algorithm.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DT_algorithm_test.dir\build.make CMakeFiles/DT_algorithm_test.dir/tests/test_DT_algorithm.cpp.obj
+.PHONY : tests/test_DT_algorithm.cpp.obj
+
+tests/test_DT_algorithm.i: tests/test_DT_algorithm.cpp.i
+.PHONY : tests/test_DT_algorithm.i
+
+# target to preprocess a source file
+tests/test_DT_algorithm.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DT_algorithm_test.dir\build.make CMakeFiles/DT_algorithm_test.dir/tests/test_DT_algorithm.cpp.i
+.PHONY : tests/test_DT_algorithm.cpp.i
+
+tests/test_DT_algorithm.s: tests/test_DT_algorithm.cpp.s
+.PHONY : tests/test_DT_algorithm.s
+
+# target to generate assembly for a file
+tests/test_DT_algorithm.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DT_algorithm_test.dir\build.make CMakeFiles/DT_algorithm_test.dir/tests/test_DT_algorithm.cpp.s
+.PHONY : tests/test_DT_algorithm.cpp.s
+
 tests/test_canoncial_node_set.obj: tests/test_canoncial_node_set.cpp.obj
 .PHONY : tests/test_canoncial_node_set.obj
 
@@ -486,6 +584,30 @@ tests/test_canoncial_node_set.s: tests/test_canoncial_node_set.cpp.s
 tests/test_canoncial_node_set.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\canconical_node_test.dir\build.make CMakeFiles/canconical_node_test.dir/tests/test_canoncial_node_set.cpp.s
 .PHONY : tests/test_canoncial_node_set.cpp.s
+
+tests/test_distributed_tracking.obj: tests/test_distributed_tracking.cpp.obj
+.PHONY : tests/test_distributed_tracking.obj
+
+# target to build an object file
+tests/test_distributed_tracking.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\distributed_tracking_test.dir\build.make CMakeFiles/distributed_tracking_test.dir/tests/test_distributed_tracking.cpp.obj
+.PHONY : tests/test_distributed_tracking.cpp.obj
+
+tests/test_distributed_tracking.i: tests/test_distributed_tracking.cpp.i
+.PHONY : tests/test_distributed_tracking.i
+
+# target to preprocess a source file
+tests/test_distributed_tracking.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\distributed_tracking_test.dir\build.make CMakeFiles/distributed_tracking_test.dir/tests/test_distributed_tracking.cpp.i
+.PHONY : tests/test_distributed_tracking.cpp.i
+
+tests/test_distributed_tracking.s: tests/test_distributed_tracking.cpp.s
+.PHONY : tests/test_distributed_tracking.s
+
+# target to generate assembly for a file
+tests/test_distributed_tracking.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\distributed_tracking_test.dir\build.make CMakeFiles/distributed_tracking_test.dir/tests/test_distributed_tracking.cpp.s
+.PHONY : tests/test_distributed_tracking.cpp.s
 
 tests/test_element_processing.obj: tests/test_element_processing.cpp.obj
 .PHONY : tests/test_element_processing.obj
@@ -548,7 +670,9 @@ help:
 	@echo ... list_install_components
 	@echo ... rebuild_cache
 	@echo ... test
+	@echo ... DT_algorithm_test
 	@echo ... canconical_node_test
+	@echo ... distributed_tracking_test
 	@echo ... element_processing_test
 	@echo ... endpoint_tree_test
 	@echo ... gmock
@@ -574,9 +698,18 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... tests/DTAlgorithmTest.obj
+	@echo ... tests/DTAlgorithmTest.i
+	@echo ... tests/DTAlgorithmTest.s
+	@echo ... tests/test_DT_algorithm.obj
+	@echo ... tests/test_DT_algorithm.i
+	@echo ... tests/test_DT_algorithm.s
 	@echo ... tests/test_canoncial_node_set.obj
 	@echo ... tests/test_canoncial_node_set.i
 	@echo ... tests/test_canoncial_node_set.s
+	@echo ... tests/test_distributed_tracking.obj
+	@echo ... tests/test_distributed_tracking.i
+	@echo ... tests/test_distributed_tracking.s
 	@echo ... tests/test_element_processing.obj
 	@echo ... tests/test_element_processing.i
 	@echo ... tests/test_element_processing.s

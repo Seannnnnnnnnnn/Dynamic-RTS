@@ -1,10 +1,20 @@
 hello_test_NOT_BUILT 0 0
 HelloTest.BasicAssertions 1 0.0127394
-EndpointTreeTest.LeftEndpointIsMinimum 29 0.000462907
-EndpointTreeTest.RightEndpointIsInfinity 28 0.000473711
+EndpointTreeTest.LeftEndpointIsMinimum 68 0.000225596
+EndpointTreeTest.RightEndpointIsInfinity 67 0.000207434
 EndpointTreeTest.CorrectTreeStructure 2 0
-EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals 26 0.000474858
-EndpointTreeTest.HasCorrectCanonicalNodeSet 19 0.000766563
-EndpointTreeTest.SetCorrectMaximumMinimum 17 0.0007603
-EndpointTreeTest.StabsCorrectNumberOfNodes 14 0.000886221
+EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals 65 0.000199911
+EndpointTreeTest.HasCorrectCanonicalNodeSet 58 0.000231653
+EndpointTreeTest.SetCorrectMaximumMinimum 56 0.000244223
+EndpointTreeTest.StabsCorrectNumberOfNodes 53 0.000245511
+DTAlgorithmTest.BuildsDTInstances 30 0.000395243
+DTAlgorithmTest.NodesAreCorrectlyInitialized 31 0.000477884
+DTAlgorithmTest.BuildsDTInstancesInNodes 8 0.0016241
+DTAlgorithmTest.BuildsCorrectNumberOfNodes 24 0.000535092
+DTAlgorithmTest.HeapsAreCorrectlyInitialized 20 0.000627765
+EndpointTreeTest.StabsCorrectNumberOfNodesSmallTree 18 0.000709972
+DistributedTrackingTest.CreatesCorrectSlack 1 0.0130852
+DistributedTrackingTest.BuildsCorrectly 13 0.000942008
+DistributedTrackingTest.CreatesCorrectSlackWhenSmall 10 0.00117079
+DistributedTrackingTest.CreatesCorrectSlackWhenBig 9 0.0013767
 ---
