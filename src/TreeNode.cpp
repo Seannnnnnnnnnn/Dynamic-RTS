@@ -6,19 +6,7 @@ void TreeNode::initializeDTInstanceData(DistributedTracking* dtInstance) {
 }
 
 
-void TreeNode::updateDTInstanceData(DistributedTracking* dtInstance, int newSlack) {
-    auto it = dtInstanceDataMap.find(dtInstance);
-    if (it != dtInstanceDataMap.end()) {
-        // Update the slack value
-        it->second.second = newSlack;
-        // Rebuild the heap since slack has changed
-        initialiseHeap();
-    }
-}
-
-
 void TreeNode::updateSlack(DistributedTracking* dtInstance, int newSlack){
-    // Find the iterator to the dtInstance
     auto it = dtInstanceDataMap.find(dtInstance);
     if (it != dtInstanceDataMap.end()) {
         it->second.second = newSlack; 

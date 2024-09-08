@@ -8,4 +8,6 @@ add_test([=[DTAlgorithmTest.HeapsAreCorrectlyInitialized]=]  C:/Users/seanl/Dyna
 set_tests_properties([=[DTAlgorithmTest.HeapsAreCorrectlyInitialized]=]  PROPERTIES WORKING_DIRECTORY C:/Users/seanl/Dynamic-RTS/src/build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
 add_test([=[DTAlgorithmTest.BuildsCorrectNumberOfNodes]=]  C:/Users/seanl/Dynamic-RTS/src/build/DT_algorithm_test.exe [==[--gtest_filter=DTAlgorithmTest.BuildsCorrectNumberOfNodes]==] --gtest_also_run_disabled_tests)
 set_tests_properties([=[DTAlgorithmTest.BuildsCorrectNumberOfNodes]=]  PROPERTIES WORKING_DIRECTORY C:/Users/seanl/Dynamic-RTS/src/build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
-set(  DT_algorithm_test_TESTS DTAlgorithmTest.BuildsDTInstances DTAlgorithmTest.BuildsDTInstancesInNodes DTAlgorithmTest.NodesAreCorrectlyInitialized DTAlgorithmTest.HeapsAreCorrectlyInitialized DTAlgorithmTest.BuildsCorrectNumberOfNodes)
+add_test([=[DTAlgorithmTest.BuildsQuerySet]=]  C:/Users/seanl/Dynamic-RTS/src/build/DT_algorithm_test.exe [==[--gtest_filter=DTAlgorithmTest.BuildsQuerySet]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[DTAlgorithmTest.BuildsQuerySet]=]  PROPERTIES WORKING_DIRECTORY C:/Users/seanl/Dynamic-RTS/src/build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+set(  DT_algorithm_test_TESTS DTAlgorithmTest.BuildsDTInstances DTAlgorithmTest.BuildsDTInstancesInNodes DTAlgorithmTest.NodesAreCorrectlyInitialized DTAlgorithmTest.HeapsAreCorrectlyInitialized DTAlgorithmTest.BuildsCorrectNumberOfNodes DTAlgorithmTest.BuildsQuerySet)

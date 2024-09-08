@@ -56,3 +56,8 @@ std::vector<DistributedTracking*> TestDTAlgorithmClass::getDTInstancesFromNodes(
     }
     return dtInstances;
 }
+
+
+std::vector<Query>& TestDTAlgorithmClass::getQuerySet() {
+    return querySet;
+}

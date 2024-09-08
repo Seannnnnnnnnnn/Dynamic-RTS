@@ -10,7 +10,7 @@ struct TreeNode;  // forward decleration to avoid circular dependancy
 class DistributedTracking {
 public:
     DistributedTracking(Query& coordinator, std::vector<TreeNode*>& participants);
-    void processSignal();  // called when receiving signal
+    void processSignal(int counterChange);  // called when receiving signal
     bool isAlive() const;  // flag for if the DistributedTracking instance is still alive
     int getSlack() const;
     int getThreshold() const;
@@ -23,6 +23,6 @@ private:
     int threshold;
     int numSignalsReceived;
     int totalCounter;
-    int calculateSlack();
+    int calculateAndSetSlack();
     void processMaturity();
 };

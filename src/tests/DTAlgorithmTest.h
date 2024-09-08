@@ -8,7 +8,8 @@ class TestDTAlgorithmClass : DTAlgorithm {
 
 public:
     using DTAlgorithm::DTAlgorithm;
-
+    
+    std::vector<Query>& getQuerySet();
     std::vector<TreeNode*> getNodes();
     std::vector<DistributedTracking*> getDTInstances();
     std::vector<DistributedTracking*> getDTInstancesFromNodes();

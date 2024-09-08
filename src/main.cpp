@@ -18,17 +18,13 @@ int main() {
     };
     
     DTAlgorithm DT(queries);
-    std::cout<<"created the DT Algorithm"<<std::endl;
 
-
-    StreamElement streamElement(9, 100);
-    std::cout<<"created a stream element"<<std::endl;
+    StreamElement streamElement(9, 1);
 
     DT.processElement(streamElement);
-    std::cout<<"processed a stream element"<<std::endl;
 
     for (auto query : DT.getQuerySet()) {
-        if (!query.alive) {
+        if (!query.isAlive()) {
             std::cout<<"Matured query"<<std::endl;
         }
     }

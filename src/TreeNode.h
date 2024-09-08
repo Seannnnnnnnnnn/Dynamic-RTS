@@ -45,7 +45,6 @@ struct TreeNode {
     std::unordered_map<DistributedTracking*, std::pair<int, int>> dtInstanceDataMap; // <dtInstance, <last_signal_counter, slack>>
     
     void initializeDTInstanceData(DistributedTracking* dtInstance);
-    void updateDTInstanceData(DistributedTracking* dtInstance, int newSlack);
     void updateSlack(DistributedTracking* dtInstance, int newSlack);
     void initialiseHeap();
 };

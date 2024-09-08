@@ -1,18 +1,20 @@
+#include <iostream>
 #include "DistributedTracking.h"
 #include "TreeNode.h"
+
 
 DistributedTracking::DistributedTracking(Query& coordinator, std::vector<TreeNode*>& participants)
     : coordinator(coordinator), participants(participants), threshold(coordinator.getThreshold()), 
       numSignalsReceived(0) 
       { 
-        calculateSlack();
+        calculateAndSetSlack();
       }
 
 
-int DistributedTracking::calculateSlack() {
+int DistributedTracking::calculateAndSetSlack() {
     int h = participants.size();
     if (threshold <= 6 * h) {
-        slack = 1;  // Straightforward solution
+        slack = 1;
     } else {
         slack = threshold / (2 * h);
     }
@@ -40,59 +42,57 @@ int DistributedTracking::getThreshold() const {
 }
 
 
-void DistributedTracking::processSignal(){
-    // TODO: update this to fit with the new slack messaging! 
-    numSignalsReceived++;
-    int h = participants.size();
-    // if we receive h messages, collect counters and rebuild with new slack
-    if (numSignalsReceived % h == 0){
-        // get counters from all participants 
-        int total_counters = 0;
-        for (auto participant : participants) {
-            total_counters += participant->counter;
-        }
-        threshold -= total_counters;
+void DistributedTracking::processSignal(int counterChange){
+    // counterChange: difference between node counter now and counter at last signal sent
 
-        if (threshold <= 0) {
-            processMaturity();
-            return;
-        }
-
-        int new_slack = calculateSlack();
-
-        // assign new slack to each participant
-        for (auto participant : participants) {
-            participant->updateSlack(this, new_slack);
-        }
+    if (slack == 1){  // in the straight forward solution, we process all signals we receive
+        threshold -= counterChange;
+        if (threshold <= 0) { processMaturity(); }
     }
-    return;
+
+    else {
+        numSignalsReceived++;
+        int h = participants.size();
+        // if we receive h messages, collect counters and rebuild with new slack
+        if (numSignalsReceived % h == 0){
+            // get counters from all participants 
+            int totalCounters = 0;
+            for (auto participant : participants) {
+                totalCounters += participant->counter;
+            }
+            threshold -= totalCounters;
+
+            if (threshold <= 0) {
+                processMaturity();
+            }
+
+            int new_slack = calculateAndSetSlack();
+
+            for (auto participant : participants) {
+                participant->updateSlack(this, new_slack);
+            }
+        }
+    } 
 }
 
 void DistributedTracking::processMaturity() {
+    // TODO: sometimes - the performed removals is not called - figure out why?
+    
     // Mark the query as matured.
+    std::cout<<"Maturing Query"<<std::endl;
     coordinator.alive = false;
 
     for (auto participant : participants) {
-        // Remove the current slack associated with this DT instance from the participant's map.
         auto it = participant->dtInstanceDataMap.find(this);
         if (it != participant->dtInstanceDataMap.end()) {
             // Remove slack value associated with this DT instance.
-            int slack = it->second.second;
-            auto slackIt = std::find_if(
-                participant->dtInstanceDataMap.begin(),
-                participant->dtInstanceDataMap.end(),
-                [slack](const auto& pair) { return pair.second.second == slack; });
-
-            if (slackIt != participant->dtInstanceDataMap.end()) {
-                participant->dtInstanceDataMap.erase(slackIt);
-            }
-
-            // Remove the DT instance from the map.
-            participant->dtInstanceDataMap.erase(it);
+            participant->dtInstanceDataMap.erase(it);  // Remove the instance directly
         }
-
         // Rebuild the heap since the DT instance has been removed and slack values changed.
-        participant->initialiseHeap();
+        if (!participant->dtHeap.empty()){
+            participant->initialiseHeap();
+        }
     }
+    std::cout<<"Performed removals"<<std::endl;
     return;
 }
