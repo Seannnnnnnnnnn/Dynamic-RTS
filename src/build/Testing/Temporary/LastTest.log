@@ -1,10 +1,10 @@
-Start testing: Sep 08 17:46 AUS Eastern Standard Time
+Start testing: Sep 09 12:41 AEST
 ----------------------------------------------------------
 1/18 Testing: EndpointTreeTest.LeftEndpointIsMinimum
 1/18 Test: EndpointTreeTest.LeftEndpointIsMinimum
-Command: "C:/Users/seanl/Dynamic-RTS/src/build/endpoint_tree_test.exe" "--gtest_filter=EndpointTreeTest.LeftEndpointIsMinimum" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/seanl/Dynamic-RTS/src/build
-"EndpointTreeTest.LeftEndpointIsMinimum" start time: Sep 08 17:46 AUS Eastern Standard Time
+Command: "/Users/sean/Dynamic-RTS/src/build/endpoint_tree_test" "--gtest_filter=EndpointTreeTest.LeftEndpointIsMinimum" "--gtest_also_run_disabled_tests"
+Directory: /Users/sean/Dynamic-RTS/src/build
+"EndpointTreeTest.LeftEndpointIsMinimum" start time: Sep 09 12:41 AEST
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = EndpointTreeTest.LeftEndpointIsMinimum
@@ -22,15 +22,15 @@ Note: Google Test filter = EndpointTreeTest.LeftEndpointIsMinimum
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"EndpointTreeTest.LeftEndpointIsMinimum" end time: Sep 08 17:46 AUS Eastern Standard Time
+"EndpointTreeTest.LeftEndpointIsMinimum" end time: Sep 09 12:41 AEST
 "EndpointTreeTest.LeftEndpointIsMinimum" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 2/18 Testing: EndpointTreeTest.SetCorrectMaximumMinimum
 2/18 Test: EndpointTreeTest.SetCorrectMaximumMinimum
-Command: "C:/Users/seanl/Dynamic-RTS/src/build/endpoint_tree_test.exe" "--gtest_filter=EndpointTreeTest.SetCorrectMaximumMinimum" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/seanl/Dynamic-RTS/src/build
-"EndpointTreeTest.SetCorrectMaximumMinimum" start time: Sep 08 17:46 AUS Eastern Standard Time
+Command: "/Users/sean/Dynamic-RTS/src/build/endpoint_tree_test" "--gtest_filter=EndpointTreeTest.SetCorrectMaximumMinimum" "--gtest_also_run_disabled_tests"
+Directory: /Users/sean/Dynamic-RTS/src/build
+"EndpointTreeTest.SetCorrectMaximumMinimum" start time: Sep 09 12:41 AEST
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = EndpointTreeTest.SetCorrectMaximumMinimum
@@ -48,15 +48,15 @@ Note: Google Test filter = EndpointTreeTest.SetCorrectMaximumMinimum
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"EndpointTreeTest.SetCorrectMaximumMinimum" end time: Sep 08 17:46 AUS Eastern Standard Time
+"EndpointTreeTest.SetCorrectMaximumMinimum" end time: Sep 09 12:41 AEST
 "EndpointTreeTest.SetCorrectMaximumMinimum" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 3/18 Testing: EndpointTreeTest.RightEndpointIsInfinity
 3/18 Test: EndpointTreeTest.RightEndpointIsInfinity
-Command: "C:/Users/seanl/Dynamic-RTS/src/build/endpoint_tree_test.exe" "--gtest_filter=EndpointTreeTest.RightEndpointIsInfinity" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/seanl/Dynamic-RTS/src/build
-"EndpointTreeTest.RightEndpointIsInfinity" start time: Sep 08 17:46 AUS Eastern Standard Time
+Command: "/Users/sean/Dynamic-RTS/src/build/endpoint_tree_test" "--gtest_filter=EndpointTreeTest.RightEndpointIsInfinity" "--gtest_also_run_disabled_tests"
+Directory: /Users/sean/Dynamic-RTS/src/build
+"EndpointTreeTest.RightEndpointIsInfinity" start time: Sep 09 12:41 AEST
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = EndpointTreeTest.RightEndpointIsInfinity
@@ -74,15 +74,15 @@ Note: Google Test filter = EndpointTreeTest.RightEndpointIsInfinity
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"EndpointTreeTest.RightEndpointIsInfinity" end time: Sep 08 17:46 AUS Eastern Standard Time
+"EndpointTreeTest.RightEndpointIsInfinity" end time: Sep 09 12:41 AEST
 "EndpointTreeTest.RightEndpointIsInfinity" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 4/18 Testing: EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals
 4/18 Test: EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals
-Command: "C:/Users/seanl/Dynamic-RTS/src/build/endpoint_tree_test.exe" "--gtest_filter=EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/seanl/Dynamic-RTS/src/build
-"EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals" start time: Sep 08 17:46 AUS Eastern Standard Time
+Command: "/Users/sean/Dynamic-RTS/src/build/endpoint_tree_test" "--gtest_filter=EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals" "--gtest_also_run_disabled_tests"
+Directory: /Users/sean/Dynamic-RTS/src/build
+"EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals" start time: Sep 09 12:41 AEST
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals
@@ -100,15 +100,15 @@ Note: Google Test filter = EndpointTreeTest.LeavesHaveCorrectJurisdictionInterva
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals" end time: Sep 08 17:46 AUS Eastern Standard Time
+"EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals" end time: Sep 09 12:41 AEST
 "EndpointTreeTest.LeavesHaveCorrectJurisdictionIntervals" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 5/18 Testing: EndpointTreeTest.HasCorrectCanonicalNodeSet
 5/18 Test: EndpointTreeTest.HasCorrectCanonicalNodeSet
-Command: "C:/Users/seanl/Dynamic-RTS/src/build/canconical_node_test.exe" "--gtest_filter=EndpointTreeTest.HasCorrectCanonicalNodeSet" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/seanl/Dynamic-RTS/src/build
-"EndpointTreeTest.HasCorrectCanonicalNodeSet" start time: Sep 08 17:46 AUS Eastern Standard Time
+Command: "/Users/sean/Dynamic-RTS/src/build/canconical_node_test" "--gtest_filter=EndpointTreeTest.HasCorrectCanonicalNodeSet" "--gtest_also_run_disabled_tests"
+Directory: /Users/sean/Dynamic-RTS/src/build
+"EndpointTreeTest.HasCorrectCanonicalNodeSet" start time: Sep 09 12:41 AEST
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = EndpointTreeTest.HasCorrectCanonicalNodeSet
@@ -126,15 +126,15 @@ Note: Google Test filter = EndpointTreeTest.HasCorrectCanonicalNodeSet
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"EndpointTreeTest.HasCorrectCanonicalNodeSet" end time: Sep 08 17:46 AUS Eastern Standard Time
+"EndpointTreeTest.HasCorrectCanonicalNodeSet" end time: Sep 09 12:41 AEST
 "EndpointTreeTest.HasCorrectCanonicalNodeSet" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 6/18 Testing: EndpointTreeTest.StabsCorrectNumberOfNodes
 6/18 Test: EndpointTreeTest.StabsCorrectNumberOfNodes
-Command: "C:/Users/seanl/Dynamic-RTS/src/build/element_processing_test.exe" "--gtest_filter=EndpointTreeTest.StabsCorrectNumberOfNodes" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/seanl/Dynamic-RTS/src/build
-"EndpointTreeTest.StabsCorrectNumberOfNodes" start time: Sep 08 17:46 AUS Eastern Standard Time
+Command: "/Users/sean/Dynamic-RTS/src/build/element_processing_test" "--gtest_filter=EndpointTreeTest.StabsCorrectNumberOfNodes" "--gtest_also_run_disabled_tests"
+Directory: /Users/sean/Dynamic-RTS/src/build
+"EndpointTreeTest.StabsCorrectNumberOfNodes" start time: Sep 09 12:41 AEST
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = EndpointTreeTest.StabsCorrectNumberOfNodes
@@ -152,15 +152,15 @@ Note: Google Test filter = EndpointTreeTest.StabsCorrectNumberOfNodes
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"EndpointTreeTest.StabsCorrectNumberOfNodes" end time: Sep 08 17:46 AUS Eastern Standard Time
+"EndpointTreeTest.StabsCorrectNumberOfNodes" end time: Sep 09 12:41 AEST
 "EndpointTreeTest.StabsCorrectNumberOfNodes" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 7/18 Testing: EndpointTreeTest.StabsCorrectNumberOfNodesSmallTree
 7/18 Test: EndpointTreeTest.StabsCorrectNumberOfNodesSmallTree
-Command: "C:/Users/seanl/Dynamic-RTS/src/build/element_processing_test.exe" "--gtest_filter=EndpointTreeTest.StabsCorrectNumberOfNodesSmallTree" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/seanl/Dynamic-RTS/src/build
-"EndpointTreeTest.StabsCorrectNumberOfNodesSmallTree" start time: Sep 08 17:46 AUS Eastern Standard Time
+Command: "/Users/sean/Dynamic-RTS/src/build/element_processing_test" "--gtest_filter=EndpointTreeTest.StabsCorrectNumberOfNodesSmallTree" "--gtest_also_run_disabled_tests"
+Directory: /Users/sean/Dynamic-RTS/src/build
+"EndpointTreeTest.StabsCorrectNumberOfNodesSmallTree" start time: Sep 09 12:41 AEST
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = EndpointTreeTest.StabsCorrectNumberOfNodesSmallTree
@@ -178,15 +178,15 @@ Note: Google Test filter = EndpointTreeTest.StabsCorrectNumberOfNodesSmallTree
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"EndpointTreeTest.StabsCorrectNumberOfNodesSmallTree" end time: Sep 08 17:46 AUS Eastern Standard Time
+"EndpointTreeTest.StabsCorrectNumberOfNodesSmallTree" end time: Sep 09 12:41 AEST
 "EndpointTreeTest.StabsCorrectNumberOfNodesSmallTree" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 8/18 Testing: DistributedTrackingTest.BuildsCorrectly
 8/18 Test: DistributedTrackingTest.BuildsCorrectly
-Command: "C:/Users/seanl/Dynamic-RTS/src/build/distributed_tracking_test.exe" "--gtest_filter=DistributedTrackingTest.BuildsCorrectly" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/seanl/Dynamic-RTS/src/build
-"DistributedTrackingTest.BuildsCorrectly" start time: Sep 08 17:46 AUS Eastern Standard Time
+Command: "/Users/sean/Dynamic-RTS/src/build/distributed_tracking_test" "--gtest_filter=DistributedTrackingTest.BuildsCorrectly" "--gtest_also_run_disabled_tests"
+Directory: /Users/sean/Dynamic-RTS/src/build
+"DistributedTrackingTest.BuildsCorrectly" start time: Sep 09 12:41 AEST
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = DistributedTrackingTest.BuildsCorrectly
@@ -204,15 +204,15 @@ Note: Google Test filter = DistributedTrackingTest.BuildsCorrectly
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"DistributedTrackingTest.BuildsCorrectly" end time: Sep 08 17:46 AUS Eastern Standard Time
+"DistributedTrackingTest.BuildsCorrectly" end time: Sep 09 12:41 AEST
 "DistributedTrackingTest.BuildsCorrectly" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 9/18 Testing: DistributedTrackingTest.CreatesCorrectSlackWhenSmall
 9/18 Test: DistributedTrackingTest.CreatesCorrectSlackWhenSmall
-Command: "C:/Users/seanl/Dynamic-RTS/src/build/distributed_tracking_test.exe" "--gtest_filter=DistributedTrackingTest.CreatesCorrectSlackWhenSmall" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/seanl/Dynamic-RTS/src/build
-"DistributedTrackingTest.CreatesCorrectSlackWhenSmall" start time: Sep 08 17:46 AUS Eastern Standard Time
+Command: "/Users/sean/Dynamic-RTS/src/build/distributed_tracking_test" "--gtest_filter=DistributedTrackingTest.CreatesCorrectSlackWhenSmall" "--gtest_also_run_disabled_tests"
+Directory: /Users/sean/Dynamic-RTS/src/build
+"DistributedTrackingTest.CreatesCorrectSlackWhenSmall" start time: Sep 09 12:41 AEST
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = DistributedTrackingTest.CreatesCorrectSlackWhenSmall
@@ -230,15 +230,15 @@ Note: Google Test filter = DistributedTrackingTest.CreatesCorrectSlackWhenSmall
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"DistributedTrackingTest.CreatesCorrectSlackWhenSmall" end time: Sep 08 17:46 AUS Eastern Standard Time
+"DistributedTrackingTest.CreatesCorrectSlackWhenSmall" end time: Sep 09 12:41 AEST
 "DistributedTrackingTest.CreatesCorrectSlackWhenSmall" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 10/18 Testing: DistributedTrackingTest.CreatesCorrectSlackWhenBig
 10/18 Test: DistributedTrackingTest.CreatesCorrectSlackWhenBig
-Command: "C:/Users/seanl/Dynamic-RTS/src/build/distributed_tracking_test.exe" "--gtest_filter=DistributedTrackingTest.CreatesCorrectSlackWhenBig" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/seanl/Dynamic-RTS/src/build
-"DistributedTrackingTest.CreatesCorrectSlackWhenBig" start time: Sep 08 17:46 AUS Eastern Standard Time
+Command: "/Users/sean/Dynamic-RTS/src/build/distributed_tracking_test" "--gtest_filter=DistributedTrackingTest.CreatesCorrectSlackWhenBig" "--gtest_also_run_disabled_tests"
+Directory: /Users/sean/Dynamic-RTS/src/build
+"DistributedTrackingTest.CreatesCorrectSlackWhenBig" start time: Sep 09 12:41 AEST
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = DistributedTrackingTest.CreatesCorrectSlackWhenBig
@@ -256,15 +256,15 @@ Note: Google Test filter = DistributedTrackingTest.CreatesCorrectSlackWhenBig
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"DistributedTrackingTest.CreatesCorrectSlackWhenBig" end time: Sep 08 17:46 AUS Eastern Standard Time
+"DistributedTrackingTest.CreatesCorrectSlackWhenBig" end time: Sep 09 12:41 AEST
 "DistributedTrackingTest.CreatesCorrectSlackWhenBig" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 11/18 Testing: DistributedTrackingTest.ProcessSignalWithoutMaturity
 11/18 Test: DistributedTrackingTest.ProcessSignalWithoutMaturity
-Command: "C:/Users/seanl/Dynamic-RTS/src/build/distributed_tracking_test.exe" "--gtest_filter=DistributedTrackingTest.ProcessSignalWithoutMaturity" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/seanl/Dynamic-RTS/src/build
-"DistributedTrackingTest.ProcessSignalWithoutMaturity" start time: Sep 08 17:46 AUS Eastern Standard Time
+Command: "/Users/sean/Dynamic-RTS/src/build/distributed_tracking_test" "--gtest_filter=DistributedTrackingTest.ProcessSignalWithoutMaturity" "--gtest_also_run_disabled_tests"
+Directory: /Users/sean/Dynamic-RTS/src/build
+"DistributedTrackingTest.ProcessSignalWithoutMaturity" start time: Sep 09 12:41 AEST
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = DistributedTrackingTest.ProcessSignalWithoutMaturity
@@ -282,15 +282,15 @@ Note: Google Test filter = DistributedTrackingTest.ProcessSignalWithoutMaturity
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"DistributedTrackingTest.ProcessSignalWithoutMaturity" end time: Sep 08 17:46 AUS Eastern Standard Time
+"DistributedTrackingTest.ProcessSignalWithoutMaturity" end time: Sep 09 12:41 AEST
 "DistributedTrackingTest.ProcessSignalWithoutMaturity" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 12/18 Testing: DistributedTrackingTest.HandlesMaturityWhenSmall
 12/18 Test: DistributedTrackingTest.HandlesMaturityWhenSmall
-Command: "C:/Users/seanl/Dynamic-RTS/src/build/distributed_tracking_test.exe" "--gtest_filter=DistributedTrackingTest.HandlesMaturityWhenSmall" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/seanl/Dynamic-RTS/src/build
-"DistributedTrackingTest.HandlesMaturityWhenSmall" start time: Sep 08 17:46 AUS Eastern Standard Time
+Command: "/Users/sean/Dynamic-RTS/src/build/distributed_tracking_test" "--gtest_filter=DistributedTrackingTest.HandlesMaturityWhenSmall" "--gtest_also_run_disabled_tests"
+Directory: /Users/sean/Dynamic-RTS/src/build
+"DistributedTrackingTest.HandlesMaturityWhenSmall" start time: Sep 09 12:41 AEST
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = DistributedTrackingTest.HandlesMaturityWhenSmall
@@ -299,6 +299,7 @@ Note: Google Test filter = DistributedTrackingTest.HandlesMaturityWhenSmall
 [----------] 1 test from DistributedTrackingTest
 [ RUN      ] DistributedTrackingTest.HandlesMaturityWhenSmall
 Maturing Query
+Performed removals
 [       OK ] DistributedTrackingTest.HandlesMaturityWhenSmall (0 ms)
 [----------] 1 test from DistributedTrackingTest (0 ms total)
 
@@ -309,15 +310,15 @@ Maturing Query
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"DistributedTrackingTest.HandlesMaturityWhenSmall" end time: Sep 08 17:46 AUS Eastern Standard Time
+"DistributedTrackingTest.HandlesMaturityWhenSmall" end time: Sep 09 12:41 AEST
 "DistributedTrackingTest.HandlesMaturityWhenSmall" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 13/18 Testing: DTAlgorithmTest.BuildsDTInstances
 13/18 Test: DTAlgorithmTest.BuildsDTInstances
-Command: "C:/Users/seanl/Dynamic-RTS/src/build/DT_algorithm_test.exe" "--gtest_filter=DTAlgorithmTest.BuildsDTInstances" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/seanl/Dynamic-RTS/src/build
-"DTAlgorithmTest.BuildsDTInstances" start time: Sep 08 17:46 AUS Eastern Standard Time
+Command: "/Users/sean/Dynamic-RTS/src/build/DT_algorithm_test" "--gtest_filter=DTAlgorithmTest.BuildsDTInstances" "--gtest_also_run_disabled_tests"
+Directory: /Users/sean/Dynamic-RTS/src/build
+"DTAlgorithmTest.BuildsDTInstances" start time: Sep 09 12:41 AEST
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = DTAlgorithmTest.BuildsDTInstances
@@ -335,15 +336,15 @@ Note: Google Test filter = DTAlgorithmTest.BuildsDTInstances
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"DTAlgorithmTest.BuildsDTInstances" end time: Sep 08 17:46 AUS Eastern Standard Time
+"DTAlgorithmTest.BuildsDTInstances" end time: Sep 09 12:41 AEST
 "DTAlgorithmTest.BuildsDTInstances" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 14/18 Testing: DTAlgorithmTest.BuildsDTInstancesInNodes
 14/18 Test: DTAlgorithmTest.BuildsDTInstancesInNodes
-Command: "C:/Users/seanl/Dynamic-RTS/src/build/DT_algorithm_test.exe" "--gtest_filter=DTAlgorithmTest.BuildsDTInstancesInNodes" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/seanl/Dynamic-RTS/src/build
-"DTAlgorithmTest.BuildsDTInstancesInNodes" start time: Sep 08 17:46 AUS Eastern Standard Time
+Command: "/Users/sean/Dynamic-RTS/src/build/DT_algorithm_test" "--gtest_filter=DTAlgorithmTest.BuildsDTInstancesInNodes" "--gtest_also_run_disabled_tests"
+Directory: /Users/sean/Dynamic-RTS/src/build
+"DTAlgorithmTest.BuildsDTInstancesInNodes" start time: Sep 09 12:41 AEST
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = DTAlgorithmTest.BuildsDTInstancesInNodes
@@ -351,7 +352,7 @@ Note: Google Test filter = DTAlgorithmTest.BuildsDTInstancesInNodes
 [----------] Global test environment set-up.
 [----------] 1 test from DTAlgorithmTest
 [ RUN      ] DTAlgorithmTest.BuildsDTInstancesInNodes
-C:\Users\seanl\Dynamic-RTS\src\tests\test_DT_algorithm.cpp:38: Skipped
+/Users/sean/Dynamic-RTS/src/tests/test_DT_algorithm.cpp:38: Skipped
 
 
 [  SKIPPED ] DTAlgorithmTest.BuildsDTInstancesInNodes (0 ms)
@@ -367,15 +368,15 @@ Test time =   0.01 sec
 ----------------------------------------------------------
 Test Pass Reason:
 Skip regular expression found in output. Regex=[\[  SKIPPED \]]
-"DTAlgorithmTest.BuildsDTInstancesInNodes" end time: Sep 08 17:46 AUS Eastern Standard Time
+"DTAlgorithmTest.BuildsDTInstancesInNodes" end time: Sep 09 12:41 AEST
 "DTAlgorithmTest.BuildsDTInstancesInNodes" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 15/18 Testing: DTAlgorithmTest.NodesAreCorrectlyInitialized
 15/18 Test: DTAlgorithmTest.NodesAreCorrectlyInitialized
-Command: "C:/Users/seanl/Dynamic-RTS/src/build/DT_algorithm_test.exe" "--gtest_filter=DTAlgorithmTest.NodesAreCorrectlyInitialized" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/seanl/Dynamic-RTS/src/build
-"DTAlgorithmTest.NodesAreCorrectlyInitialized" start time: Sep 08 17:46 AUS Eastern Standard Time
+Command: "/Users/sean/Dynamic-RTS/src/build/DT_algorithm_test" "--gtest_filter=DTAlgorithmTest.NodesAreCorrectlyInitialized" "--gtest_also_run_disabled_tests"
+Directory: /Users/sean/Dynamic-RTS/src/build
+"DTAlgorithmTest.NodesAreCorrectlyInitialized" start time: Sep 09 12:41 AEST
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = DTAlgorithmTest.NodesAreCorrectlyInitialized
@@ -393,15 +394,15 @@ Note: Google Test filter = DTAlgorithmTest.NodesAreCorrectlyInitialized
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"DTAlgorithmTest.NodesAreCorrectlyInitialized" end time: Sep 08 17:46 AUS Eastern Standard Time
+"DTAlgorithmTest.NodesAreCorrectlyInitialized" end time: Sep 09 12:41 AEST
 "DTAlgorithmTest.NodesAreCorrectlyInitialized" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 16/18 Testing: DTAlgorithmTest.HeapsAreCorrectlyInitialized
 16/18 Test: DTAlgorithmTest.HeapsAreCorrectlyInitialized
-Command: "C:/Users/seanl/Dynamic-RTS/src/build/DT_algorithm_test.exe" "--gtest_filter=DTAlgorithmTest.HeapsAreCorrectlyInitialized" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/seanl/Dynamic-RTS/src/build
-"DTAlgorithmTest.HeapsAreCorrectlyInitialized" start time: Sep 08 17:46 AUS Eastern Standard Time
+Command: "/Users/sean/Dynamic-RTS/src/build/DT_algorithm_test" "--gtest_filter=DTAlgorithmTest.HeapsAreCorrectlyInitialized" "--gtest_also_run_disabled_tests"
+Directory: /Users/sean/Dynamic-RTS/src/build
+"DTAlgorithmTest.HeapsAreCorrectlyInitialized" start time: Sep 09 12:41 AEST
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = DTAlgorithmTest.HeapsAreCorrectlyInitialized
@@ -419,15 +420,15 @@ Note: Google Test filter = DTAlgorithmTest.HeapsAreCorrectlyInitialized
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"DTAlgorithmTest.HeapsAreCorrectlyInitialized" end time: Sep 08 17:46 AUS Eastern Standard Time
+"DTAlgorithmTest.HeapsAreCorrectlyInitialized" end time: Sep 09 12:41 AEST
 "DTAlgorithmTest.HeapsAreCorrectlyInitialized" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 17/18 Testing: DTAlgorithmTest.BuildsCorrectNumberOfNodes
 17/18 Test: DTAlgorithmTest.BuildsCorrectNumberOfNodes
-Command: "C:/Users/seanl/Dynamic-RTS/src/build/DT_algorithm_test.exe" "--gtest_filter=DTAlgorithmTest.BuildsCorrectNumberOfNodes" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/seanl/Dynamic-RTS/src/build
-"DTAlgorithmTest.BuildsCorrectNumberOfNodes" start time: Sep 08 17:46 AUS Eastern Standard Time
+Command: "/Users/sean/Dynamic-RTS/src/build/DT_algorithm_test" "--gtest_filter=DTAlgorithmTest.BuildsCorrectNumberOfNodes" "--gtest_also_run_disabled_tests"
+Directory: /Users/sean/Dynamic-RTS/src/build
+"DTAlgorithmTest.BuildsCorrectNumberOfNodes" start time: Sep 09 12:41 AEST
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = DTAlgorithmTest.BuildsCorrectNumberOfNodes
@@ -445,15 +446,15 @@ Note: Google Test filter = DTAlgorithmTest.BuildsCorrectNumberOfNodes
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"DTAlgorithmTest.BuildsCorrectNumberOfNodes" end time: Sep 08 17:46 AUS Eastern Standard Time
+"DTAlgorithmTest.BuildsCorrectNumberOfNodes" end time: Sep 09 12:41 AEST
 "DTAlgorithmTest.BuildsCorrectNumberOfNodes" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 18/18 Testing: DTAlgorithmTest.BuildsQuerySet
 18/18 Test: DTAlgorithmTest.BuildsQuerySet
-Command: "C:/Users/seanl/Dynamic-RTS/src/build/DT_algorithm_test.exe" "--gtest_filter=DTAlgorithmTest.BuildsQuerySet" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/seanl/Dynamic-RTS/src/build
-"DTAlgorithmTest.BuildsQuerySet" start time: Sep 08 17:46 AUS Eastern Standard Time
+Command: "/Users/sean/Dynamic-RTS/src/build/DT_algorithm_test" "--gtest_filter=DTAlgorithmTest.BuildsQuerySet" "--gtest_also_run_disabled_tests"
+Directory: /Users/sean/Dynamic-RTS/src/build
+"DTAlgorithmTest.BuildsQuerySet" start time: Sep 09 12:41 AEST
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = DTAlgorithmTest.BuildsQuerySet
@@ -471,8 +472,8 @@ Note: Google Test filter = DTAlgorithmTest.BuildsQuerySet
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"DTAlgorithmTest.BuildsQuerySet" end time: Sep 08 17:46 AUS Eastern Standard Time
+"DTAlgorithmTest.BuildsQuerySet" end time: Sep 09 12:41 AEST
 "DTAlgorithmTest.BuildsQuerySet" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Sep 08 17:46 AUS Eastern Standard Time
+End testing: Sep 09 12:41 AEST

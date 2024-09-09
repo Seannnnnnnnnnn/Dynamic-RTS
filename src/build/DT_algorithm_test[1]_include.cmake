@@ -1,5 +1,5 @@
-if(EXISTS "C:/Users/seanl/Dynamic-RTS/src/build/DT_algorithm_test[1]_tests.cmake")
-  include("C:/Users/seanl/Dynamic-RTS/src/build/DT_algorithm_test[1]_tests.cmake")
+if(EXISTS "/Users/sean/Dynamic-RTS/src/build/DT_algorithm_test[1]_tests.cmake")
+  include("/Users/sean/Dynamic-RTS/src/build/DT_algorithm_test[1]_tests.cmake")
 else()
   add_test(DT_algorithm_test_NOT_BUILT DT_algorithm_test_NOT_BUILT)
 endif()

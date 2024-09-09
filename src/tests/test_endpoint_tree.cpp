@@ -29,7 +29,6 @@ TEST(EndpointTreeTest, SetCorrectMaximumMinimum) {
     };
 
     EndpointTree tree(queries);
-    TreeNode* root = tree.getRoot().get();
 
     ASSERT_EQ(tree.maximum_endpoint, 100);
     ASSERT_EQ(tree.minimum_endpoint, -1);

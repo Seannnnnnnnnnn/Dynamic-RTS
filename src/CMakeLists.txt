@@ -4,6 +4,15 @@ project(drts)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
+
+
+# Add compiler warning flags
+if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+    add_compile_options(-Wall -Wextra -Wpedantic -Werror)
+elseif(MSVC)
+    add_compile_options(/W4 /WX)
+endif()
 
 add_executable(main 
             main.cpp

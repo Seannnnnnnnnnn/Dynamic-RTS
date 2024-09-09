@@ -22,7 +22,6 @@ private:
     int slack;
     int threshold;
     int numSignalsReceived;
-    int totalCounter;
     int calculateAndSetSlack();
     void processMaturity();
 };

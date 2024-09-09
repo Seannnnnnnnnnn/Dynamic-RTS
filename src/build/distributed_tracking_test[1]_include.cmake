@@ -1,5 +1,5 @@
-if(EXISTS "C:/Users/seanl/Dynamic-RTS/src/build/distributed_tracking_test[1]_tests.cmake")
-  include("C:/Users/seanl/Dynamic-RTS/src/build/distributed_tracking_test[1]_tests.cmake")
+if(EXISTS "/Users/sean/Dynamic-RTS/src/build/distributed_tracking_test[1]_tests.cmake")
+  include("/Users/sean/Dynamic-RTS/src/build/distributed_tracking_test[1]_tests.cmake")
 else()
   add_test(distributed_tracking_test_NOT_BUILT distributed_tracking_test_NOT_BUILT)
 endif()

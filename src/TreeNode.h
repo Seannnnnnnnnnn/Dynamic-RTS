@@ -33,8 +33,8 @@ struct TreeNode {
     std::unique_ptr<TreeNode> right;
 
     TreeNode() : 
-        endpoint(0), jurisdictionLeft(0), jurisdictionRight(0), 
-        left(nullptr), right(nullptr), counter(0) {}
+        counter(0), endpoint(0), jurisdictionLeft(0), jurisdictionRight(0), 
+        left(nullptr), right(nullptr) {}
 
     int getCounter() { return counter; }
     inline bool stabsJurisdictionInterval(int value) { return jurisdictionLeft <= value < jurisdictionRight; }

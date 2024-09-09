@@ -28,7 +28,9 @@ void EndpointTree::buildTree(std::unique_ptr<TreeNode>& node, int left, int righ
     if (left == right) {
         node->endpoint = endpoints[left];
         node->jurisdictionLeft = endpoints[left];
-        node->jurisdictionRight = (left + 1 < endpoints.size()) ? endpoints[left + 1] : INFTY;
+        node->jurisdictionRight = (static_cast<std::vector<int>::size_type>(left + 1) < endpoints.size()) 
+                          ? endpoints[left + 1] 
+                          : INFTY;
         return;
     }
 

@@ -80,33 +80,40 @@ TEST(DistributedTrackingTest, ProcessSignalWithoutMaturity){
     // Tests that we can process a signal when the counter change is small enough to not mature
 
     // set up
-    Query coordinator(0, 10, 16);  // threshold of 100
-    
-    std::vector<TreeNode*> participants;
+    Query coordinator(0, 10, 16);  // Threshold of 16
+
+    // Store unique_ptrs to keep them alive
+    std::vector<std::unique_ptr<TreeNode>> participants;
     for (int i = 0; i < 3; ++i) {
-        participants.push_back(std::make_unique<TreeNode>().get());
-    }        
-    
-    auto dtInstance = std::make_unique<DistributedTracking>(coordinator, participants);
+        participants.push_back(std::make_unique<TreeNode>());
+    }
+
+    // Extract raw pointers for use with DistributedTracking
+    std::vector<TreeNode*> participantPtrs;
+    for (const auto& participant : participants) {
+        participantPtrs.push_back(participant.get());
+    }
+
+    auto dtInstance = std::make_unique<DistributedTracking>(coordinator, participantPtrs);
     DistributedTracking* dtInstancePtr = dtInstance.get();
 
-    for (auto participant : participants) {
+    for (auto participant : participantPtrs) {
         participant->dtInstanceDataMap[dtInstancePtr] = {0, dtInstancePtr->getSlack()};
         participant->initialiseHeap();
     }
 
-    // check that participants have non-empty maps and Heaps
-    for (auto participant : participants) {
+    // Check that participants have non-empty maps and heaps
+    for (auto participant : participantPtrs) {
         ASSERT_FALSE(participant->dtHeap.empty());
         ASSERT_FALSE(participant->dtInstanceDataMap.empty());
     }
-    ASSERT_EQ(dtInstance->getSlack(), 1);  // check that we branch correctly in processSignal
+    ASSERT_EQ(dtInstance->getSlack(), 1);  // Check that we branch correctly in processSignal
 
-    // small value to not mature the DT instance
+    // Small value to not mature the DT instance
     dtInstance->processSignal(1);
 
-    // check that particpants have empty maps
-    for (auto participant : participants) {
+    // Check that participants have non-empty maps and heaps
+    for (auto participant : participantPtrs) {
         ASSERT_FALSE(participant->dtHeap.empty());
         ASSERT_FALSE(participant->dtInstanceDataMap.empty());
         ASSERT_TRUE(dtInstance->isAlive());
@@ -115,27 +122,33 @@ TEST(DistributedTrackingTest, ProcessSignalWithoutMaturity){
 }
 
 
-
 TEST(DistributedTrackingTest, HandlesMaturityWhenSmall){
 
     // set up
     Query coordinator(0, 10, 1);  // threshold of 1
     
-    std::vector<TreeNode*> participants;
+    // Store unique_ptrs to keep them alive
+    std::vector<std::unique_ptr<TreeNode>> participants;
     for (int i = 0; i < 3; ++i) {
-        participants.push_back(std::make_unique<TreeNode>().get());
-    }        
+        participants.push_back(std::make_unique<TreeNode>());
+    }
+
+    // Extract raw pointers for use with DistributedTracking
+    std::vector<TreeNode*> participantPtrs;
+    for (const auto& participant : participants) {
+        participantPtrs.push_back(participant.get());
+    }       
     
-    auto dtInstance = std::make_unique<DistributedTracking>(coordinator, participants);
+    auto dtInstance = std::make_unique<DistributedTracking>(coordinator, participantPtrs);
     DistributedTracking* dtInstancePtr = dtInstance.get();
 
-    for (auto participant : participants) {
+    for (auto participant : participantPtrs) {
         participant->dtInstanceDataMap[dtInstancePtr] = {0, dtInstancePtr->getSlack()};
         participant->initialiseHeap();
     }
 
     // check that participants have non-empty maps and Heaps
-    for (auto participant : participants) {
+    for (auto participant : participantPtrs) {
         ASSERT_FALSE(participant->dtHeap.empty());
         ASSERT_FALSE(participant->dtInstanceDataMap.empty());
     }
@@ -145,7 +158,7 @@ TEST(DistributedTrackingTest, HandlesMaturityWhenSmall){
     dtInstance->processSignal(100);
 
     // check that particpants have empty maps
-    for (auto participant : participants) {
+    for (auto participant : participantPtrs) {
         ASSERT_TRUE(participant->dtHeap.empty());
         ASSERT_TRUE(participant->dtInstanceDataMap.empty());
         ASSERT_FALSE(dtInstance->isAlive());
