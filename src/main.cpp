@@ -23,11 +23,11 @@ int main() {
 
     DT.processElement(streamElement);
 
-    // for (auto query : DT.getQuerySet()) {
-    //     if (!query.isAlive()) {
-    //         std::cout<<"Matured query"<<std::endl;
-    //     }
-    // }
+    for (auto query : DT.getQuerySet()) {
+        if (!query.isAlive()) {
+            std::cout<<"Matured query"<<std::endl;
+        }
+    }
 
     return 0;
 }
