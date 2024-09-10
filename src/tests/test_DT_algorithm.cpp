@@ -26,18 +26,11 @@ protected:
 };
 
 
-TEST_F(DTAlgorithmTest, BuildsDTInstances) {
-    // checks that all DT Instances are built
-    auto dtInstances = dtAlgorithmTestClass->getDTInstances();
-    ASSERT_EQ(dtInstances.size(), 8);
-}
-
 
 TEST_F(DTAlgorithmTest, BuildsDTInstancesInNodes) {
     // checks that all DT Instances are built
-    GTEST_SKIP();
     auto dtInstances = dtAlgorithmTestClass->getDTInstancesFromNodes();
-    ASSERT_EQ(dtInstances.size(), 21);
+    ASSERT_EQ(dtInstances.size(), 23);
 }
 
 
@@ -90,6 +83,46 @@ TEST_F(DTAlgorithmTest, BuildsQuerySet) {
 
     DTAlgorithm DT(queries);
     ASSERT_EQ(DT.getQuerySet().size(), 4);
+}
+
+
+TEST_F(DTAlgorithmTest, AssignsDtInstancesCorrectlyToHeaps) {
+    // example from 2016 
+    std::vector<Query> queries = {
+        Query(1, 11, 1),
+        Query(2, 16, 1),
+        Query(3, 13, 1),
+        Query(4, 9, 1),
+        Query(5, 15, 1),
+        Query(6, 8, 1),
+        Query(7, 14, 1),
+        Query(10, 12, 1),
+    };
+    
+    DTAlgorithm DT(queries);
+    ASSERT_EQ(DT.getQuerySet().size(), 8);
+
+    // following node should have 4 DT instancesthm
+    TreeNode* root = DT.getDTRoot();  
+    TreeNode* targetNode = root->right.get()->left.get();
+
+    // Check DTHeap and DTMap sizes
+    ASSERT_EQ(targetNode->dtHeap.size(), 4);
+    ASSERT_EQ(targetNode->dtInstanceDataMap.size(), 4);
+
+    // Check its the right node
+    ASSERT_EQ(targetNode->jurisdictionLeft, 9);
+    ASSERT_EQ(targetNode->jurisdictionRight, 13);
+
+    // Check that it can be iterated over (instances are stored correctly)
+    for (auto dtInstance : targetNode->dtInstanceList) {
+        ASSERT_EQ(dtInstance->getSlack(), 1);
+    }
+}
+
+
+TEST_F(DTAlgorithmTest, AssignsCorrectKeysToHeaps) {
+    GTEST_SKIP();
 }
 
 

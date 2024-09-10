@@ -28,3 +28,7 @@ void TreeNode::initialiseHeap() {
         dtHeap.emplace(key, dtInstance);
     }
 }
+
+bool TreeNode::stabsJurisdictionInterval(int val) const {
+    return jurisdictionLeft <= val && val < jurisdictionRight;
+}

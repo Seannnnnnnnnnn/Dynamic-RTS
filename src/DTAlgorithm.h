@@ -8,6 +8,7 @@ public:
     DTAlgorithm(std::vector<Query>& queries);
     void processElement(const StreamElement& element);
     std::vector<Query>& getQuerySet();
+    TreeNode* getDTRoot();
 
 protected:
     std::vector<std::unique_ptr<DistributedTracking>> dtInstances;

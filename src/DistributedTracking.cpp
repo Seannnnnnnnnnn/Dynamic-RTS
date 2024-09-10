@@ -76,10 +76,7 @@ void DistributedTracking::processSignal(int counterChange){
 }
 
 void DistributedTracking::processMaturity() {
-    // TODO: sometimes - the performed removals is not called - figure out why?
-    
-    // Mark the query as matured.
-    std::cout<<"Maturing Query"<<std::endl;
+    // Mark the query as matured
     coordinator.alive = false;
 
     for (auto participant : participants) {
@@ -93,6 +90,5 @@ void DistributedTracking::processMaturity() {
             participant->initialiseHeap();
         }
     }
-    std::cout<<"Performed removals"<<std::endl;
     return;
 }

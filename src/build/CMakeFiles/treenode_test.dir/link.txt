@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/c++  -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/treenode_test.dir/tests/test_tree_node.cpp.o CMakeFiles/treenode_test.dir/TreeNode.cpp.o -o treenode_test  lib/libgtest.a

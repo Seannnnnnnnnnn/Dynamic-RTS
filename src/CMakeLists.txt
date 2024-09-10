@@ -30,6 +30,10 @@ enable_testing()
 add_subdirectory(googletest)
 include_directories(googletest/include)
 
+add_executable(treenode_test 
+            tests/test_tree_node.cpp
+            TreeNode.cpp)
+
 add_executable(endpoint_tree_test 
             tests/test_endpoint_tree.cpp
             EndpointTree.cpp
@@ -63,25 +67,27 @@ add_executable(distributed_tracking_test
             Query.cpp
             DistributedTracking.cpp)
 
-# add_executable(DT_algorithm_test 
-#             tests/test_DT_algorithm.cpp
-#             tests/DTAlgorithmTest.cpp
-#             EndpointTree.cpp
-#             TreeNode.cpp
-#             Query.cpp
-#             StreamElement.h
-#             DistributedTracking.cpp
-#             DTAlgorithm.cpp)
+add_executable(DT_algorithm_test 
+            tests/test_DT_algorithm.cpp
+            tests/DTAlgorithmTest.cpp
+            EndpointTree.cpp
+            TreeNode.cpp
+            Query.cpp
+            StreamElement.h
+            DistributedTracking.cpp
+            DTAlgorithm.cpp)
 
 target_link_libraries(endpoint_tree_test PRIVATE gtest)
 target_link_libraries(canconical_node_test PRIVATE gtest)
 target_link_libraries(element_processing_test PRIVATE gtest)
 target_link_libraries(distributed_tracking_test PRIVATE gtest)
-# target_link_libraries(DT_algorithm_test PRIVATE gtest)
+target_link_libraries(DT_algorithm_test PRIVATE gtest)
+target_link_libraries(treenode_test PRIVATE gtest)
 
 include(GoogleTest)
 gtest_discover_tests(endpoint_tree_test)
 gtest_discover_tests(canconical_node_test)
 gtest_discover_tests(element_processing_test)
 gtest_discover_tests(distributed_tracking_test)
-# gtest_discover_tests(DT_algorithm_test)
+gtest_discover_tests(DT_algorithm_test)
+gtest_discover_tests(treenode_test)

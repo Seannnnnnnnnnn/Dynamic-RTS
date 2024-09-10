@@ -37,11 +37,12 @@ struct TreeNode {
         left(nullptr), right(nullptr) {}
 
     int getCounter() { return counter; }
-    inline bool stabsJurisdictionInterval(int value) { return jurisdictionLeft <= value < jurisdictionRight; }
+    bool stabsJurisdictionInterval(int value) const;
     inline void incrementCounter(int weight) { counter += weight; }
 
     // Distributed Tracking methods and attributes
     DTHeap dtHeap;    
+    std::vector<DistributedTracking*> dtInstanceList;  // for debugging
     std::unordered_map<DistributedTracking*, std::pair<int, int>> dtInstanceDataMap; // <dtInstance, <last_signal_counter, slack>>
     
     void initializeDTInstanceData(DistributedTracking* dtInstance);

@@ -1,0 +1,5 @@
+if(EXISTS "/Users/sean/Dynamic-RTS/src/build/treenode_test[1]_tests.cmake")
+  include("/Users/sean/Dynamic-RTS/src/build/treenode_test[1]_tests.cmake")
+else()
+  add_test(treenode_test_NOT_BUILT treenode_test_NOT_BUILT)
+endif()

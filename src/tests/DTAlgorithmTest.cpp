@@ -32,10 +32,6 @@ std::vector<TreeNode*> TestDTAlgorithmClass::getNodes(){
 }
 
 
-std::vector<DistributedTracking*> TestDTAlgorithmClass::getDTInstances(){
-    return dtInstances;
-}
-
 
 std::vector<DistributedTracking*> TestDTAlgorithmClass::getDTInstancesFromNodes(){
     

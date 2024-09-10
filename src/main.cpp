@@ -4,6 +4,9 @@
 #include "StreamElement.h"
 #include "DTAlgorithm.h"
 
+// TODO: fix tests, clean up logging statements
+//       clean up DTAlgorithm::processCounterIncrement - below should be killing 6 queries
+
 int main() {
     // Define some example queries
     std::vector<Query> queries = {
@@ -19,15 +22,17 @@ int main() {
     
     DTAlgorithm DT(queries);
 
-    StreamElement streamElement(9, 1);
+    StreamElement streamElement(10, 1);
 
     DT.processElement(streamElement);
 
-    for (auto query : DT.getQuerySet()) {
+    int dead_queries = 0;
+    for (auto& query : DT.getQuerySet()) {
         if (!query.isAlive()) {
-            std::cout<<"Matured query"<<std::endl;
+            dead_queries++;
         }
     }
+    std::cout<<"Matured " << dead_queries << " RTS Queries" << std::endl;
 
     return 0;
 }
