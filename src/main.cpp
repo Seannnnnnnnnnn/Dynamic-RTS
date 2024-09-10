@@ -4,8 +4,7 @@
 #include "StreamElement.h"
 #include "DTAlgorithm.h"
 
-// TODO: fix tests, clean up logging statements
-//       clean up DTAlgorithm::processCounterIncrement - below should be killing 6 queries
+// TODO: final debugging - make sure we kill 6 of the below queries (currently kill 5)
 
 int main() {
     // Define some example queries
@@ -17,7 +16,7 @@ int main() {
         Query(5, 15, 1),
         Query(6, 8, 1),
         Query(7, 14, 1),
-        Query(10, 12, 1),
+        Query(10, 12, 1),  // you're alive for some reason
     };
     
     DTAlgorithm DT(queries);
@@ -29,6 +28,7 @@ int main() {
     int dead_queries = 0;
     for (auto& query : DT.getQuerySet()) {
         if (!query.isAlive()) {
+            std::cout<<"killed query on : [" << query.getLeft() <<"," << query.getRight()<<")\n";
             dead_queries++;
         }
     }
