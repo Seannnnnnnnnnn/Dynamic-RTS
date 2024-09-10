@@ -4,7 +4,6 @@
 #include "StreamElement.h"
 #include "DTAlgorithm.h"
 
-// TODO: final debugging - make sure we kill 6 of the below queries (currently kill 5)
 
 int main() {
     // Define some example queries
@@ -15,15 +14,17 @@ int main() {
         Query(4, 9, 1),
         Query(5, 15, 1),
         Query(6, 8, 1),
-        Query(7, 14, 1),
-        Query(10, 12, 1),  // you're alive for some reason
+        Query(7, 14, 100),
+        Query(10, 12, 1),
     };
     
     DTAlgorithm DT(queries);
 
-    StreamElement streamElement(10, 1);
-
-    DT.processElement(streamElement);
+    DT.processElement(StreamElement(13, 1));
+    DT.processElement(StreamElement(4, 1));
+    DT.processElement(StreamElement(8, 25));
+    DT.processElement(StreamElement(9, 10));
+    DT.processElement(StreamElement(9, 26));
 
     int dead_queries = 0;
     for (auto& query : DT.getQuerySet()) {
@@ -33,6 +34,5 @@ int main() {
         }
     }
     std::cout<<"Matured " << dead_queries << " RTS Queries" << std::endl;
-
     return 0;
 }

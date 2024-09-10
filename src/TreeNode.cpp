@@ -1,5 +1,4 @@
 #include "TreeNode.h"
-#include <iostream>
 
 void TreeNode::initializeDTInstanceData(DistributedTracking* dtInstance) {
     dtInstanceDataMap[dtInstance] = {0, 0};  // Initialize with default values
@@ -9,6 +8,7 @@ void TreeNode::initializeDTInstanceData(DistributedTracking* dtInstance) {
 void TreeNode::updateSlack(DistributedTracking* dtInstance, int newSlack){
     auto it = dtInstanceDataMap.find(dtInstance);
     if (it != dtInstanceDataMap.end()) {
+        it->second.first = 0;  // at start of new round, we reset to 0
         it->second.second = newSlack; 
         // Rebuild the heap since slack has changed
         initialiseHeap();
@@ -27,8 +27,4 @@ void TreeNode::initialiseHeap() {
         int key = data.first + data.second; // last_signal_counter + slack
         dtHeap.emplace(key, dtInstance);
     }
-}
-
-bool TreeNode::stabsJurisdictionInterval(int val) const {
-    return jurisdictionLeft <= val && val < jurisdictionRight;
 }

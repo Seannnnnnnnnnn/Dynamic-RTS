@@ -1,4 +1,3 @@
-#include <iostream>
 #include "DistributedTracking.h"
 #include "TreeNode.h"
 

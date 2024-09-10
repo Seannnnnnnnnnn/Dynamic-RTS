@@ -25,7 +25,7 @@ add_executable(main
 
 target_include_directories(main PUBLIC "${PROJECT_SOURCE_DIR}")
 
-# testing
+# Unit testing files
 enable_testing()
 add_subdirectory(googletest)
 include_directories(googletest/include)

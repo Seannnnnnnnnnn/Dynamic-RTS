@@ -1,5 +1,4 @@
 #include "DTAlgorithm.h"
-#include <iostream>
 
 
 DTAlgorithm::DTAlgorithm(std::vector<Query>& queries): 
@@ -49,8 +48,7 @@ void DTAlgorithm::processElement(const StreamElement& streamElement) {
 
 
 void DTAlgorithm::manageCounterUpdate(TreeNode* treeNode) {
-    // TODO: logic here is still buggy somewhere - need to keep popping until we are done!
-    // std::cout << "Checking node with # dtInstances: " << treeNode->dtInstanceList.size() << std::endl;
+    // TODO: complete the logic for handling large counter increments
     while(!treeNode->dtHeap.empty()){
 
         auto [minimumKey, dtInstance] = treeNode->dtHeap.top();
@@ -60,18 +58,22 @@ void DTAlgorithm::manageCounterUpdate(TreeNode* treeNode) {
         }
         
         treeNode->dtHeap.pop();  
+        int slack = dtInstance->getSlack();
         int previousCounterValue = treeNode->dtInstanceDataMap[dtInstance].first;
-        int counterChange = treeNode->counter - previousCounterValue;
 
-        dtInstance->processSignal(counterChange); 
-        
+        // for handling non-uniform counter increases - see section 7 of paper
+        while (treeNode->counter - previousCounterValue >= slack){
+            dtInstance->processSignal(slack); 
+            previousCounterValue += slack;
+        }
+
         // only perform the following if the dt instance is still alive after processing the latest counter change: 
         if (dtInstance->isAlive()) {
             int newSlack = dtInstance->getSlack();
             // if the slack doesn't change we need to update heap key
             // the else-case is handled by the DistributedTracking
-            int newKey = newSlack + treeNode->counter;
-            treeNode->dtInstanceDataMap[dtInstance] = {treeNode->counter, newSlack};
+            int newKey = newSlack + previousCounterValue;
+            treeNode->dtInstanceDataMap[dtInstance] = {previousCounterValue, newSlack};
             treeNode->dtHeap.push({newKey, dtInstance});
         }
     }

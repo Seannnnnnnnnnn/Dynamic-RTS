@@ -36,9 +36,9 @@ struct TreeNode {
         counter(0), endpoint(0), jurisdictionLeft(0), jurisdictionRight(0), 
         left(nullptr), right(nullptr) {}
 
-    int getCounter() { return counter; }
-    bool stabsJurisdictionInterval(int value) const;
-    inline void incrementCounter(int weight) { counter += weight; }
+    int getCounter() const { return counter; }
+    bool stabsJurisdictionInterval(int value) const { return jurisdictionLeft <= value && value < jurisdictionRight; }
+    void incrementCounter(int weight) { counter += weight; }
 
     // Distributed Tracking methods and attributes
     DTHeap dtHeap;    

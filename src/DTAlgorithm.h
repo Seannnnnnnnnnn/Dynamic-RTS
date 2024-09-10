@@ -7,6 +7,7 @@ class DTAlgorithm : public EndpointTree {
 public:
     DTAlgorithm(std::vector<Query>& queries);
     void processElement(const StreamElement& element);
+
     std::vector<Query>& getQuerySet();
     TreeNode* getDTRoot();
 
