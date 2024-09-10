@@ -26,25 +26,23 @@ void DTAlgorithm::processElement(const StreamElement& streamElement) {
     // overrides the element processing of the EndpointTree class, as we now use 
     // the dtInstances to manage query maturation 
     TreeNode* current = getRoot().get();
-    TreeNode* targetNode = current->right.get()->left.get();
-    std::cout << "Target Node jurisdiction interval: [" << targetNode->jurisdictionLeft << "," << targetNode->jurisdictionRight << ")\n";
 
     int value  = streamElement.value;
     int weight = streamElement.weight;
     
     if (value < minimum_endpoint || value > maximum_endpoint) { return; }  // don't process if it's not in the tree
 
-    while (current->left && current->right) {
+    while (current) {
+        TreeNode* left = current->left.get();
+        TreeNode* right = current->right.get();
+        
         current->counter+=weight;
         manageCounterUpdate(current);  
         
-        if (current->left->stabsJurisdictionInterval(value)) {
-            current = current->left.get();
-        } else if (current->right->stabsJurisdictionInterval(value)) {
-            current = current->right.get();
+        if (left && left->stabsJurisdictionInterval(value)) {
+            current = left;
         } else {
-            std::cerr << "Error: No valid child node stabs the value " << value << std::endl;
-            break;
+            current = right;
         }
     }
 }

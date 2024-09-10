@@ -121,8 +121,63 @@ TEST_F(DTAlgorithmTest, AssignsDtInstancesCorrectlyToHeaps) {
 }
 
 
-TEST_F(DTAlgorithmTest, AssignsCorrectKeysToHeaps) {
-    GTEST_SKIP();
+TEST_F(DTAlgorithmTest, DoesntMatureAllQueries) {
+    std::vector<Query> queries = {
+        Query(1, 11, 1),
+        Query(2, 16, 1),
+        Query(3, 13, 10),
+        Query(4, 9, 1),
+        Query(5, 15, 1),
+        Query(6, 8, 1),
+        Query(7, 14, 1),
+        Query(10, 12, 10),  // you're alive for some reason
+    };
+    
+    DTAlgorithm DT(queries);
+
+    StreamElement streamElement(10, 1);
+
+    DT.processElement(streamElement);
+
+    int dead_queries = 0;
+    for (auto& query : DT.getQuerySet()) {
+        if (!query.isAlive()) {
+            std::cout<<"killed query on : [" << query.getLeft() <<"," << query.getRight()<<")\n";
+            dead_queries++;
+        }
+    }
+
+    ASSERT_EQ(dead_queries, 4);
+}
+
+
+TEST_F(DTAlgorithmTest, MaturesQueries) {
+    std::vector<Query> queries = {
+        Query(1, 11, 1),
+        Query(2, 16, 1),
+        Query(3, 13, 1),
+        Query(4, 9, 1),
+        Query(5, 15, 1),
+        Query(6, 8, 1),
+        Query(7, 14, 1),
+        Query(10, 12, 1),  // you're alive for some reason
+    };
+    
+    DTAlgorithm DT(queries);
+
+    StreamElement streamElement(10, 1);
+
+    DT.processElement(streamElement);
+
+    int dead_queries = 0;
+    for (auto& query : DT.getQuerySet()) {
+        if (!query.isAlive()) {
+            std::cout<<"killed query on : [" << query.getLeft() <<"," << query.getRight()<<")\n";
+            dead_queries++;
+        }
+    }
+
+    ASSERT_EQ(dead_queries, 6);
 }
 
 
