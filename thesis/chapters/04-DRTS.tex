@@ -183,7 +183,7 @@ which the worst case depricates to $O(nm)$ runtime. It is now clear that so long
 
 
 \newpage
-\section{$\varepsilon$ - Fuzzy Dynamic Range Thresholding on Streams}
+\section{$\varepsilon$ - Fuzzy DRTS}
 
 Theorem 4.7 suggests that designing an \textit{exact} DRTS algorithm is difficult for problem instances with a large number of distinct endpoint functions. We now ask, can we bucket our queries in such a way that we trade some accuracy for speed? In this following section, we formalise an approximated version of the DRTS problem, and propose (as far as we know) an entirely novel approach to grouping DRTS queries to solve the problem.
 
@@ -284,3 +284,13 @@ We now demonstrate the correctness of our algorithm, and formally prove that it 
 
 \newpage
 \section{Experimental Results}
+\label{sec:experimental-results}
+This section provides an experimental evaluation of our algorithms for the DRTS and $\varepsilon$-fuzzy DRTS problems, using benchmark solutions discussed in \cref{sec:benchmark-solutions} as a baseline. 
+
+\subsection{Experiment Design}
+\label{sec:experiment-design}
+
+All experiments were performed on an Ubuntu PC, equipped with an Intel Quad-Core i7 CPU running at 2.3GHZ with 16GB onboard memory. In terms of operating system, macOS Ventura 13.0 was used. All algorithms were written in \texttt{C++ 17} asdC  
+
+
+\subsection{Performance on Financial Data}

@@ -183,13 +183,39 @@ We now ask, what running time overheads does this method add to the running time
 \section{Distributed Tracking}
 \label{sec:dist-tracking}
 
-We make a brief excursion to the field of \textit{Distributed Computing} to consider an interesting problem known as \textit{Distributed Tracking}. Also known as \textit{Distributed Monitoring} or \textit{Distributed Functional Monitoring} it models the following scenario: Consider a coordinator $q$ and a set of participants $S_1, \dots, S_h$. Each participant has a corresponding counter $c_i$, each initialised to 0, and the coordinator has some tolerance $\tau \in \mathbb{N}$. At each time step, at most one of the counters are incremented; that is, one or zero counters increase. The goal of the distributed tracking problem is to design an \textit{efficient} algorithm for the coordinator to report the instant that 
+We make a brief excursion to the field of \textit{Distributed Computing} to consider a seemingly unrelated problem known as \textit{Distributed Tracking}. Also known as \textit{Distributed Monitoring} or \textit{Distributed Functional Monitoring} it models the following scenario: Consider a coordinator $q$ and a set of participants $S_1, \dots, S_h$. Each participant has a corresponding counter $c_i$, each initialised to 0, and the coordinator has some \textit{tolerance} $\tau \in \mathbb{N}$. At each time step, at most one of the counters are incremented; that is, one or zero counters increase. The goal of the distributed tracking problem is to design an \textit{efficient} algorithm for the coordinator to report the instant that 
 $$\sum_{i=1}^{h}c_i = \tau$$
 It is assumed that the coordinator and participants have a two-way communication channel, so that a participant may report its counter $c_i$ upon request from the coordinator, or at any time it pleases. By the term \textit{efficient}, we mean to design an algorithm that \textit{minimises} these total number of \textit{messages} between the coordinator and participant.
 
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[scale=0.15]
+\tikzstyle{every node}+=[inner sep=0pt]
+\draw [black] (37.7,-20.7) circle (3);
+\draw (37.7,-20.7) node {$q$};
+\draw [black] (37.7,-20.7) circle (2.4);
+\draw [black] (24,-38.2) circle (3);
+\draw (24,-38.2) node {$S_1$};
+\draw [black] (52.3,-38.2) circle (3);
+\draw (52.3,-38.2) node {$S_3$};
+\draw [black] (37.7,-38.2) circle (3);
+\draw (37.7,-38.2) node {$S_2$};
+\draw [black] (25.5,-35.7) -- (35.81,-23.03);
+\fill [black] (35.81,-23.03) -- (34.91,-23.33) -- (35.69,-23.96);
+\draw [black] (37.7,-35.2) -- (37.7,-23.7);
+\fill [black] (37.7,-23.7) -- (37.2,-24.5) -- (38.2,-24.5);
+\draw [black] (50.8,-35.3) -- (39.7,-22.93);
+\fill [black] (39.7,-22.93) -- (39.87,-23.86) -- (40.61,-23.19);
+\end{tikzpicture}
+\caption{An example of a Distributed Tracking instance on $h=3$ participants.}
+\end{center}
+\end{figure}
+
+
 For illustrative purposes consider the following naive algorithm for the distributed tracking problem, where at each time step if a participants counter $c_i$ has been incremented, the corresponding participant $s_i$ reports it's new count to the coorindator. This clearly results in $O(\tau)$ messages over the course of the algorithm.
 
-A more efficient algorithm, which we will make frequent use of in this thesis, is a much simplified result of what is proposed in Cormode in \cite{Cormode2011}
+A more efficient algorithm, which we will make frequent use of in this thesis, is a result of Cormode \cite{Cormode2011}, though is presented (along with its proof) in a much more simplified manner.  
 \begin{algorithm}
 \caption{Efficient Distributed Tracking}\label{alg:dist-tracking}
 \begin{algorithmic}[1]

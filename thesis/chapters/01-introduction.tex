@@ -7,36 +7,40 @@
 \chapter{\chaptertitle}
 \label{ch:introduction}
 
-This thesis studies an applied problem from Computational Geometry called \textit{Range Thresholding on Streams} \cite{GAN16}. The problem is best intuited through an example related to the share market. Traders may pay close attention to the trading volumes in sensitive price ranges as for example. substantial limit orders in certain price ranges may indicate significant price downfall. A trader therefore may wish to receive timely alerts for queries of the form: 
+This thesis studies an applied problem from Computational Geometry called \textit{Range Thresholding on Streams} \cite{GAN16}. The problem is best motivated through an example related to trading in the share market. Suppose that we are a high-stakes trader, and we pay close attention to the trading volumes in sensitive price ranges. For example, we may know that substantial limit orders in certain price ranges may indicate significant price downfall. We therefore wish to receive timely alerts for queries of the form: 
 
 \textit{"Alert me when \text{100,000} shares of AAPL (Apple Inc.) have been sold in the price range \text{[200, 205]} from now."}
 
-More formally, the Range Threshold on Streams (RTS) problem can be formulated as follows. Consider a sequence of elements $\{e_i\}^{n}_{i=1}$ where each element $e_i$ contains a \textit{value} $v(e_i) \in \mathbb{R}$ and a \textit{weight} $w(e_i) \in \mathbb{Z}$. An RTS query $q$ comprises of a tuple $(R_q, \tau_q)$ where $R_q = [x,y]$ is a subset of the real line, and $\tau_q \in\mathbb{N}$ is some \textit{threshold}
+More formally, the Range Threshold on Streams (RTS) problem can be formulated as follows. Consider an unbounded stream of elements $\{e_i\}^{n}_{i=1}$ where each element $e_i$ contains a \textit{value} $v(e_i) \in \mathbb{R}$ and a \textit{weight} $w(e_i) \in \mathbb{Z}$. An RTS query $q$ comprises of a tuple $(R_q, \tau_q)$ where $R_q = [x,y]$ is a subset of the real line, and $\tau_q \in\mathbb{N}$ is some \textit{threshold}. Let $S(q)$ be the set of stream elements $e_i$ such that 
+\begin{itemize}
+    \item $e_i$ is received after the time $q$ is registered and,
+    \item has value $v(e)$ falling into $R_q$. 
+\end{itemize}
+The query \textit{matures} the instant that $\sum_{e\in S(q)}w(e)\geq \tau_q$. The Range Thresholding on Streams problem is to design an algorithm or data structure that can efficiently support and process a huge number of simultaneous RTS queries  in terms of both space and computational cost. 
 
-The challenge of this thesis is to design an efficient algorithm / data structure that supports a large number of such queries. 
+As described in the RTS literature \cite{GAN16, DBLP:conf/sigmod/ZhangGBKCZ22}, an RTS query $q$ intuitively detects when the interval $R_q$ becomes a \textit{hot spot}, and solutions to the RTS problem are required for applications which involve rapid responses to such hot spots, such as the as our earlier example in stock trading.
 
-\section{Problem Statement}
-\label{sec:problem-statement}
+The RTS problem is deceptively simple at first glance - one can easily solve the problem with the following polynomial-time algorithm; whenever a stream element $e$ arrives, one checks if $e\in R_q$ for each registered query $q$, and update some counter $c_q$ if so. The instant that $c_q \geq \tau_q$ report maturity for the query. For a set of $m$ queries the cost of processing a $n$ streams becomes a prohibitively large $O(nm)$ - suggesting that the naive algorithm becomes computationally intractable when attempting to support a large number of queries. 
 
+Despite the number of applications for the RTS problem \cite{DBLP:conf/sigmod/ZhangGBKCZ22}, it was only until recently that the first algorithm was proposed that escapes the $O(nm)$ barrier of the naive algorithm \cite{GAN16}. 
 
+\section{Motivation}
+\label{sec:motivation}
+This thesis is primarily motivated to extend the literature to define and solve a more general version of the RTS problem, in which the interval of interest for a given query $R_q$, is allowed to become \textit{dynamic}. 
 
+Returning to our example related to the Stock market, Traders will often be interested in buy/sell orders being placed within ranges related to the so-called \textit{volume weighted average price} (VWAP) \cite{vwap}. Recall that the formula for VWAP is given by 
+\begin{equation}
+    \frac{\sum_{e}v(e) \times w(e)}{\sum_{e}w(e)}
+\end{equation}
+where $v(e)$ denotes the \textit{price} or \textit{value} of order $e$ and $w(e)$ denotes the corresponding \textit{volume} or \textit{weight}. If a trader were to register an alert of such as:
 
-Currently, the Wybe language supports only first-order programming, where all terms have first-order types. In this thesis, we introduce an extension to the Wybe language that supports higher-order programming.
+\textit{"Notify me when $\tau$ shares of limit orders have been registered within $x$\% of VWAP"}
 
-While many languages support higher-order programming, the Wybe language supports features that, to our knowledge, have not been investigated in a higher-order context. One such novel language feature Wybe has is a resource system. Resources in Wybe are akin to global variables in imperative languages or class variables in object-oriented languages. Resources, however, are more constrained in their usage, with each procedure that manipulates a resource requiring being marked as such. 
+There is currently no algorithm to do so, as existing RTS solutions require that the interval of interest for a given query $R_q$ remains fixed over the lifetime of said query, whereas endpoints determined by percentages of VWAP will \textit{evolve} with new trades as in $(1)$. 
 
-The resource system has not been investigated in the context of higher-order programming, providing a space in which we can investigate this language feature in a higher-order context. The desired semantics motivate an extension to the intermediate representation that introduces global variables. We aim to extend the Wybe language with our desired semantics of resources and provide novel optimisations enabled by these semantics. 
-
-With these extensions to the Wybe language, we evaluate the performance of the language in terms of execution time and program size, with the existing language as a baseline. While a slow-down may seem detrimental to the utility of a language, higher-order programming increases the expressiveness of a language. The increased expressiveness allows more general programs to be written with less source code and programming effort. Ideally, these overheads should be relatively small in comparison to the overall runtime of a program, lowering the cost of these extensions.
-
-Hence, we aim to answer these research questions:
-\begin{enumerate}
-  \item How can the Wybe language be extended with higher-order programming?
-  \item How can the resource system of Wybe be extended to support higher-order programming while maintaining the guarantees of resources and the expressiveness of higher-order programming?
-  \item Do these extensions perform similarly in terms of execution runtime and program size when compared with the existing Wybe language?
-\end{enumerate}
+Our goal therefore, is to mathematically formalise this more general type of query, where the endpoints or region of interest $R_q$ is allowed to \textit{change} with the introduction of each new stream element. Similar to the RTS problem, we then want to design salable solutions to manage a large number of simultaneous queries. 
 
 \section{Thesis Outline}
 \label{sec:doc-outline}
 
-The remainder of this chapter continues with an overview of the Wybe language. Following, in \cref{ch:preliminaries}, we review literature regarding the design an implementation of higher-order programming, type systems, and intermediate representations.
+The remainder of the thesis is outlined as follows; in \cref{ch:preliminaries} we cover all the necessary mathematical material to understand and analyse the state of the art solutions to the RTS problem. In \cref{ch:rts} we formally define the RTS problem, and briefly cover some existing solutions to RTS. The bulk of the chapter is then devoted to describing the state of the art \textit{DT Algorithm} for the RTS problem, and formally proving it's correctness and sub-quadratic run time. In \cref{ch:drts} we formalise an extension of the problem, which we call \textit{Dynamic Range Thresholding on Streams} (DRTS), as described in \cref{sec:motivation}. For the remainder of the chapter, we demonstrate how the DT Algorithm can be extended to solve the dynamic version of the problem, as well as propose a novel algorithm, in which we trade accuracy for speed to solve a special class of DRTS instances. Finally, we demonstrate that our algorithms not only have strong theoretical properties, but also perform well in practice via an experimental evaluation on synthetic and real data. 
