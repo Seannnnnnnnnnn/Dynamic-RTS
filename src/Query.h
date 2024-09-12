@@ -2,7 +2,7 @@
 
 struct Query {
     int l;      // Left endpoint of the interval
-    int r;      // Right endpoint of the interval
+    int r;      // Right endpoint of the intervals
     int tau;    // Threshold value
     int count;  // Running count of weights
     bool alive; // Status of the query

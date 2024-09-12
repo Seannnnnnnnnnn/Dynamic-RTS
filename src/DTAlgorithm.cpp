@@ -48,7 +48,6 @@ void DTAlgorithm::processElement(const StreamElement& streamElement) {
 
 
 void DTAlgorithm::manageCounterUpdate(TreeNode* treeNode) {
-    // TODO: complete the logic for handling large counter increments
     while(!treeNode->dtHeap.empty()){
 
         auto [minimumKey, dtInstance] = treeNode->dtHeap.top();
