@@ -10,13 +10,15 @@
 \section{Analysis of Algorithms}
 \label{sec:anaylsis-of-algorithms}
 
+With Algorithms and Data Structures being a core topic of this thesis, we require the formal mathematical language that is used to describe and evaluate their performance. In addition, we also need to specify a so-called model of computation, which defines the set of \textit{operations} a computer has available to formulate an algorithm.
+
 \subsection{Word-RAM Model \& Big Oh Notation}
-Under the Word-RAM model there are four atomic operations that a CPU can perform: 
+In this thesis, we consider so-called the Word-RAM model \cite{DBLP:conf/stoc/FredmanW90} which models as computer as having a contiguous array of \textit{Memory} registers and a \textit{CPU} which can perform: 
 \begin{itemize}
-    \item \textbf{Regiser (Re-)Initialization}: Set the content of a register to a fixed value, or to the content of another register.
-    \item \textbf{Arithmetic Operations}: Take two integers $a$ and $b$ stored in two registers, calculate the following and then store the result in a register
-    \item \textbf{Comparison and Branching}: Compare two integers $a$ and $b$ stored in two registers and decide which of the following is true: $a<b, a=b$ abd $a>b$
-    \item \textbf{Memory Access}: Take the memory address $p$ stored in a register, then perform one of a read or write operation at adress $p$
+    \item \textbf{Regiser (Re-)Initialization}: Set the content of a register in memory to a fixed value, or to the content of another register.
+    \item \textbf{Arithmetic Operations}: Take two integers $a$ and $b$ stored in two registers, calculate the following and then store the result in a register.
+    \item \textbf{Comparison and Branching}: Compare two integers $a$ and $b$ stored in two registers and decide which of the following is true: $a<b, a=b$ and $a>b$.
+    \item \textbf{Memory Access}: Take the memory address $p$ stored in a register, then perform one of a read or write operation at address $p$.
 \end{itemize}
 
 Every algorithm can be viewed as a sequence of these four atomic operations. The \textit{running time cost} of an algorithm is the measured by the number of operations in the sequence, as a function of the size of the input $n$. The \textit{space consumption} of an algorithm is the measured by the footprint of memory cells which it touches, that is, the peak memory usage when the algorithm is running. We will commonly describe the growth of said function in terms of their Big-$O$, Big-$\Omega$ and Big-$\Theta$ complexity defined as follows
@@ -32,7 +34,7 @@ Every algorithm can be viewed as a sequence of these four atomic operations. The
 \begin{definition}[Big-$\Theta$ Notation] $\Theta(g(n))$ is the family of all functions of $n$ that grow \textit{asymptotically as fast as $g(n)$}. That this $\Theta(g(n)) = O(g(n))\bigcap\Omega(g(n))$.
 \end{definition}
 
-For example, if an algorithm produces a sequence $n^2+4n$ atomic operations of an input of size $n$ we say that the \textit{runtime} of said algorithm is $O(n^2)$. 
+We will describe the \textit{time complexity} of an algorithm as the measurement of its running cost of via such notations. Analogously, we define the same for the \textit{space complexity} of an algorithm as a measure of its space consumption. 
 
 \subsection{Amortised Analysis}
 \label{ssec:amortised-analysis}
@@ -45,7 +47,6 @@ Also sometimes referred to as a \textit{prepaid argument}, suppose $cost(\sigma_
 $$\sum_{i=1}^{n}cost(\sigma_i)\leq\sum_{i=1}^{n}a(\sigma_i)$$
 
 
-\newpage
 \section{Binary Heap Data Structures}
 \label{sec:heap-data-structs}
 
@@ -87,13 +88,13 @@ where equation $(2.1)$ is called the \textit{min-heap property}. Our motivation 
     Given a Min-Heap on n elements, the minimum element can be found in $O(1)$ time.
 \end{lemma}
 \begin{proof}
-    By the min-heap property in $(2.1)$ we are guaranteed that the root (or equivalently $A[1]$ in an array-like implementation) is the smallest element. 
+    By the min-heap property in $(2.1)$ we are guaranteed that the root (or equivalently $A[1]$ in an array-like implementation) is the smallest element, which can be accessed in constant time.
 \end{proof}
 
 \subsection{Heapify}
 \label{ssec:heapify}
 
-Given an array $A[1:n]$ we require an efficient procedure to reorganise the elements of the array such that the Min-Heap property 2.1 is satisfied. This procedure of transforming an existing array into a heap is referred to as \textit{heapifying} and can be performed surprisingly fast. Consider the following procedure
+Given an array $A[1:n]$ we require an efficient procedure to reorganise the elements of the array such that the Min-Heap property 2.1 is satisfied. This procedure of transforming an existing array into a heap is referred to as \textit{heapifying} and can be performed surprisingly fast. Consider the following procedure as described in \textit{Cormen et. al} \cite{cormen01introduction}:
 
 \begin{algorithm}
 \caption{Build Min-Heap}\label{alg:heapify}
@@ -173,7 +174,7 @@ We now ask, what running time overheads does this method add to the running time
     \textbf{Query:}  A query on $S$ now involves a query on $S_0, \dots, S_{h-1}$ plus some constant overhead. Similar to our analysis of the space complexity this is given by 
     $$query(S)\leq \sum_{i=0}^{h-1}query(2^i)$$
 
-    \textbf{Insertion:} It is clear that some insertions are cheaper then others, for example when $i=0$, we can insert in $O(1)$. In the worst case, an insertion can result a recombination over the $h = O(\log n)$ partitions. Given this worst-case scenario occurs relatively infrequently, we will instead analyse the \textit{amortised} time (recall \cref{ssec:amortised-analysis}) of an insertion via the following \textit{accounting} argument. 
+    \textbf{Insertion:} It is clear that some insertions are cheaper then others, for example when $i=0$, we can insert in $O(1)$, though in the worst case, an insertion can result a recombination over the $h = O(\log n)$ partitions. Given this worst-case scenario occurs relatively infrequently, we will instead analyse the \textit{amortised} time complexity, as described in \cref{ssec:amortised-analysis}, of an insertion via the following argument. 
 
     Recall that to insert an element we destroy the data structures on $S_0,\dots, S_{i-1}$ and then build on the $2^i$ elements in $S_i$. Thus the build time is precisely $build(2^i)$. We charge the cost over the $2^i$ elements and thus each element bears $build(2^i) / 2^i$ cost. After performing $n$ insertions, we ask how much cost can be charged this way?  We make the observation that, an element can only move from a lower indexed subset $S_i$ to a higher one, $S_j$ where $i < j$. Hence an element can be amortised at most once over every group $i = 0,\dots h-1$, bringing its amortised cost to  
     $$O\left(\sum_{i=0}^{h-1}\frac{1}{2^i}build(2^i)\right)$$
@@ -230,7 +231,7 @@ A more efficient algorithm, which we will make frequent use of in this thesis, i
 \State \text{participant $S_i$ transmits a signal to $q$}
 \State $\bar{c}_i \gets c_i$
 \EndIf
-\State \text{after $q$ collects $h$ notifications set } $\tau^\prime\leftarrow\tau-\sum_{i=1}^{h}c_i$
+\State \text{after $q$ collects $h$ notifications break and set } $\tau^\prime\leftarrow\tau-\sum_{i=1}^{h}c_i$
 \EndFor
 \State \textbf{return} \text{DistributedTracking}$(\tau^\prime, S_1,\dots,S_h)$ \Comment{recursive call}
 \EndProcedure

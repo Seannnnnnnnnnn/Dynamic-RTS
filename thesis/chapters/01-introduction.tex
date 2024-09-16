@@ -7,11 +7,17 @@
 \chapter{\chaptertitle}
 \label{ch:introduction}
 
-This thesis studies an applied problem from Computational Geometry called \textit{Range Thresholding on Streams} \cite{GAN16}. The problem is best motivated through an example related to trading in the share market. Suppose that we are a high-stakes trader, and we pay close attention to the trading volumes in sensitive price ranges. For example, we may know that substantial limit orders in certain price ranges may indicate significant price downfall. We therefore wish to receive timely alerts for queries of the form: 
+This thesis studies an applied problem from Computational Geometry called \textit{Range Thresholding on Streams} \cite{GAN16}. The problem is best motivated through an example related to trading in the share market. High frequency traders often pay close attention to the trading volumes in sensitive price ranges. For example, traders may know that substantial limit orders in certain price ranges may indicate significant price downfall. We therefore wish to receive timely alerts for queries of the form: 
 
 \textit{"Alert me when \text{100,000} shares of AAPL (Apple Inc.) have been sold in the price range \text{[200, 205]} from now."}
 
-More formally, the Range Threshold on Streams (RTS) problem can be formulated as follows. Consider an unbounded stream of elements $\{e_i\}^{n}_{i=1}$ where each element $e_i$ contains a \textit{value} $v(e_i) \in \mathbb{R}$ and a \textit{weight} $w(e_i) \in \mathbb{Z}$. An RTS query $q$ comprises of a tuple $(R_q, \tau_q)$ where $R_q = [x,y]$ is a subset of the real line, and $\tau_q \in\mathbb{N}$ is some \textit{threshold}. Let $S(q)$ be the set of stream elements $e_i$ such that 
+Or more generally, we may even wish to receive an alert for a query involving multiple trading streams, such as 
+
+\textit{"Alert me when \text{100,000} share of APPL have been solve in the price range of [200, 205] and the NASDAQ is trading between [4,000, 4,500]"}
+
+Both queries are example of so-called \textit{Range Thresholding Queries}. Designing efficient algorithms to simulataneoulsy support massive amounts of such queries is central to the Range Thresholding on Streams problem. 
+
+In mathematical language, the Range Threshold on Streams (RTS) problem can be formulated as follows. Consider an unbounded stream of elements $\{e_i\}^{n}_{i=1}$ where each element $e_i$ contains a \textit{value} $v(e_i) \in \mathbb{R}$ and a \textit{weight} $w(e_i) \in \mathbb{Z}$. An RTS query $q$ comprises of a tuple $(R_q, \tau_q)$ where $R_q = [x,y]$ is a subset of the real line, and $\tau_q \in\mathbb{N}$ is some \textit{threshold}. Let $S(q)$ be the set of stream elements $e_i$ such that 
 \begin{itemize}
     \item $e_i$ is received after the time $q$ is registered and,
     \item has value $v(e)$ falling into $R_q$. 
@@ -26,9 +32,9 @@ Despite the number of applications for the RTS problem \cite{DBLP:conf/sigmod/Zh
 
 \section{Motivation}
 \label{sec:motivation}
-This thesis is primarily motivated to extend the literature to define and solve a more general version of the RTS problem, in which the interval of interest for a given query $R_q$, is allowed to become \textit{dynamic}. 
+This thesis is primarily motivated to extend the literature to define and solve a more general version of the RTS problem, in which the interval of interest for a given query $R_q$, is allowed to become \textit{dynamic} and \textit{move} with the evolution of the data stream. 
 
-Returning to our example related to the Stock market, Traders will often be interested in buy/sell orders being placed within ranges related to the so-called \textit{volume weighted average price} (VWAP) \cite{vwap}. Recall that the formula for VWAP is given by 
+For a motivating example of this, we return to the context of High Frequency Trading. Traders will often be interested in buy/sell orders being placed within ranges related to the so-called \textit{volume weighted average price} (VWAP) \cite{vwap}. Recall that the formula for VWAP is given by 
 \begin{equation}
     \frac{\sum_{e}v(e) \times w(e)}{\sum_{e}w(e)}
 \end{equation}
@@ -36,9 +42,9 @@ where $v(e)$ denotes the \textit{price} or \textit{value} of order $e$ and $w(e)
 
 \textit{"Notify me when $\tau$ shares of limit orders have been registered within $x$\% of VWAP"}
 
-There is currently no algorithm to do so, as existing RTS solutions require that the interval of interest for a given query $R_q$ remains fixed over the lifetime of said query, whereas endpoints determined by percentages of VWAP will \textit{evolve} with new trades as in $(1)$. 
+As we can see in (1), the endpoints of such a query will change as new stream elements are processed - with the potential for particularly large jumps for trades with large volumes. Existing algorithms to solve the RTS problem are also unable to support such queries, as they assume that the registered interval $R_q$ remains unaltered over the lifetime of the query. 
 
-Our goal therefore, is to mathematically formalise this more general type of query, where the endpoints or region of interest $R_q$ is allowed to \textit{change} with the introduction of each new stream element. Similar to the RTS problem, we then want to design salable solutions to manage a large number of simultaneous queries. 
+Our goal for this thesis is to mathematically formalise this more general type of query, where the endpoints or region of interest $R_q$ is allowed to \textit{move} with the introduction of each new stream element. Similar to the RTS problem, we then aim to design scalable algorithms to manage a large number of simultaneous queries. 
 
 \section{Thesis Outline}
 \label{sec:doc-outline}

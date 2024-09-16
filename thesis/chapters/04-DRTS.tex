@@ -38,6 +38,29 @@ Some useful examples of DRTS queries are the following
     
 We note that definition 4.1 leaves few restrictions on the possible choices for the endpoint function $f$, only that it be monotonically increasing so that the interval remains well defined after each time step. One could therefore supply a multivariate function $f(x,t)$ such as $f(x, t) = x + \Delta_t$ for some sequence $\{\Delta_t: t\geq1\}$. Thus, proposed solutions to the DTS problem must be able to solve these types of queries also. 
 
+\section{Benchmark Solutions}
+\label{sec:drts-benchmark-solutions}
+
+The introduction of endpoint functions limits the feasibility of the many of the benchmark solutions previously explored in \cref{sec:benchmark-solutions}. The reason being, many of these Data Structures are created on the intervals. In the DRTS context, all $m$ query intervals could possibly change significantly at each time stamp, forcing a complete rebuild of the Data Structure.
+
+One benchmark solution which is robust enough to manage changes to the intervals that are present in the case of the DRTS problem is following naive algorithm:
+
+\begin{algorithm}
+\caption{Naive RTS}\label{alg:naive-drts}
+\begin{algorithmic}[1]
+\Procedure{Naive-DRTS}{query set $Q^*$}
+\State \text{for each $q\in Q^*$ initialise $c_q\gets 0$}
+\For{ \text{each stream element $e_t$}}
+\For{ \text{each $q\in Q^*$}}
+\State \text{calculate $R_t$ using endpoint function $f$}
+\State \text{if $e\in R_t$ set $c_q \gets c_q + w(e)$}
+\State \text{if $c_q \geq \tau_q$, mature query $q$}
+\EndFor
+\EndFor
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
 \section{DT Algorithm For DRTS Queries}
 \label{sec:drts-dt-algorithm}
 
@@ -174,9 +197,9 @@ The second summation is a little more trickier to tightly analyse, but we make s
 \end{align*}
 Which is the same in terms of big-$O$ as before. This makes sense, as splitting up and processing an element over each of the $k$ DT instances may increase the element processing cost, but it would not alter the total messaging cost of the algorithm. This brings the total runtime analysis to: 
 $$O(nk\log (m/k) + m\log^2 m \log\tau_{max})$$
-which the worst case depricates to $O(nm)$ runtime. It is now clear that so long as $k = O(\log m)$ we can preserve a runtime of $\Tilde{O}(n+m)$. We conclude the analysis of this section with the following theorem. 
+which the worst case deprecates to $O(nm)$ runtime when we have as many distinct endpoint functions as we do queries. It is now clear that so long as $k = O(\log m)$ we can preserve a runtime of $\Tilde{O}(n+m)$. We conclude the analysis of this section with the following theorem. 
 
-\begin{theorem}[Correctness and Runtime]
+\begin{theorem}[Correctness and Time Complexity]
     For a collection of $m$ DRTS queries with $k$ distinct endpoint functions, and a stream of length $n$, \cref{alg:DRTS-bucketing} correctly solves the DRTS problem in runtime $O(nk\log(m/k) + m\log^2 m\log\tau_{\max})$. In the case that $k = O(\log m)$ the runtime is polylogarithmic.
 \end{theorem}
 
@@ -204,6 +227,7 @@ The goal of the the $\varepsilon$-fuzzy Range Threshold on Streams problem is to
 That is, in the $\varepsilon$-fuzzy variant, we record all stream elements that stab $\text{core}(R)$, but may also possible record elements that stab the outer core of the interval as well. We  extend the definition of $\varepsilon$-fuzzy intervals above to define an $\varepsilon$-fuzzy dynamic RTS query analogously. 
 
 \subsection{Novel Bucketing Algorithm}
+\label{sec:novel-bucketing-algorithm}
 We now propose our algorithm for the $\varepsilon$-fuzzy DRTS problem. The intuition behind our algorithm is that we can now bucket queries that don't share the exact same endpoint function, but they are \textit{approximately} close for long enough time so that the core region of each interval remains \textit{covered}. Over the course of our algorithm, we provide simple corrective measures to ensure our this approximated cover is well maintained. 
 
 We describe our algorithm below in psuedocode before proving its runtime and correctness. 
@@ -251,7 +275,7 @@ We now demonstrate the correctness of our algorithm, and formally prove that it 
     We note that $(1)$ and $(2)$ are calculated by steps 3 of the algorithm. Moreover, the updating of $\Delta_Q^\prime$ in step 5 of the algorithm ensures that no condition is violated
 \end{proof}
 
-\textbf{Lemma} (Runtime). \textit{For a set of $m$ queries $(R_i, \tau_i, \Delta_i)$  
+\textbf{Lemma} (Time Complexity). \textit{For a set of $m$ queries $(R_i, \tau_i, \Delta_i)$  
  and a data stream of length $n$, the Algorithm runs in $O(nk\log (m/k) + m\log^2 m \log\tau_{\text{max}})$ where $k = O(\log \Delta_{\text{max}})$} 
  \begin{proof}
     Steps 1 through to 4 of the algorithm can be viewed as \textit{preprocessing}, all of which can be readily seen to require $\Theta(m)$ time. The bulk of the run time can be attributed to step 5; which requires that we check and update each approximation factor $\Delta^\prime_{Q_i}$, and then process the stream element on each of the DT+ instances running on $Q_1,\dots, Q_k$. \\
@@ -264,33 +288,106 @@ We now demonstrate the correctness of our algorithm, and formally prove that it 
     which we recall to have shown as $O(nk\log (m/k) + m\log^2 m \log\tau_{\text{max}})$ from our earlier work on dynamic RTS queries.
 \end{proof} 
 
-\textbf{Lemma} (Approximation Factor). \textit{Assuming for each stream element $w(e_t)=1$ and $v(e_t)$ is distributed uniformly, the approximated count of stream elements that have stabbed a given interval maintained by the algorithm differs from the exact count with expectation 0.} 
-\begin{proof}
-    Without loss of generality, we may assume that $\Delta_i^\prime \geq \Delta_i$ as the alternative case holds by symmetry. 
-    By our first lemma, all stream elements that stab the core interval are counted. Therefore the maintained count can only deviate from the \textit{exact} count when either: 
-    \begin{enumerate}
-        \item A false negative occurs: $v(e_t) \in [l, l^\prime]$ and the approximated count differs from the exact count by -1
-        \item A false positive occurs: $v(e_t) \in [r, r^\prime]$ and the approximated count differs from the exact count by +1
-    \end{enumerate}
-    Let $FN$ and $FP$ denote the total number of false negatives and false positives respectively that occur over the course of the data stream which can be written as
-    $$FN = \sum_{t=1}^{n}1\{v(e_t) \in [l, l^\prime]\} \quad \quad FP = \sum_{t=1}^{n}1\{v(e_t) \in [r, r^\prime]\}$$
-    Finally, the deviation between the exact count and the approximated count maintained by the algorithm is $FP - FN$ which in expectation:
-    \begin{align*}
-        \mathbb{E}[FP - FN] &= \sum_{t=1}^{n} \mathbb{P}(v(e_t) \in [l, l^\prime]) - \mathbb{P}(v(e_t) \in [r, r^\prime]) \\
-        &= 0
-    \end{align*}
-    where the last inequality comes from the fact that by shifting both end points equally at each iteration, the length of the intervals $[l, l^\prime]$ and $[r, r^\prime]$ are always the same which implies $\mathbb{P}(v(e_t) \in [l, l^\prime]) = \mathbb{P}(v(e_t) \in [r, r^\prime])$
-\end{proof} 
 
 \newpage
 \section{Experimental Results}
 \label{sec:experimental-results}
-This section provides an experimental evaluation of our algorithms for the DRTS and $\varepsilon$-fuzzy DRTS problems, using benchmark solutions discussed in \cref{sec:benchmark-solutions} as a baseline. 
+This section provides an experimental evaluation of our algorithms for the DRTS and $\varepsilon$-fuzzy DRTS problems, using benchmark solutions discussed in \cref{sec:drts-benchmark-solutions} as a baseline. 
 
 \subsection{Experiment Design}
 \label{sec:experiment-design}
 
-All experiments were performed on an Ubuntu PC, equipped with an Intel Quad-Core i7 CPU running at 2.3GHZ with 16GB onboard memory. In terms of operating system, macOS Ventura 13.0 was used. All algorithms were written in \texttt{C++ 17} asdC  
+All experiments were performed on an Ubuntu version 24.04 PC, equipped with an Intel Quad-Core i7 CPU running at 2.3GHZ with 32GB onboard memory. All algorithms were implemented in \texttt{C++ 17} and compiled with the \texttt{clang g++ 14.0} compiler. The source code for our implementations are made freely available on \href{https://github.com/Seannnnnnnnnnn/Dynamic-RTS/tree/master}{github}.
+
+We follow the design of previous performance studies on RTS algorithms \cite{GAN16, DBLP:conf/sigmod/ZhangGBKCZ22} by separating our evaluation into two parts: one in which all queries are registered at the beginning, before moving to the scenario where queries are randomly issued throughout the course of the data stream. The rational for this separation is to allow us to determine how inputs $\tau_{\max}, m$ and $k$ (the number of distinct endpoint functions)  impact the performance of our algorithm, without the complications that are introduced through dynamisation. 
+
+To ensure a fair evaluation between algorithms, we implement a \textit{Data Generator}, which produces a set of random queries and sequence of stream elements to test our algorithms. When evaluating, we trial each algorithm over a common list of 100 \textit{seeds} to the generator, so that each algorithm is evaluated on a variety of different query sets and element streams. 
+
+\subsection{Scenario 1: Static Query Insertions}
+\label{ssec:experiments-scenario-1}
+For consistency with the existing literature, we closely follow the design of previous experimental evaluations \cite{GAN16, DBLP:conf/sigmod/ZhangGBKCZ22}. We first describe the configuration and rational of our experiments before discussing the results. 
+
+\textbf{Setup.} We restrict the dimension of the data space to $d\in\{1,2\}$ and to an integer domain of $[0, 10^5]$. For each stream element $e$, its corresponding $v(e)$ us uniformly distributed over the data space and its weight $w(e)$ sampled from a uniform distribution over the integer range of $[50, 150]$. For the endpoint function component of each query, we consider the equal-step case, where the endpoint of each interval is incremented by a value of $\Delta$ at each timestamp. Across each experiment we supply an integer input $k>0$ which generates a set of $k$ values for $\Delta$ uniformly on $[1, 10^3]$. Queries are then assigned one of  $\Delta_1,\dots, \Delta_k$ uniformly upon creation. 
+
+In each experiment $m$ queries were all registered at the beginning of the stream, with an identical threshold $\tau$. For a query $q$, the center of $R_q$ was generated from a Gaussian distribution with mean $5\times10^4$ and standard deviation set to 15\% of the mean. The whole $R_q$ was required to fit into the data space otherwise it was regenerated. As we set  the length of the data stream ahead of time, we also confirm for each $R_q$ and $\Delta_q$, that the updated interval will remain in the data space over the life of the simulation, otherwise it is regenerated.  
+
+The rational for this configuration is that stream elements are generated uniformly across the data stream, though through sampling of a Gaussian distribution, the queries tend to cluster around the \textit{hot spot}  of it's mean, which coincides with the centre of the data space. As explained in \cite{GAN16}, the choice of distributions also leads to $v(e)$ \textit{stabbing} 10\% of the queries alive in expectation. Given that each query $q$ had a 10\% probability of increasing its $W(q)$ with each stream element with $\mathbb{E}[w(e)] = 100$, each query was expected to mature after $\tau / (10\% \times 100) = \tau/10$ timestamps. 
+
+As detailed in \cref{sec:experiment-design}, we repeat each experiment 100 times, across distinct seeds to our generators for the stream elements and queries. We then report on the \textit{averaged} totals across each trial.
+
+\textbf{Results.} The first of our experiments sought to illustrate the efficiency of each algorithm over an entire fixed-length stream. We set $m = 1$ million and $\tau = 20$ million and tracked the average cost of processing an incoming query. With the relatively high value of $\tau$ to each stream elements weight, this experiment grants us insight into the performance of our algorithm in the absence of global rebuilds as the result of maturation. 
+
+We first consider the scenario where $k=1$, so we can develop a baseline - level of performance of our most simplest DRTS algorithm (see \cref{alg:DT+-algorithm}) over the naive solution.
+
+\begin{center}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.45]{thesis/figures/chart1.1.png}
+\caption{Efficiency as a function of time ($m$= 1 million, $\tau$ = 20 million, $k=1$, static queries)}
+\end{figure}
+\end{center}
+
+As this experiment is designed to purely evaluate the element processing time of each algorithm, we see relatively stable curves once their underlying \textit{structures} have been built. In the case of the naive algorithm, this underlying structure is a simple array containing each query, whereas in the case of the DT+ algorithm, this is the more complicated Endpoint Tree. This explains why the curve for the naive initially starts far below the DT+. However, once the underlying structures are built, we see an observable gap in element processing time which favours our algorithm. As we expect, the cost of element processing for the naive algorithm becomes stable - where the slight uptick in DT+ is due to Distributed Tracking costs, as rounds complete, and new slack values are assigned. Finally, we note that this scaling behaviour matches previous studies on the standard RTS problem \cite{GAN16, DBLP:conf/sigmod/ZhangGBKCZ22}.
+
+We now consider varying values $k$, which represents the number of distinct endpoint functions in our query set. Recall that for \cref{alg:DT+-algorithm}, this will now involve the creation of $k$ DT+ instances to process each endpoint function. In this experiment we know include our bucketing algorithm described in \cref{sec:novel-bucketing-algorithm}. We keep $m$ and $\tau$ as before, though now consider $k = 100,000$. For now, we ignore the approximation factor that comes from using the bucketing algorithm, and instead compare the algorithms based on average processing time. 
+
+\begin{center}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.45]{thesis/figures/chart2.1.png}
+\caption{Efficiency as a function of time ($m$= 1 million, $\tau$ = 20 million, $k=100,000$ static queries)}
+\end{figure}
+\end{center}
+
+Here, we see the performance of the DT+ algorithm being much closer to the naive algorithm, which is expected as the algorithm must now perform an additional $k$ loops in each element processing. As predicted by the theory, the Bucketing algorithm remains much more robust - by guaranteeing only a logarithmic factor of loops is performed. 
+
+As before, after the construction of each method, we see the each algorithm stabilise to its average cost of processing. By fixing $m$ and $\tau$, and plotting this stabilised value over $k$, we see that the DT+ algorithm deprecates to performance of the naive approach as $k\to m$. Close inspection shows that the cost of DT+ actually eclipses approach for values of $k$ close to $m$ - the reason lying in the implementation details, as a naive iteration over an array is more efficient than iterating over and tracing through a number of endpoint trees with depths of mostly 1 or 2. Furthermore as we had hoped, we see that the Bucketing algorithm scales much better over $k$.
+
+\begin{center}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.45]{thesis/figures/chart3.1.png}
+\caption{Average operation cost over $k$ = number of distinct endpoint functions}
+\end{figure}
+\end{center}
+
+\newpage
+\subsection{Scenario 2: Dynamic Query Insertions}
+\label{ssec:experiments-scenario-2}
+
+We now conduct experiments where queries can be inserted and deleted throughout the course of the data stream. 
+
+\textbf{Setup.} Stream elements and queries are generated in the same way as \cref{ssec:experiments-scenario-1}, though the threshold of each query $\tau_q$ is distributed uniformly on $[100, 100,000]$. Across all simulations, the total number of stream elements is fixed at 3 million. Before the stream commences, we register 1 million queries, with other queries added according to a mode of dynamism below: 
+\begin{itemize}
+    \item \textit{Stochastic Mode}: we fix a parameter $p_{ins}\in(0,1)$ to our simulation, which at each timestamp, an additional query is generated and inserted with probability $p_{ins}$. Similarly, we also supply a parameter $p_{del}\in(0,1)$ which deletes a random live query with probability $p_{del}$. 
+    \item \textit{Fixed-load Mode}: As soon as a query is matured or registered, we instantly generate and insert a new one. This ensures that we have a fixed load of live queries over the life of the simulation.
+\end{itemize}
+
+\textbf{Results (Stochastic Mode).} First we focus on $p_{ins} = p_{del} = 1/3$, Figure 4.4 shows that the averaged cost per-operation as a function of the number of received elements. The overall trends and relative performance of the algorithms reflect what we have seen so far in the static insertion scenario: 
+
+\begin{center}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.45]{thesis/figures/chart4.1.png}
+\caption{Efficiency as a function of time  ($k=100,000$, dynamic queries)}
+\end{figure}
+\end{center}
+
+It is worth noting that the presence of the occasional bumps in the DT+ and Bucketing chart are the result of logarithmic rebuilding, or global reconstruction taking place as the result of significant query maturation or insertion.
+
+Next, we sought to evaluate how algorithms scale with the rate of insertion. To do so, we adjusted $p_{ins}$ over equally-spaced intervals between 0.1 to 0.5 to and measured the total running time of each algorithm to process the whole stream. As one would be expect, the running time increased linearly in $p_{ins}$.
+
+\begin{center}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.45]{thesis/figures/chart5.1.png}
+\caption{Total Stream processing time ($k=10,000$, dynamic queries)}
+\end{figure}
+\end{center}
 
 
-\subsection{Performance on Financial Data}
+\newpage
+\subsection{Scenario 3: Performance on Financial Data}
+As a final measure of performance, we move from synthetically generated data and instead measure evaluate each algorithm against actual, high frequency trading data. The motivation for this final evaluation is two fold: first, we can gain insight to the performance of our algorithms on actual data streams that are drawn from far more complex distributions than we what have tested so far. Secondly, we can evaluate on DRTS queries with more complex endpoint functions besides the equal step case. 
+
+We choose to set our final experiments in the context of high-frequency trading for both the abundance of quality data sets available, and as a nod to our initial motivation for studying such queries as outlined in \cref{sec:motivation}. We consider high-frequency limit order book data across 5 of the largest and most liquid US technology stocks Amazon, Apple, Google, Intel and Microsoft. All data sets are available and sourced from \href{https://lobsterdata.com/info/DataSamples.php}{LOBSTER} which is used in a number of other studies involving high-frequency financial time series data \cite{RePEc:hum:wpaper:sfb649dp2014-053}
